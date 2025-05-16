@@ -80,7 +80,7 @@ body.dark-mode {
 /* الهيدر */
 .header {
   background: var(--header-bg-light);
-  padding: 15px 30px;
+  padding: 12px 30px; /* تم تقليل الحشو العلوي والسفلي */
   box-shadow: 0 4px 15px var(--header-shadow-light);
   border-radius: 0 0 20px 20px;
   display: flex;
@@ -98,7 +98,7 @@ body.dark-mode .header {
 .header-text span {
   color: var(--header-text-light);
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-  font-size: 26px;
+  font-size: 24px; /* تم تقليل حجم الخط */
   font-weight: 700;
 }
 body.dark-mode .header-text span {
@@ -106,7 +106,7 @@ body.dark-mode .header-text span {
 }
 
 .header-text img {
-  height: 40px;
+  height: 35px; /* تم تقليل حجم الشعار */
   margin-left: 15px;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
@@ -399,36 +399,71 @@ body.dark-mode .site-footer {
 /* شريط الواتساب */
 .whatsapp-bar {
   position: fixed;
-  bottom: 20px;
+  bottom: 20px; /* موضع شريط الواتساب الأصلي */
   left: 50%;
   transform: translateX(-50%);
-  width: auto; /* ليتناسب مع المحتوى */
-  min-width: 280px; /* حد أدنى للعرض */
+  width: auto;
+  min-width: 280px;
   max-width: 90%;
   background: linear-gradient(90deg, #25D366 0%, #128C7E 100%);
-  padding: 12px 25px; /* تعديل الحشو */
+  padding: 12px 25px;
   border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px; /* مسافة بين الأيقونات والنص */
+  gap: 10px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
   z-index: 1000;
   cursor: pointer;
   animation: pulse 1.5s infinite;
-  color: white; /* لون النص ثابت */
+  color: white;
 }
 .whatsapp-bar:hover {
-    transform: translateX(-50%) scale(1.03); /* تعديل تأثير النبض عند المرور */
+    transform: translateX(-50%) scale(1.03);
 }
 
-.whatsapp-bar i.fab.fa-whatsapp { /* استهداف أيقونات واتساب فقط */
-  font-size: 26px; /* تعديل حجم الأيقونة */
+.whatsapp-bar i.fab.fa-whatsapp {
+  font-size: 26px;
   color: white;
 }
 .whatsapp-text {
-    font-size: 18px; /* تعديل حجم الخط */
+    font-size: 18px;
     font-weight: 700;
+}
+
+
+/* زر الدعم الجديد */
+.support-button {
+  position: fixed;
+  bottom: 80px; /* ضع الزر فوق شريط الواتساب بمسافة */
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: var(--btn-gradient-light); /* استخدام نفس تدرج الأزرار الأخرى */
+  color: var(--btn-text-light);
+  padding: 12px 25px;
+  font-size: 18px; /* حجم خط مناسب */
+  border-radius: 30px;
+  box-shadow: 0 4px 15px var(--btn-shadow-light);
+  transition: transform 0.3s, box-shadow 0.3s, background-image 0.4s ease;
+  text-decoration: none; /* إزالة خط تحت الرابط */
+  font-weight: 700;
+  z-index: 999; /* تأكد من ظهوره فوق المحتوى */
+  cursor: pointer;
+}
+
+body.dark-mode .support-button {
+  background-image: var(--btn-gradient-dark);
+  color: var(--btn-text-dark);
+  box-shadow: 0 4px 15px var(--btn-shadow-dark);
+}
+
+.support-button:hover {
+  transform: translateX(-50%) translateY(-3px); /* تأثير بسيط عند المرور */
+  box-shadow: 0 6px 20px var(--btn-shadow-light);
+}
+body.dark-mode .support-button:hover {
+  transform: translateX(-50%) translateY(-3px);
+  box-shadow: 0 6px 20px var(--btn-shadow-dark);
 }
 
 
@@ -559,6 +594,14 @@ body.dark-mode .modal-close {
   </div>
 
     <div class="small-btns">
+    <h3><i class="fas fa-search" style="margin-left: 8px;"></i>محرك بحث ذكي ومتنوع المصادر</h3>
+    <div class="btn-section">
+      <a href="https://saif1230876657.github.io/my-store/" class="btn-small" target="_blank">
+        <i class="fas fa-search"></i>
+        استخدام محرك البحث
+      </a>
+      <img src="https://i.postimg.cc/sxV4m25N/image.jpg" alt="محرك البحث الذكي" class="subject-img"/>
+    </div>
     <h3><i class="fas fa-brain" style="margin-left: 8px;"></i>AI لمساعدتك في المذاكرة</h3>
     <div class="btn-section">
       <a href="https://saif1230876657.github.io/saif0/" class="btn-small" target="_blank">
@@ -567,6 +610,9 @@ body.dark-mode .modal-close {
       </a>
       <img src="https://i.postimg.cc/sXsst8NN/Egypt-Pyramids-Photos-41.jpg" alt="التاريخ" class="subject-img"/>
     </div>
+
+    <script async="async" data-cfasync="false" src="//pl26642122.profitableratecpm.com/207bfbb4822f7b530ad2c391a896859c/invoke.js"></script>
+    <div id="container-207bfbb4822f7b530ad2c391a896859c"></div>
     <div class="btn-section">
       <a href="https://saif1230876657.github.io/saifSA.-X/" class="btn-small" target="_blank">
         <i class="fas fa-flask"></i>
@@ -591,10 +637,16 @@ body.dark-mode .modal-close {
   </div>
 
     <div class="whatsapp-bar" onclick="window.location.href='https://wa.me/201202687082'">
-    <i class="fab fa-whatsapp"></i>
-    <span class="whatsapp-text">للتواصل مع سيف</span>
-    <i class="fab fa-whatsapp"></i>
-  </div>
+      <i class="fab fa-whatsapp"></i>
+      <span class="whatsapp-text">للتواصل مع سيف</span>
+      <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <a href="https://www.profitableratecpm.com/k8fisnjjc?key=afa7ea920578f74cea5997d670bbe78e"
+       class="support-button" target="_blank">
+      دعم ❤️
+    </a>
+
 
     <script>
     const toggleBtn = document.getElementById('mode-toggle');
