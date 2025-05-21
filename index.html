@@ -66,502 +66,502 @@
       --modal-btn-text-dark: #FFFFFF;
     }
 
-body {
-  font-family: 'Tajawal', sans-serif;
-  background-color: var(--bg-light);
-  color: var(--text-light);
-  margin: 0;
-  padding: 0;
-  transition: background-color 0.4s ease, color 0.4s ease; /* تحسين الانتقال */
-  position: relative;
-  min-height: 100vh;
-  display: flex; /* For footer positioning */
-  flex-direction: column; /* For footer positioning */
-  text-align: center; /* تأكد من أن النص المركزي هو الافتراضي */
-}
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.4s ease, color 0.4s ease; /* تحسين الانتقال */
+      position: relative;
+      min-height: 100vh;
+      display: flex; /* For footer positioning */
+      flex-direction: column; /* For footer positioning */
+      text-align: center; /* تأكد من أن النص المركزي هو الافتراضي */
+    }
 
-body.dark-mode {
-  background-color: var(--bg-dark);
-  color: var(--text-dark);
-}
+    body.dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
 
-/* الهيدر */
-.header {
-  background: var(--header-bg-light);
-  padding: 12px 30px; /* تم تقليل الحشو العلوي والسفلي */
-  box-shadow: 0 4px 15px var(--header-shadow-light);
-  border-radius: 0 0 20px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: 1000;
-  transition: background 0.4s ease, box-shadow 0.4s ease;
-}
-body.dark-mode .header {
-  background: var(--header-bg-dark);
-  box-shadow: 0 4px 15px var(--header-shadow-dark);
-}
+    /* الهيدر */
+    .header {
+      background: var(--header-bg-light);
+      padding: 12px 30px; /* تم تقليل الحشو العلوي والسفلي */
+      box-shadow: 0 4px 15px var(--header-shadow-light);
+      border-radius: 0 0 20px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 1000;
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+    }
+    body.dark-mode .header {
+      background: var(--header-bg-dark);
+      box-shadow: 0 4px 15px var(--header-shadow-dark);
+    }
 
-.header-text span {
-  color: var(--header-text-light);
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-  font-size: 24px; /* تم تقليل حجم الخط */
-  font-weight: 700;
-}
-body.dark-mode .header-text span {
-  color: var(--header-text-dark);
-}
+    .header-text span {
+      color: var(--header-text-light);
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+      font-size: 24px; /* تم تقليل حجم الخط */
+      font-weight: 700;
+    }
+    body.dark-mode .header-text span {
+      color: var(--header-text-dark);
+    }
 
-.header-text img {
-  height: 35px; /* تم تقليل حجم الشعار */
-  margin-left: 15px;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-}
+    .header-text img {
+      height: 35px; /* تم تقليل حجم الشعار */
+      margin-left: 15px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    }
 
-#mode-toggle {
-  background: rgba(255, 255, 255, 0.1); /* سيبقى هذا شفافًا على خلفية الهيدر */
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  color: var(--header-text-light); /* سيستخدم نفس لون نص الهيدر */
-  border-radius: 25px;
-  padding: 8px 20px;
-  transition: all 0.3s ease;
-  font-family: 'Tajawal', sans-serif;
-  font-weight: 700;
-  cursor: pointer;
-}
-body.dark-mode #mode-toggle {
-  background: rgba(0, 0, 0, 0.2); /* خلفية أغمق للزر في الوضع الليلي */
-  border: 2px solid rgba(255, 255, 255, 0.2); /* حدود أفتح قليلاً */
-  color: var(--header-text-dark);
-}
-#mode-toggle:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-body.dark-mode #mode-toggle:hover {
-    background: rgba(0, 0, 0, 0.3);
-}
-
-
-/* قسم السيرة الذاتية */
-.bio-section {
-  background: var(--card-bg-light);
-  padding: 25px;
-  border-radius: 20px;
-  margin: 30px auto;
-  max-width: 800px;
-  box-shadow: 0 4px 20px var(--card-shadow-light);
-  line-height: 1.8;
-  text-align: right; /* تأكد من المحاذاة لليمين */
-  transition: background 0.4s ease, box-shadow 0.4s ease;
-}
-body.dark-mode .bio-section {
-  background: var(--card-bg-dark);
-  box-shadow: 0 4px 20px var(--card-shadow-dark);
-}
-
-.bio-section h3 {
-  font-size: 28px;
-  color: var(--primary-accent-light);
-  margin-bottom: 20px;
-  font-weight: 700; /* إضافة وزن الخط */
-  transition: color 0.4s ease;
-}
-body.dark-mode .bio-section h3 {
-  color: var(--primary-accent-dark);
-}
-
-.bio-section p {
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-
-.more-details {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--more-details-bg-light);
-  padding: 10px 20px;
-  border-radius: 30px;
-  transition: background 0.3s, color 0.3s;
-  cursor: pointer;
-  font-weight: 700;
-  color: var(--primary-accent-light);
-}
-body.dark-mode .more-details {
-  background: var(--more-details-bg-dark);
-  color: var(--primary-accent-dark);
-}
-.more-details:hover {
-    background: var(--primary-accent-light);
-    color: var(--btn-text-light);
-}
-body.dark-mode .more-details:hover {
-    background: var(--primary-accent-dark);
-    color: var(--btn-text-dark); /* أو أبيض إذا كان البرتقالي الداكن فاتحًا كفاية */
-}
+    #mode-toggle {
+      background: rgba(255, 255, 255, 0.1); /* سيبقى هذا شفافًا على خلفية الهيدر */
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: var(--header-text-light); /* سيستخدم نفس لون نص الهيدر */
+      border-radius: 25px;
+      padding: 8px 20px;
+      transition: all 0.3s ease;
+      font-family: 'Tajawal', sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    body.dark-mode #mode-toggle {
+      background: rgba(0, 0, 0, 0.2); /* خلفية أغمق للزر في الوضع الليلي */
+      border: 2px solid rgba(255, 255, 255, 0.2); /* حدود أفتح قليلاً */
+      color: var(--header-text-dark);
+    }
+    #mode-toggle:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+    body.dark-mode #mode-toggle:hover {
+        background: rgba(0, 0, 0, 0.3);
+    }
 
 
-.full-bio {
-  display: none;
-  margin-top: 20px;
-  border-top: 2px dashed var(--primary-accent-light);
-  padding-top: 20px;
-  transition: border-top-color 0.4s ease;
-}
-body.dark-mode .full-bio {
-  border-top-color: var(--primary-accent-dark);
-}
+    /* قسم السيرة الذاتية */
+    .bio-section {
+      background: var(--card-bg-light);
+      padding: 25px;
+      border-radius: 20px;
+      margin: 30px auto;
+      max-width: 800px;
+      box-shadow: 0 4px 20px var(--card-shadow-light);
+      line-height: 1.8;
+      text-align: right; /* تأكد من المحاذاة لليمين */
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+    }
+    body.dark-mode .bio-section {
+      background: var(--card-bg-dark);
+      box-shadow: 0 4px 20px var(--card-shadow-dark);
+    }
 
-/* قسم التطبيق الرئيسي */
-.hero {
-  padding: 40px 20px 60px; /* تقليل الحشو السفلي قليلًا */
-  /* margin-bottom: 60px; /* يمكن إزالته إذا كان الفوتر يعتني بالمسافة */
-}
+    .bio-section h3 {
+      font-size: 28px;
+      color: var(--primary-accent-light);
+      margin-bottom: 20px;
+      font-weight: 700; /* إضافة وزن الخط */
+      transition: color 0.4s ease;
+    }
+    body.dark-mode .bio-section h3 {
+      color: var(--primary-accent-dark);
+    }
 
-.hero h2 {
-  font-size: 32px;
-  line-height: 1.5;
-  margin-bottom: 30px;
-  font-weight: 900; /* خط أثقل للعنوان الرئيسي */
-}
-.hero h2 strong {
-    color: var(--primary-accent-light);
-    transition: color 0.4s ease;
-}
-body.dark-mode .hero h2 strong {
-    color: var(--primary-accent-dark);
-}
+    .bio-section p {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
 
-.btn-download {
-  background-image: var(--btn-gradient-light);
-  color: var(--btn-text-light);
-  padding: 18px 50px;
-  font-size: 22px;
-  border-radius: 40px;
-  box-shadow: 0 6px 20px var(--btn-shadow-light);
-  transition: transform 0.3s, box-shadow 0.3s, background-image 0.4s ease;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-  border: none;
-  position: relative;
-  font-weight: 700;
-}
-body.dark-mode .btn-download {
-  background-image: var(--btn-gradient-dark);
-  color: var(--btn-text-dark);
-  box-shadow: 0 6px 20px var(--btn-shadow-dark);
-}
-
-.btn-download::after {
-  content: "\f019"; /* Font Awesome download icon */
-  font-family: "Font Awesome 6 Free"; /* تأكد من استخدام الاسم الصحيح للفونت */
-  font-weight: 900;
-  margin-right: 10px; /* مسافة قبل الأيقونة */
-}
-.btn-download:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px var(--btn-shadow-light);
-}
-body.dark-mode .btn-download:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px var(--btn-shadow-dark);
-}
-
-.safe {
-  margin: 15px 0;
-  font-size: 16px;
-  color: var(--safe-color-light);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  font-weight: 700;
-  transition: color 0.4s ease;
-}
-body.dark-mode .safe {
-  color: var(--safe-color-dark);
-}
-
-.safe::before {
-  content: "\f058"; /* Font Awesome check-circle icon */
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-}
-
-.banner {
-  margin: 40px auto;
-  max-width: 90%;
-  border-radius: 20px;
-  box-shadow: 0 8px 30px var(--card-shadow-light); /* استخدام نفس ظل البطاقة */
-  border: 3px solid var(--border-color-light);
-  display: block; /* لتجنب أي مسافات إضافية أسفل الصورة */
-  transition: box-shadow 0.4s ease, border-color 0.4s ease;
-}
-body.dark-mode .banner {
-  box-shadow: 0 8px 30px var(--card-shadow-dark);
-  border-color: var(--border-color-dark);
-}
-
-/* مواد دراسية */
-.small-btns {
-  margin: 40px 20px; /* تقليل الهامش العلوي */
-}
-.small-btns h3 { /* إضافة تنسيق لعنوان هذا القسم */
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 30px;
-    color: var(--primary-accent-light);
-}
-body.dark-mode .small-btns h3 {
-    color: var(--primary-accent-dark);
-}
+    .more-details {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--more-details-bg-light);
+      padding: 10px 20px;
+      border-radius: 30px;
+      transition: background 0.3s, color 0.3s;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--primary-accent-light);
+    }
+    body.dark-mode .more-details {
+      background: var(--more-details-bg-dark);
+      color: var(--primary-accent-dark);
+    }
+    .more-details:hover {
+        background: var(--primary-accent-light);
+        color: var(--btn-text-light);
+    }
+    body.dark-mode .more-details:hover {
+        background: var(--primary-accent-dark);
+        color: var(--btn-text-dark); /* أو أبيض إذا كان البرتقالي الداكن فاتحًا كفاية */
+    }
 
 
-.btn-section { /* أصبح هذا بمثابة بطاقة */
-  margin-bottom: 30px;
-  padding: 20px;
-  background-color: var(--card-bg-light);
-  border-radius: 20px;
-  box-shadow: 0 4px 15px var(--card-shadow-light);
-  transition: background-color 0.4s ease, box-shadow 0.4s ease;
-}
-body.dark-mode .btn-section {
-    background-color: var(--card-bg-dark);
-    box-shadow: 0 4px 15px var(--card-shadow-dark);
-}
+    .full-bio {
+      display: none;
+      margin-top: 20px;
+      border-top: 2px dashed var(--primary-accent-light);
+      padding-top: 20px;
+      transition: border-top-color 0.4s ease;
+    }
+    body.dark-mode .full-bio {
+      border-top-color: var(--primary-accent-dark);
+    }
+
+    /* قسم التطبيق الرئيسي */
+    .hero {
+      padding: 40px 20px 60px; /* تقليل الحشو السفلي قليلًا */
+      /* margin-bottom: 60px; /* يمكن إزالته إذا كان الفوتر يعتني بالمسافة */
+    }
+
+    .hero h2 {
+      font-size: 32px;
+      line-height: 1.5;
+      margin-bottom: 30px;
+      font-weight: 900; /* خط أثقل للعنوان الرئيسي */
+    }
+    .hero h2 strong {
+        color: var(--primary-accent-light);
+        transition: color 0.4s ease;
+    }
+    body.dark-mode .hero h2 strong {
+        color: var(--primary-accent-dark);
+    }
+
+    .btn-download {
+      background-image: var(--btn-gradient-light);
+      color: var(--btn-text-light);
+      padding: 18px 50px;
+      font-size: 22px;
+      border-radius: 40px;
+      box-shadow: 0 6px 20px var(--btn-shadow-light);
+      transition: transform 0.3s, box-shadow 0.3s, background-image 0.4s ease;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+      position: relative;
+      font-weight: 700;
+    }
+    body.dark-mode .btn-download {
+      background-image: var(--btn-gradient-dark);
+      color: var(--btn-text-dark);
+      box-shadow: 0 6px 20px var(--btn-shadow-dark);
+    }
+
+    .btn-download::after {
+      content: "\f019"; /* Font Awesome download icon */
+      font-family: "Font Awesome 6 Free"; /* تأكد من استخدام الاسم الصحيح للفونت */
+      font-weight: 900;
+      margin-right: 10px; /* مسافة قبل الأيقونة */
+    }
+    .btn-download:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px var(--btn-shadow-light);
+    }
+    body.dark-mode .btn-download:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px var(--btn-shadow-dark);
+    }
+
+    .safe {
+      margin: 15px 0;
+      font-size: 16px;
+      color: var(--safe-color-light);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      transition: color 0.4s ease;
+    }
+    body.dark-mode .safe {
+      color: var(--safe-color-dark);
+    }
+
+    .safe::before {
+      content: "\f058"; /* Font Awesome check-circle icon */
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+    }
+
+    .banner {
+      margin: 40px auto;
+      max-width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px var(--card-shadow-light); /* استخدام نفس ظل البطاقة */
+      border: 3px solid var(--border-color-light);
+      display: block; /* لتجنب أي مسافات إضافية أسفل الصورة */
+      transition: box-shadow 0.4s ease, border-color 0.4s ease;
+    }
+    body.dark-mode .banner {
+      box-shadow: 0 8px 30px var(--card-shadow-dark);
+      border-color: var(--border-color-dark);
+    }
+
+    /* مواد دراسية */
+    .small-btns {
+      margin: 40px 20px; /* تقليل الهامش العلوي */
+    }
+    .small-btns h3 { /* إضافة تنسيق لعنوان هذا القسم */
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        color: var(--primary-accent-light);
+    }
+    body.dark-mode .small-btns h3 {
+        color: var(--primary-accent-dark);
+    }
 
 
-.btn-small {
-  background-image: var(--btn-gradient-light);
-  color: var(--btn-text-light);
-  border-radius: 30px; /* زيادة الانحناء */
-  padding: 15px 35px;
-  font-size: 20px;
-  box-shadow: 0 4px 15px var(--btn-shadow-light);
-  transition: transform 0.3s, box-shadow 0.3s, background-image 0.4s ease;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center; /* لتوسيط المحتوى */
-  gap: 12px;
-  border: none;
-  cursor: pointer;
-  font-weight: 700;
-  width: auto; /* السماح للعرض بالتكيف مع المحتوى */
-  min-width: 220px; /* حد أدنى للعرض */
-}
-body.dark-mode .btn-small {
-  background-image: var(--btn-gradient-dark);
-  color: var(--btn-text-dark);
-  box-shadow: 0 4px 15px var(--btn-shadow-dark);
-}
-.btn-small:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px var(--btn-shadow-light);
-}
-body.dark-mode .btn-small:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px var(--btn-shadow-dark);
-}
-.btn-small i {
-    font-size: 20px; /* حجم الأيقونة داخل الزر */
-}
+    .btn-section { /* أصبح هذا بمثابة بطاقة */
+      margin-bottom: 30px;
+      padding: 20px;
+      background-color: var(--card-bg-light);
+      border-radius: 20px;
+      box-shadow: 0 4px 15px var(--card-shadow-light);
+      transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    }
+    body.dark-mode .btn-section {
+        background-color: var(--card-bg-dark);
+        box-shadow: 0 4px 15px var(--card-shadow-dark);
+    }
 
 
-.subject-img {
-  margin: 25px auto;
-  width: 90%; /* تعديل العرض */
-  max-width: 450px; /* تعديل أقصى عرض */
-  border-radius: 20px;
-  box-shadow: 0 8px 25px var(--card-shadow-light);
-  border: 3px solid var(--primary-accent-light); /* استخدام اللون الأساسي */
-  display: block;
-  transition: box-shadow 0.4s ease, border-color 0.4s ease;
-}
-body.dark-mode .subject-img {
-  box-shadow: 0 8px 25px var(--card-shadow-dark);
-  border-color: var(--primary-accent-dark);
-}
-
-/* الفوتر */
-.site-footer {
-  background: var(--footer-bg-light);
-  color: var(--footer-text-light);
-  padding: 25px;
-  text-align: center;
-  font-size: 16px; /* تصغير الخط قليلاً */
-  /* border-top: 3px solid rgba(255,255,255,0.2); /* يمكن إزالته أو تعديله */
-  margin-top: auto; /* يدفع الفوتر لأسفل الصفحة */
-  font-weight: 700;
-  transition: background 0.4s ease, color 0.4s ease;
-}
-body.dark-mode .site-footer {
-  background: var(--footer-bg-dark);
-  color: var(--footer-text-dark);
-  /* border-top-color: rgba(255,255,255,0.1); */
-}
-
-
-/* شريط الواتساب */
-.whatsapp-bar {
-  position: fixed;
-  bottom: 20px; /* موضع شريط الواتساب الأصلي */
-  left: 50%;
-  transform: translateX(-50%);
-  width: auto;
-  min-width: 280px;
-  max-width: 90%;
-  background: linear-gradient(90deg, #25D366 0%, #128C7E 100%);
-  padding: 12px 25px;
-  border-radius: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  z-index: 1000;
-  cursor: pointer;
-  animation: pulse 1.5s infinite;
-  color: white;
-}
-.whatsapp-bar:hover {
-    transform: translateX(-50%) scale(1.03);
-}
-
-.whatsapp-bar i.fab.fa-whatsapp {
-  font-size: 26px;
-  color: white;
-}
-.whatsapp-text {
-    font-size: 18px;
-    font-weight: 700;
-}
+    .btn-small {
+      background-image: var(--btn-gradient-light);
+      color: var(--btn-text-light);
+      border-radius: 30px; /* زيادة الانحناء */
+      padding: 15px 35px;
+      font-size: 20px;
+      box-shadow: 0 4px 15px var(--btn-shadow-light);
+      transition: transform 0.3s, box-shadow 0.3s, background-image 0.4s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center; /* لتوسيط المحتوى */
+      gap: 12px;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      width: auto; /* السماح للعرض بالتكيف مع المحتوى */
+      min-width: 220px; /* حد أدنى للعرض */
+    }
+    body.dark-mode .btn-small {
+      background-image: var(--btn-gradient-dark);
+      color: var(--btn-text-dark);
+      box-shadow: 0 4px 15px var(--btn-shadow-dark);
+    }
+    .btn-small:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px var(--btn-shadow-light);
+    }
+    body.dark-mode .btn-small:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px var(--btn-shadow-dark);
+    }
+    .btn-small i {
+        font-size: 20px; /* حجم الأيقونة داخل الزر */
+    }
 
 
-/* زر الدعم الجديد */
-.support-button {
-  position: fixed;
-  bottom: 80px; /* ضع الزر فوق شريط الواتساب بمسافة */
-  left: 50%;
-  transform: translateX(-50%);
-  background-image: var(--btn-gradient-light); /* استخدام نفس تدرج الأزرار الأخرى */
-  color: var(--btn-text-light);
-  padding: 12px 25px;
-  font-size: 18px; /* حجم خط مناسب */
-  border-radius: 30px;
-  box-shadow: 0 4px 15px var(--btn-shadow-light);
-  transition: transform 0.3s, box-shadow 0.3s, background-image 0.4s ease;
-  text-decoration: none; /* إزالة خط تحت الرابط */
-  font-weight: 700;
-  z-index: 999; /* تأكد من ظهوره فوق المحتوى */
-  cursor: pointer;
-}
+    .subject-img {
+      margin: 25px auto;
+      width: 90%; /* تعديل العرض */
+      max-width: 450px; /* تعديل أقصى عرض */
+      border-radius: 20px;
+      box-shadow: 0 8px 25px var(--card-shadow-light);
+      border: 3px solid var(--primary-accent-light); /* استخدام اللون الأساسي */
+      display: block;
+      transition: box-shadow 0.4s ease, border-color 0.4s ease;
+    }
+    body.dark-mode .subject-img {
+      box-shadow: 0 8px 25px var(--card-shadow-dark);
+      border-color: var(--primary-accent-dark);
+    }
 
-body.dark-mode .support-button {
-  background-image: var(--btn-gradient-dark);
-  color: var(--btn-text-dark);
-  box-shadow: 0 4px 15px var(--btn-shadow-dark);
-}
-
-.support-button:hover {
-  transform: translateX(-50%) translateY(-3px); /* تأثير بسيط عند المرور */
-  box-shadow: 0 6px 20px var(--btn-shadow-light);
-}
-body.dark-mode .support-button:hover {
-  transform: translateX(-50%) translateY(-3px);
-  box-shadow: 0 6px 20px var(--btn-shadow-dark);
-}
-
-
-/* مودال الإشعارات */
-.custom-modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--modal-content-bg-light);
-  color: var(--modal-content-text-light);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  z-index: 2000;
-  max-width: 400px;
-  width: 90%;
-  text-align: center;
-  display: none;
-  transition: background 0.4s ease, color 0.4s ease;
-}
-body.dark-mode .custom-modal {
-  background: var(--modal-content-bg-dark);
-  color: var(--modal-content-text-dark);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* ظل أغمق للمودال في الوضع الليلي */
-}
+    /* الفوتر */
+    .site-footer {
+      background: var(--footer-bg-light);
+      color: var(--footer-text-light);
+      padding: 25px;
+      text-align: center;
+      font-size: 16px; /* تصغير الخط قليلاً */
+      /* border-top: 3px solid rgba(255,255,255,0.2); /* يمكن إزالته أو تعديله */
+      margin-top: auto; /* يدفع الفوتر لأسفل الصفحة */
+      font-weight: 700;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+    body.dark-mode .site-footer {
+      background: var(--footer-bg-dark);
+      color: var(--footer-text-dark);
+      /* border-top-color: rgba(255,255,255,0.1); */
+    }
 
 
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--modal-bg-overlay);
-  z-index: 1999;
-  display: none;
-  opacity: 0; /* للتحكم في الظهور التدريجي */
-  transition: opacity 0.3s ease;
-}
-body.dark-mode .modal-overlay {
-    /* يمكن أن يكون نفس اللون أو أغمق قليلاً إذا أردت */
-}
+    /* شريط الواتساب */
+    .whatsapp-bar {
+      position: fixed;
+      bottom: 20px; /* موضع شريط الواتساب الأصلي */
+      left: 50%;
+      transform: translateX(-50%);
+      width: auto;
+      min-width: 280px;
+      max-width: 90%;
+      background: linear-gradient(90deg, #25D366 0%, #128C7E 100%);
+      padding: 12px 25px;
+      border-radius: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      z-index: 1000;
+      cursor: pointer;
+      animation: pulse 1.5s infinite;
+      color: white;
+    }
+    .whatsapp-bar:hover {
+        transform: translateX(-50%) scale(1.03);
+    }
+
+    .whatsapp-bar i.fab.fa-whatsapp {
+      font-size: 26px;
+      color: white;
+    }
+    .whatsapp-text {
+        font-size: 18px;
+        font-weight: 700;
+    }
 
 
-.modal-content {
-  font-size: 18px;
-  margin: 10px 0 20px; /* تعديل الهامش */
-}
-.modal-content i.fas.fa-download {
-    font-size: 40px;
-    color: var(--primary-accent-light);
-    margin-bottom: 15px;
-    transition: color 0.4s ease;
-}
-body.dark-mode .modal-content i.fas.fa-download {
-    color: var(--primary-accent-dark);
-}
-.modal-content h3 {
-    font-size: 22px; /* تعديل حجم الخط */
-    font-weight: 700;
-    margin-bottom: 10px;
-}
+    /* زر الدعم الجديد */
+    .support-button {
+      position: fixed;
+      bottom: 80px; /* ضع الزر فوق شريط الواتساب بمسافة */
+      left: 50%;
+      transform: translateX(-50%);
+      background-image: var(--btn-gradient-light); /* استخدام نفس تدرج الأزرار الأخرى */
+      color: var(--btn-text-light);
+      padding: 12px 25px;
+      font-size: 18px; /* حجم خط مناسب */
+      border-radius: 30px;
+      box-shadow: 0 4px 15px var(--btn-shadow-light);
+      transition: transform 0.3s, box-shadow 0.3s, background-image 0.4s ease;
+      text-decoration: none; /* إزالة خط تحت الرابط */
+      font-weight: 700;
+      z-index: 999; /* تأكد من ظهوره فوق المحتوى */
+      cursor: pointer;
+    }
+
+    body.dark-mode .support-button {
+      background-image: var(--btn-gradient-dark);
+      color: var(--btn-text-dark);
+      box-shadow: 0 4px 15px var(--btn-shadow-dark);
+    }
+
+    .support-button:hover {
+      transform: translateX(-50%) translateY(-3px); /* تأثير بسيط عند المرور */
+      box-shadow: 0 6px 20px var(--btn-shadow-light);
+    }
+    body.dark-mode .support-button:hover {
+      transform: translateX(-50%) translateY(-3px);
+      box-shadow: 0 6px 20px var(--btn-shadow-dark);
+    }
 
 
-.modal-close {
-  background: var(--modal-btn-bg-light);
-  color: var(--modal-btn-text-light);
-  border: none;
-  padding: 12px 35px; /* زيادة الحشو */
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 700; /* خط أثقل */
-  transition: transform 0.3s, background 0.4s ease;
-}
-body.dark-mode .modal-close {
-  background: var(--modal-btn-bg-dark);
-  color: var(--modal-btn-text-dark);
-}
-.modal-close:hover {
-    transform: scale(1.05); /* تكبير طفيف عند المرور */
-}
+    /* مودال الإشعارات */
+    .custom-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--modal-content-bg-light);
+      color: var(--modal-content-text-light);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      z-index: 2000;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      display: none;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+    body.dark-mode .custom-modal {
+      background: var(--modal-content-bg-dark);
+      color: var(--modal-content-text-dark);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* ظل أغمق للمودال في الوضع الليلي */
+    }
 
 
-@keyframes pulse {
-  0% { transform: translateX(-50%) scale(1); }
-  50% { transform: translateX(-50%) scale(1.03); } /* تقليل النبض قليلاً */
-  100% { transform: translateX(-50%) scale(1); }
-}
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--modal-bg-overlay);
+      z-index: 1999;
+      display: none;
+      opacity: 0; /* للتحكم في الظهور التدريجي */
+      transition: opacity 0.3s ease;
+    }
+    body.dark-mode .modal-overlay {
+        /* يمكن أن يكون نفس اللون أو أغمق قليلاً إذا أردت */
+    }
+
+
+    .modal-content {
+      font-size: 18px;
+      margin: 10px 0 20px; /* تعديل الهامش */
+    }
+    .modal-content i.fas.fa-download {
+        font-size: 40px;
+        color: var(--primary-accent-light);
+        margin-bottom: 15px;
+        transition: color 0.4s ease;
+    }
+    body.dark-mode .modal-content i.fas.fa-download {
+        color: var(--primary-accent-dark);
+    }
+    .modal-content h3 {
+        font-size: 22px; /* تعديل حجم الخط */
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+
+    .modal-close {
+      background: var(--modal-btn-bg-light);
+      color: var(--modal-btn-text-light);
+      border: none;
+      padding: 12px 35px; /* زيادة الحشو */
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 700; /* خط أثقل */
+      transition: transform 0.3s, background 0.4s ease;
+    }
+    body.dark-mode .modal-close {
+      background: var(--modal-btn-bg-dark);
+      color: var(--modal-btn-text-dark);
+    }
+    .modal-close:hover {
+        transform: scale(1.05); /* تكبير طفيف عند المرور */
+    }
+
+
+    @keyframes pulse {
+      0% { transform: translateX(-50%) scale(1); }
+      50% { transform: translateX(-50%) scale(1.03); } /* تقليل النبض قليلاً */
+      100% { transform: translateX(-50%) scale(1); }
+    }
 
   </style>
 </head>
@@ -602,6 +602,14 @@ body.dark-mode .modal-close {
   </div>
 
     <div class="small-btns">
+    <h3><i class="fas fa-file-alt" style="margin-left: 8px;"></i>موقع الاختبارات</h3>
+    <div class="btn-section">
+      <a href="https://saif1230876657.github.io/saifSAR1/" class="btn-small" target="_blank">
+        <i class="fas fa-clipboard-check"></i>
+        دخول للاختبارات
+      </a>
+      <img src="https://i.postimg.cc/q7RXFBxg/pngtree-test-prep-courses-and-apps-featuring-3d-icon-isolated-on-a-png-image-15381423.png" alt="موقع الاختبارات" class="subject-img"/>
+    </div>
     <h3><i class="fas fa-search" style="margin-left: 8px;"></i>محرك بحث ذكي ومتنوع المصادر</h3>
     <div class="btn-section">
       <a href="https://saif1230876657.github.io/my-store/" class="btn-small" target="_blank">
@@ -610,6 +618,7 @@ body.dark-mode .modal-close {
       </a>
       <img src="https://i.postimg.cc/sxV4m25N/image.jpg" alt="محرك البحث الذكي" class="subject-img"/>
     </div>
+
     <h3><i class="fas fa-brain" style="margin-left: 8px;"></i>AI لمساعدتك في المذاكرة</h3>
     <div class="btn-section">
       <a href="https://saif1230876657.github.io/saif0/" class="btn-small" target="_blank">
@@ -619,8 +628,6 @@ body.dark-mode .modal-close {
       <img src="https://i.postimg.cc/sXsst8NN/Egypt-Pyramids-Photos-41.jpg" alt="التاريخ" class="subject-img"/>
     </div>
 
-    <script async="async" data-cfasync="false" src="//pl26642122.profitableratecpm.com/207bfbb4822f7b530ad2c391a896859c/invoke.js"></script>
-    <div id="container-207bfbb4822f7b530ad2c391a896859c"></div>
     <div class="btn-section">
       <a href="https://saif1230876657.github.io/saifSA.-X/" class="btn-small" target="_blank">
         <i class="fas fa-flask"></i>
