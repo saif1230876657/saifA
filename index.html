@@ -1,751 +1,1269 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html dir="rtl" lang="ar">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>تطبيق SA</title>
-
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="[ضع رابط موقعك هنا]"> <meta property="og:title" content="Saif_SA">
-  <meta property="og:description" content="صفحة سيف الشخصية وتطبيق SA ومشاريع الذكاء الاصطناعي"> <meta property="og:image" content="https://i.postimg.cc/XYLSkstj/programmer-wallpaper-preview.jpg">
-
-  <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:url" content="[ضع رابط موقعك هنا]"> <meta name="twitter:title" content="Saif_SA">
-  <meta name="twitter:description" content="صفحة سيف الشخصية وتطبيق SA ومشاريع الذكاء الاصطناعي"> <meta name="twitter:image" content="https://i.postimg.cc/XYLSkstj/programmer-wallpaper-preview.jpg">
-
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saif AI - دردشة ذكاء اصطناعي</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     :root {
-      /* Light Mode Variables */
-      --bg-light: #FFF5E0; /* خلفية كريمية فاتحة */
-      --text-light: #3A3A3A; /* نص أغمق قليلاً لتحسين القراءة */
-      --header-bg-light: linear-gradient(90deg, #FF4E00 0%, #FF6B00 100%);
-      --header-text-light: #FFFFFF;
-      --header-shadow-light: rgba(255, 75, 0, 0.2);
-      --card-bg-light: rgba(255, 255, 255, 0.95); /* بطاقات أكثر شفافية قليلاً */
-      --card-shadow-light: rgba(0, 0, 0, 0.1);
-      --primary-accent-light: #FF4E00;
-      --secondary-accent-light: #FF6B00;
-      --btn-gradient-light: linear-gradient(135deg, #FF6B00 0%, #FF4E00 100%);
-      --btn-text-light: #FFFFFF;
-      --btn-shadow-light: rgba(255, 75, 0, 0.3);
-      --safe-color-light: #00C853;
-      --border-color-light: rgba(255, 78, 0, 0.2);
-      --more-details-bg-light: rgba(255, 78, 0, 0.1);
-      --footer-bg-light: linear-gradient(90deg, #FF4E00 0%, #FF6B00 100%);
-      --footer-text-light: #FFFFFF;
+      --primary-hue: 175;
+      --primary-saturation: 70%;
+      --primary-lightness: 40%;
 
-      /* Dark Mode Variables */
-      --bg-dark: #1A1A1A;
-      --text-dark: #E0E0E0; /* نص أفتح قليلاً */
-      --header-bg-dark: linear-gradient(90deg, #4A0E00 0%, #6B2E00 100%); /* تدرج أغمق للهيدر */
-      --header-text-dark: #F5F5F5;
-      --header-shadow-dark: rgba(0, 0, 0, 0.4); /* ظل أغمق للهيدر */
-      --card-bg-dark: #2C2C2C; /* خلفية أغمق للبطاقات */
-      --card-shadow-dark: rgba(0, 0, 0, 0.3); /* ظل أغمق للبطاقات */
-      --primary-accent-dark: #FF8000; /* برتقالي أفتح للوضع الليلي */
-      --secondary-accent-dark: #FF9933;
-      --btn-gradient-dark: linear-gradient(135deg, #FF8000 0%, #FF5500 100%);
-      --btn-text-dark: #FFFFFF; /* يمكن أن يكون أسود إذا كان التدرج فاتحًا جدًا */
-      --btn-shadow-dark: rgba(255, 100, 0, 0.3);
-      --safe-color-dark: #00E676;
-      --border-color-dark: rgba(255, 128, 0, 0.3); /* لون حدود أفتح */
-      --more-details-bg-dark: rgba(255, 128, 0, 0.15);
-      --footer-bg-dark: linear-gradient(90deg, #4A0E00 0%, #6B2E00 100%);
-      --footer-text-dark: #E0E0E0;
+      --primary-color: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
+      --primary-hover-color: hsl(var(--primary-hue), var(--primary-saturation), calc(var(--primary-lightness) - 5%));
+      --primary-glow-color: hsla(var(--primary-hue), var(--primary-saturation), calc(var(--primary-lightness) + 10%), 0.5);
 
-      --modal-bg-overlay: rgba(0,0,0,0.7);
-      --modal-content-bg-light: #FFFFFF;
-      --modal-content-text-light: #3A3A3A;
-      --modal-btn-bg-light: #FF4E00;
-      --modal-btn-text-light: #FFFFFF;
+      --bg-main: #181a1b;
+      --bg-surface: #222526;
+      --bg-surface-raised: #2c2f30;
+      --bg-input: #2c2f30;
 
-      --modal-content-bg-dark: #333333;
-      --modal-content-text-dark: #E0E0E0;
-      --modal-btn-bg-dark: #FF8000;
-      --modal-btn-text-dark: #FFFFFF;
+      --text-primary: #e8eaed;
+      --text-secondary: #9aa0a6;
+      --text-on-primary: #ffffff;
+      
+      --border-color: #3a3f42;
+      --border-color-light: #4a4f52;
+      
+      --success-color: #34a853;
+      --error-color: #ea4335;
+      
+      --user-message-bg: var(--primary-color);
+      --bot-message-bg: var(--bg-surface-raised);
+
+      --shadow-xs: 0 1px 2px rgba(0,0,0,0.25);
+      --shadow-sm: 0 2px 4px rgba(0,0,0,0.3);
+      --shadow-md: 0 4px 8px rgba(0,0,0,0.35);
+      --shadow-lg: 0 10px 20px rgba(0,0,0,0.4);
+      
+      --border-radius-sm: 6px;
+      --border-radius-md: 8px;
+      --border-radius-lg: 12px;
+      --border-radius-xl: 20px;
+
+      /* Heights for bottom elements - REDUCED VALUES */
+      --chat-input-area-height: 55px; /* كانت 70px */
+      --status-bar-area-height: 22px; /* كانت 26px */
+      --search-log-area-height: 18px; /* كانت 20px */
+
+      --scroll-btn-size: 38px; /* كانت 40px */
+      --scroll-btn-spacing: 8px; /* كانت 10px */
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Tajawal', sans-serif;
+      margin: 0;
+      padding: 0;
+      scrollbar-width: thin;
+      scrollbar-color: var(--primary-color) var(--bg-surface);
+    }
+
+    *::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    *::-webkit-scrollbar-track {
+      background: var(--bg-surface);
+      border-radius: 3px;
+    }
+    *::-webkit-scrollbar-thumb {
+      background-color: var(--primary-color);
+      border-radius: 3px;
+    }
+
+    html, body {
+      height: 100%; 
+      font-smooth: antialiased;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     body {
-      font-family: 'Tajawal', sans-serif;
-      background-color: var(--bg-light);
-      color: var(--text-light);
-      margin: 0;
-      padding: 0;
-      transition: background-color 0.4s ease, color 0.4s ease; /* تحسين الانتقال */
-      position: relative;
-      min-height: 100vh;
-      display: flex; /* For footer positioning */
-      flex-direction: column; /* For footer positioning */
-      text-align: center; /* تأكد من أن النص المركزي هو الافتراضي */
-    }
-
-    body.dark-mode {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-    }
-
-    /* الهيدر */
-    .header {
-      background: var(--header-bg-light);
-      padding: 12px 30px; /* تم تقليل الحشو العلوي والسفلي */
-      box-shadow: 0 4px 15px var(--header-shadow-light);
-      border-radius: 0 0 20px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      z-index: 1000;
-      transition: background 0.4s ease, box-shadow 0.4s ease;
-    }
-    body.dark-mode .header {
-      background: var(--header-bg-dark);
-      box-shadow: 0 4px 15px var(--header-shadow-dark);
-    }
-
-    .header-text span {
-      color: var(--header-text-light);
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-      font-size: 24px; /* تم تقليل حجم الخط */
-      font-weight: 700;
-    }
-    body.dark-mode .header-text span {
-      color: var(--header-text-dark);
-    }
-
-    .header-text img {
-      height: 35px; /* تم تقليل حجم الشعار */
-      margin-left: 15px;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-    }
-
-    #mode-toggle {
-      background: rgba(255, 255, 255, 0.1); /* سيبقى هذا شفافًا على خلفية الهيدر */
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      color: var(--header-text-light); /* سيستخدم نفس لون نص الهيدر */
-      border-radius: 25px;
-      padding: 8px 20px;
-      transition: all 0.3s ease;
-      font-family: 'Tajawal', sans-serif;
-      font-weight: 700;
-      cursor: pointer;
-    }
-    body.dark-mode #mode-toggle {
-      background: rgba(0, 0, 0, 0.2); /* خلفية أغمق للزر في الوضع الليلي */
-      border: 2px solid rgba(255, 255, 255, 0.2); /* حدود أفتح قليلاً */
-      color: var(--header-text-dark);
-    }
-    #mode-toggle:hover {
-        background: rgba(255, 255, 255, 0.2);
-    }
-    body.dark-mode #mode-toggle:hover {
-        background: rgba(0, 0, 0, 0.3);
-    }
-
-
-    /* قسم السيرة الذاتية */
-    .bio-section {
-      background: var(--card-bg-light);
-      padding: 25px;
-      border-radius: 20px;
-      margin: 30px auto;
-      max-width: 800px;
-      box-shadow: 0 4px 20px var(--card-shadow-light);
-      line-height: 1.8;
-      text-align: right; /* تأكد من المحاذاة لليمين */
-      transition: background 0.4s ease, box-shadow 0.4s ease;
-    }
-    body.dark-mode .bio-section {
-      background: var(--card-bg-dark);
-      box-shadow: 0 4px 20px var(--card-shadow-dark);
-    }
-
-    .bio-section h3 {
-      font-size: 28px;
-      color: var(--primary-accent-light);
-      margin-bottom: 20px;
-      font-weight: 700; /* إضافة وزن الخط */
-      transition: color 0.4s ease;
-    }
-    body.dark-mode .bio-section h3 {
-      color: var(--primary-accent-dark);
-    }
-
-    .bio-section p {
-      font-size: 18px;
-      margin-bottom: 15px;
-    }
-
-    .more-details {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--more-details-bg-light);
-      padding: 10px 20px;
-      border-radius: 30px;
-      transition: background 0.3s, color 0.3s;
-      cursor: pointer;
-      font-weight: 700;
-      color: var(--primary-accent-light);
-    }
-    body.dark-mode .more-details {
-      background: var(--more-details-bg-dark);
-      color: var(--primary-accent-dark);
-    }
-    .more-details:hover {
-        background: var(--primary-accent-light);
-        color: var(--btn-text-light);
-    }
-    body.dark-mode .more-details:hover {
-        background: var(--primary-accent-dark);
-        color: var(--btn-text-dark); /* أو أبيض إذا كان البرتقالي الداكن فاتحًا كفاية */
-    }
-
-
-    .full-bio {
-      display: none;
-      margin-top: 20px;
-      border-top: 2px dashed var(--primary-accent-light);
-      padding-top: 20px;
-      transition: border-top-color 0.4s ease;
-    }
-    body.dark-mode .full-bio {
-      border-top-color: var(--primary-accent-dark);
-    }
-
-    /* قسم التطبيق الرئيسي */
-    .hero {
-      padding: 40px 20px 60px; /* تقليل الحشو السفلي قليلًا */
-      /* margin-bottom: 60px; /* يمكن إزالته إذا كان الفوتر يعتني بالمسافة */
-    }
-
-    .hero h2 {
-      font-size: 32px;
-      line-height: 1.5;
-      margin-bottom: 30px;
-      font-weight: 900; /* خط أثقل للعنوان الرئيسي */
-    }
-    .hero h2 strong {
-        color: var(--primary-accent-light);
-        transition: color 0.4s ease;
-    }
-    body.dark-mode .hero h2 strong {
-        color: var(--primary-accent-dark);
-    }
-
-    .btn-download {
-      background-image: var(--btn-gradient-light);
-      color: var(--btn-text-light);
-      padding: 18px 50px;
-      font-size: 22px;
-      border-radius: 40px;
-      box-shadow: 0 6px 20px var(--btn-shadow-light);
-      transition: transform 0.3s, box-shadow 0.3s, background-image 0.4s ease;
-      text-decoration: none;
-      display: inline-block;
-      cursor: pointer;
-      border: none;
-      position: relative;
-      font-weight: 700;
-    }
-    body.dark-mode .btn-download {
-      background-image: var(--btn-gradient-dark);
-      color: var(--btn-text-dark);
-      box-shadow: 0 6px 20px var(--btn-shadow-dark);
-    }
-
-    .btn-download::after {
-      content: "\f019"; /* Font Awesome download icon */
-      font-family: "Font Awesome 6 Free"; /* تأكد من استخدام الاسم الصحيح للفونت */
-      font-weight: 900;
-      margin-right: 10px; /* مسافة قبل الأيقونة */
-    }
-    .btn-download:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px var(--btn-shadow-light);
-    }
-    body.dark-mode .btn-download:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px var(--btn-shadow-dark);
-    }
-
-    .safe {
-      margin: 15px 0;
-      font-size: 16px;
-      color: var(--safe-color-light);
+      background: var(--bg-main);
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 8px;
-      font-weight: 700;
-      transition: color 0.4s ease;
-    }
-    body.dark-mode .safe {
-      color: var(--safe-color-dark);
+      color: var(--text-primary);
+      overflow: hidden; 
     }
 
-    .safe::before {
-      content: "\f058"; /* Font Awesome check-circle icon */
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-    }
-
-    .banner {
-      margin: 40px auto;
-      max-width: 90%;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px var(--card-shadow-light); /* استخدام نفس ظل البطاقة */
-      border: 3px solid var(--border-color-light);
-      display: block; /* لتجنب أي مسافات إضافية أسفل الصورة */
-      transition: box-shadow 0.4s ease, border-color 0.4s ease;
-    }
-    body.dark-mode .banner {
-      box-shadow: 0 8px 30px var(--card-shadow-dark);
-      border-color: var(--border-color-dark);
-    }
-
-    /* مواد دراسية */
-    .small-btns {
-      margin: 40px 20px; /* تقليل الهامش العلوي */
-    }
-    .small-btns h3 { /* إضافة تنسيق لعنوان هذا القسم */
-        font-size: 28px;
-        font-weight: 700;
-        margin-bottom: 30px;
-        color: var(--primary-accent-light);
-    }
-    body.dark-mode .small-btns h3 {
-        color: var(--primary-accent-dark);
-    }
-
-
-    .btn-section { /* أصبح هذا بمثابة بطاقة */
-      margin-bottom: 30px;
-      padding: 20px;
-      background-color: var(--card-bg-light);
-      border-radius: 20px;
-      box-shadow: 0 4px 15px var(--card-shadow-light);
-      transition: background-color 0.4s ease, box-shadow 0.4s ease;
-    }
-    body.dark-mode .btn-section {
-        background-color: var(--card-bg-dark);
-        box-shadow: 0 4px 15px var(--card-shadow-dark);
-    }
-
-
-    .btn-small {
-      background-image: var(--btn-gradient-light);
-      color: var(--btn-text-light);
-      border-radius: 30px; /* زيادة الانحناء */
-      padding: 15px 35px;
-      font-size: 20px;
-      box-shadow: 0 4px 15px var(--btn-shadow-light);
-      transition: transform 0.3s, box-shadow 0.3s, background-image 0.4s ease;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center; /* لتوسيط المحتوى */
-      gap: 12px;
-      border: none;
-      cursor: pointer;
-      font-weight: 700;
-      width: auto; /* السماح للعرض بالتكيف مع المحتوى */
-      min-width: 220px; /* حد أدنى للعرض */
-    }
-    body.dark-mode .btn-small {
-      background-image: var(--btn-gradient-dark);
-      color: var(--btn-text-dark);
-      box-shadow: 0 4px 15px var(--btn-shadow-dark);
-    }
-    .btn-small:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px var(--btn-shadow-light);
-    }
-    body.dark-mode .btn-small:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px var(--btn-shadow-dark);
-    }
-    .btn-small i {
-        font-size: 20px; /* حجم الأيقونة داخل الزر */
-    }
-
-
-    .subject-img {
-      margin: 25px auto;
-      width: 90%; /* تعديل العرض */
-      max-width: 450px; /* تعديل أقصى عرض */
-      border-radius: 20px;
-      box-shadow: 0 8px 25px var(--card-shadow-light);
-      border: 3px solid var(--primary-accent-light); /* استخدام اللون الأساسي */
-      display: block;
-      transition: box-shadow 0.4s ease, border-color 0.4s ease;
-    }
-    body.dark-mode .subject-img {
-      box-shadow: 0 8px 25px var(--card-shadow-dark);
-      border-color: var(--primary-accent-dark);
-    }
-
-    /* الفوتر */
-    .site-footer {
-      background: var(--footer-bg-light);
-      color: var(--footer-text-light);
-      padding: 25px;
-      text-align: center;
-      font-size: 16px; /* تصغير الخط قليلاً */
-      /* border-top: 3px solid rgba(255,255,255,0.2); /* يمكن إزالته أو تعديله */
-      margin-top: auto; /* يدفع الفوتر لأسفل الصفحة */
-      font-weight: 700;
-      transition: background 0.4s ease, color 0.4s ease;
-    }
-    body.dark-mode .site-footer {
-      background: var(--footer-bg-dark);
-      color: var(--footer-text-dark);
-      /* border-top-color: rgba(255,255,255,0.1); */
-    }
-
-
-    /* شريط الواتساب */
-    .whatsapp-bar {
-      position: fixed;
-      bottom: 20px; /* موضع شريط الواتساب الأصلي */
-      left: 50%;
-      transform: translateX(-50%);
-      width: auto;
-      min-width: 280px;
-      max-width: 90%;
-      background: linear-gradient(90deg, #25D366 0%, #128C7E 100%);
-      padding: 12px 25px;
-      border-radius: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      z-index: 1000;
-      cursor: pointer;
-      animation: pulse 1.5s infinite;
-      color: white;
-    }
-    .whatsapp-bar:hover {
-        transform: translateX(-50%) scale(1.03);
-    }
-
-    .whatsapp-bar i.fab.fa-whatsapp {
-      font-size: 26px;
-      color: white;
-    }
-    .whatsapp-text {
-        font-size: 18px;
-        font-weight: 700;
-    }
-
-
-    /* زر الدعم الجديد */
-    .support-button {
-      position: fixed;
-      bottom: 80px; /* ضع الزر فوق شريط الواتساب بمسافة */
-      left: 50%;
-      transform: translateX(-50%);
-      background-image: var(--btn-gradient-light); /* استخدام نفس تدرج الأزرار الأخرى */
-      color: var(--btn-text-light);
-      padding: 12px 25px;
-      font-size: 18px; /* حجم خط مناسب */
-      border-radius: 30px;
-      box-shadow: 0 4px 15px var(--btn-shadow-light);
-      transition: transform 0.3s, box-shadow 0.3s, background-image 0.4s ease;
-      text-decoration: none; /* إزالة خط تحت الرابط */
-      font-weight: 700;
-      z-index: 999; /* تأكد من ظهوره فوق المحتوى */
-      cursor: pointer;
-    }
-
-    body.dark-mode .support-button {
-      background-image: var(--btn-gradient-dark);
-      color: var(--btn-text-dark);
-      box-shadow: 0 4px 15px var(--btn-shadow-dark);
-    }
-
-    .support-button:hover {
-      transform: translateX(-50%) translateY(-3px); /* تأثير بسيط عند المرور */
-      box-shadow: 0 6px 20px var(--btn-shadow-light);
-    }
-    body.dark-mode .support-button:hover {
-      transform: translateX(-50%) translateY(-3px);
-      box-shadow: 0 6px 20px var(--btn-shadow-dark);
-    }
-
-
-    /* مودال الإشعارات */
-    .custom-modal {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: var(--modal-content-bg-light);
-      color: var(--modal-content-text-light);
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      z-index: 2000;
-      max-width: 400px;
-      width: 90%;
-      text-align: center;
-      display: none;
-      transition: background 0.4s ease, color 0.4s ease;
-    }
-    body.dark-mode .custom-modal {
-      background: var(--modal-content-bg-dark);
-      color: var(--modal-content-text-dark);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* ظل أغمق للمودال في الوضع الليلي */
-    }
-
-
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
+    .container {
       width: 100%;
-      height: 100%;
-      background: var(--modal-bg-overlay);
-      z-index: 1999;
-      display: none;
-      opacity: 0; /* للتحكم في الظهور التدريجي */
-      transition: opacity 0.3s ease;
-    }
-    body.dark-mode .modal-overlay {
-        /* يمكن أن يكون نفس اللون أو أغمق قليلاً إذا أردت */
-    }
-
-
-    .modal-content {
-      font-size: 18px;
-      margin: 10px 0 20px; /* تعديل الهامش */
-    }
-    .modal-content i.fas.fa-download {
-        font-size: 40px;
-        color: var(--primary-accent-light);
-        margin-bottom: 15px;
-        transition: color 0.4s ease;
-    }
-    body.dark-mode .modal-content i.fas.fa-download {
-        color: var(--primary-accent-dark);
-    }
-    .modal-content h3 {
-        font-size: 22px; /* تعديل حجم الخط */
-        font-weight: 700;
-        margin-bottom: 10px;
+      max-width: 760px; 
+      height: 100vh; 
+      background: var(--bg-main);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative; 
+      box-shadow: var(--shadow-lg);
     }
 
+    .header {
+      background: var(--bg-surface);
+      color: var(--text-primary);
+      padding: 0.8rem 1.1rem; /* يمكن تقليل هذا قليلاً إذا لزم الأمر ليتناسب مع الارتفاع العام */
+      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      position: relative; /* مهم لـ .delete-all-btn */
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0; 
+      z-index: 10; /* لضمان ظهوره فوق العناصر الأخرى إذا كان هناك تداخل */
+    }
 
-    .modal-close {
-      background: var(--modal-btn-bg-light);
-      color: var(--modal-btn-text-light);
-      border: none;
-      padding: 12px 35px; /* زيادة الحشو */
-      border-radius: 25px;
+    .header h1 {
+      font-size: 1.3rem; 
+      flex: 1;
+      font-weight: 700;
+      color: var(--primary-color); 
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .header .fas.fa-robot {
+      font-size: 1.6rem;
+      color: var(--primary-color);
+      animation: pulseIcon 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseIcon {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.1); opacity: 0.8; }
+    }
+
+    .delete-all-btn {
+      position: absolute;
+      left: 15px; 
+      top: 50%; /* لمحاذاة رأسية أفضل */
+      transform: translateY(-50%); /* لمحاذاة رأسية أفضل */
       cursor: pointer;
-      font-size: 16px;
-      font-weight: 700; /* خط أثقل */
-      transition: transform 0.3s, background 0.4s ease;
+      transition: color 0.2s ease-in-out, transform 0.2s ease;
+      color: var(--text-secondary);
+      font-size: 1.2rem; 
+      z-index: 11; /* ليكون فوق عناصر الهيدر الأخرى إذا لزم الأمر */
     }
-    body.dark-mode .modal-close {
-      background: var(--modal-btn-bg-dark);
-      color: var(--modal-btn-text-dark);
+
+    .delete-all-btn:hover {
+      color: var(--error-color);
+      transform: translateY(-50%) rotate(10deg) scale(1.1);
     }
-    .modal-close:hover {
-        transform: scale(1.05); /* تكبير طفيف عند المرور */
+
+    .chat-container {
+      flex: 1;
+      padding: 1rem 0.7rem; 
+      overflow-y: auto;
+      background: var(--bg-main);
+      scroll-behavior: smooth; 
+    }
+
+    .message {
+      margin-bottom: 1.1rem; 
+      display: flex;
+      flex-direction: column;
+      animation: messageAppear 0.4s ease-out;
+    }
+
+    @keyframes messageAppear {
+      from { opacity: 0; transform: translateY(15px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .message-header {
+      font-size: 0.65rem; 
+      color: var(--text-secondary);
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+      padding: 0 5px; 
+    }
+
+    .delete-btn {
+      color: var(--text-secondary);
+      font-size: 0.75rem; 
+      cursor: pointer;
+      transition: color 0.2s, transform 0.2s;
+      opacity: 0.5; 
+    }
+
+    .delete-btn:hover {
+      opacity: 1;
+      color: var(--error-color);
+      transform: scale(1.15);
+    }
+
+    .message.user {
+      align-items: flex-end;
+    }
+    .message.user .message-header {
+      flex-direction: row-reverse; 
+    }
+
+    .message.bot {
+      align-items: flex-start;
+    }
+
+    .bubble {
+      max-width: 78%; 
+      padding: 0.75rem 1rem; 
+      border-radius: var(--border-radius-md); 
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      line-height: 1.6;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .message.user .bubble {
+      background: var(--user-message-bg);
+      color: var(--text-on-primary);
+      border-bottom-right-radius: var(--border-radius-sm); 
+    }
+
+    .message.bot .bubble {
+      background: var(--bot-message-bg);
+      color: var(--text-primary);
+      border-bottom-left-radius: var(--border-radius-sm); 
+    }
+
+    .message:hover .bubble {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .message-actions {
+      margin-top: 6px;
+      display: flex;
+      gap: 5px; 
+      padding: 0 5px; 
+    }
+    .message.user .message-actions { 
+        justify-content: flex-end;
+    }
+
+    .message-actions button {
+      background: transparent; 
+      border: 1px solid var(--border-color-light); 
+      cursor: pointer;
+      font-size: 0.9rem; 
+      padding: 4px 7px; 
+      color: var(--text-secondary);
+      transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      border-radius: var(--border-radius-sm);
+    }
+
+    .message-actions button:hover {
+      color: var(--text-on-primary);
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      box-shadow: 0 0 8px var(--primary-glow-color);
+    }
+
+    .message-actions button.liked {
+      color: var(--success-color);
+      border-color: var(--success-color);
+    }
+     .message-actions button.liked:hover {
+      background-color: var(--success-color);
+      color: var(--text-on-primary);
+      box-shadow: 0 0 8px hsla(135, 60%, 50%, 0.5);
+    }
+
+    .chat-input {
+      display: flex;
+      align-items: flex-end; 
+      border-top: 1px solid var(--border-color);
+      padding: 0.5rem 0.7rem; /* كانت 0.6rem 0.75rem */
+      background: var(--bg-surface); 
+      gap: 0.6rem; 
+      position: relative; 
+      z-index: 5; 
+      flex-shrink: 0; 
+      min-height: var(--chat-input-area-height); 
+    }
+
+    .chat-input textarea {
+      flex: 1;
+      padding: 0.6rem 0.9rem; /* كانت 0.7rem 1rem */
+      border: 1px solid var(--border-color);
+      resize: none;
+      font-size: 0.9rem;
+      outline: none;
+      border-radius: var(--border-radius-xl); 
+      background: var(--bg-input);
+      color: var(--text-primary);
+      max-height: 90px; /* كانت 110px */
+      line-height: 1.55;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+     .chat-input textarea::placeholder {
+        color: var(--text-secondary);
+        opacity: 0.6;
+     }
+     .chat-input textarea:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px var(--primary-glow-color);
+     }
+
+    .chat-input-btn { 
+      background: var(--primary-color);
+      border: none;
+      color: var(--text-on-primary);
+      width: 38px; /* كانت 40px */
+      height: 38px; /* كانت 40px */
+      border-radius: 50%; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1rem; 
+      transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      flex-shrink: 0; 
+    }
+    .chat-input-btn:hover {
+      background: var(--primary-hover-color);
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--primary-glow-color);
+    }
+    .chat-input-btn:active {
+        transform: scale(0.92);
+        background: var(--primary-hover-color);
+    }
+
+    #imageUpload {
+      display: none;
+    }
+    
+    .upload-options-container {
+      position: absolute;
+      bottom: calc(100% + 5px); 
+      right: 48px; /* تعديل ليتناسب مع حجم الزر الجديد */
+      background-color: var(--bg-surface-raised);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px;
+      z-index: 10;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.2s ease, visibility 0s linear 0.2s, transform 0.2s ease;
+    }
+    .upload-options-container.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      transition: opacity 0.2s ease, visibility 0s linear 0s, transform 0.2s ease;
+    }
+    .upload-options-container button {
+      background-color: var(--bg-input);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color-light);
+      padding: 8px 12px;
+      border-radius: var(--border-radius-sm);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    .upload-options-container button:hover {
+      background-color: var(--primary-color);
+      color: var(--text-on-primary);
+      border-color: var(--primary-color);
+    }
+    .upload-options-container button i {
+      font-size: 1rem;
+    }
+
+    .status {
+      text-align: center;
+      padding: 0.25rem; /* كانت 0.3rem */
+      font-size: 0.75rem; 
+      background-color: var(--bg-surface);
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border-color);
+      min-height: var(--status-bar-area-height); 
+      transition: color 0.3s ease;
+      flex-shrink: 0; 
+    }
+
+    .status.success { color: var(--success-color); font-weight: 500; }
+    .status.error { color: var(--error-color); font-weight: 500; }
+
+    a {
+      color: var(--primary-color); 
+      text-decoration: none;
+      word-break: break-all;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: hsl(var(--primary-hue), var(--primary-saturation), calc(var(--primary-lightness) + 10%)); 
+    }
+
+    .search-log {
+      text-align: center;
+      font-size: 0.7rem; 
+      color: var(--text-secondary);
+      opacity: 0.6; 
+      padding: 0.1rem 0; /* كانت 0.15rem 0 */
+      border-top: 1px dashed var(--border-color-light);
+      background-color: var(--bg-main);
+      min-height: var(--search-log-area-height);
+      flex-shrink: 0; 
+    }
+
+    .toggle-details-btn {
+      cursor: pointer;
+      color: var(--primary-color);
+      font-weight: 500;
+      border: none;
+      background: none;
+      padding: 0;
+      margin-top: 8px;
+      display: block; 
+      text-align: right; 
+      font-size: 0.85rem;
+      transition: color 0.2s ease;
+    }
+
+    .toggle-details-btn:hover {
+      color: hsl(var(--primary-hue), var(--primary-saturation), calc(var(--primary-lightness) + 10%)); 
+      text-decoration: underline;
+    }
+
+    .camera-modal {
+        display: none; 
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.7);
+        align-items: center;
+        justify-content: center;
+    }
+    .camera-modal-content {
+        background-color: var(--bg-surface);
+        padding: 20px;
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius-lg);
+        text-align: center;
+        max-width: 90%;
+        max-height: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #cameraView {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: var(--border-radius-md);
+        margin-bottom: 15px;
+        background-color: #000; 
+    }
+    .camera-controls button {
+        background: var(--primary-color);
+        border: none;
+        color: var(--text-on-primary);
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        border-radius: var(--border-radius-md);
+        cursor: pointer;
+        margin: 0 5px;
+        transition: background-color 0.2s ease;
+    }
+    .camera-controls button:hover {
+        background: var(--primary-hover-color);
+    }
+    .camera-controls button#cancelCameraBtn {
+        background-color: var(--error-color);
+    }
+    .camera-controls button#cancelCameraBtn:hover {
+        background-color: hsl(var(--primary-hue,0), 90%, 30%); 
+    }
+
+    .scroll-btn {
+      position: absolute; 
+      right: 20px;
+      background-color: var(--primary-color);
+      color: var(--text-on-primary);
+      border: none;
+      width: var(--scroll-btn-size);   
+      height: var(--scroll-btn-size);  
+      border-radius: 50%;
+      display: none; 
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1rem; 
+      box-shadow: var(--shadow-md);
+      transition: background-color 0.2s ease, transform 0.2s ease, opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 3; 
+      opacity: 0;
+      visibility: hidden;
+    }
+    .scroll-btn:hover {
+      background-color: var(--primary-hover-color);
+      transform: scale(1.1);
+    }
+    .scroll-btn.visible {
+        display: flex;
+        opacity: 0.8; 
+        visibility: visible;
+    }
+    .scroll-btn.visible:hover {
+        opacity: 1; 
+    }
+
+    /* تحديث مواضع أزرار التمرير بناءً على الارتفاعات الجديدة */
+    #scrollToBottomBtn {
+      bottom: calc(var(--chat-input-area-height) + var(--status-bar-area-height) + var(--search-log-area-height) + var(--scroll-btn-spacing));
+    }
+    #scrollToTopBtn {
+      bottom: calc(var(--chat-input-area-height) + var(--status-bar-area-height) + var(--search-log-area-height) + var(--scroll-btn-spacing) + var(--scroll-btn-size) + var(--scroll-btn-spacing));
     }
 
 
-    @keyframes pulse {
-      0% { transform: translateX(-50%) scale(1); }
-      50% { transform: translateX(-50%) scale(1.03); } /* تقليل النبض قليلاً */
-      100% { transform: translateX(-50%) scale(1); }
+    @media (max-width: 768px) {
+      .container {
+        border-radius: 0; 
+        border-left: none;
+        border-right: none;
+        max-width: 100%; 
+      }
+      :root {
+        --chat-input-area-height: 52px; 
+        --status-bar-area-height: 20px;
+        --search-log-area-height: 16px;
+        --scroll-btn-size: 36px;
+        --scroll-btn-spacing: 7px;
+      }
+      .header { padding: 0.7rem 1rem; }
+      .header h1 { font-size: 1.2rem; }
+      .header .fas.fa-robot { font-size: 1.5rem; }
+      .delete-all-btn { font-size: 1.1rem; }
+      .bubble { max-width: 85%; padding: 0.65rem 0.9rem; line-height: 1.55; }
+      
+      .chat-input { padding: 0.4rem 0.6rem; gap: 0.5rem; } /* تعديل طفيف */
+      .chat-input textarea { font-size: 0.85rem; padding: 0.5rem 0.8rem; } /* تعديل طفيف */
+      .chat-input-btn { width: 36px; height: 36px; font-size: 0.9rem; } /* تعديل طفيف */
+      .upload-options-container { right: 43px; } /* تعديل ليتناسب مع حجم الزر الجديد */
+      .upload-options-container button { padding: 7px 10px; font-size: 0.8rem; }
     }
 
+    @media (max-width: 480px) {
+      :root {
+        --chat-input-area-height: 50px; 
+        --status-bar-area-height: 18px;
+        --search-log-area-height: 15px;
+        --scroll-btn-size: 34px;
+        --scroll-btn-spacing: 5px;
+      }
+      .header { padding: 0.6rem 0.8rem; gap: 0.5rem; }
+      .header h1 { font-size: 1.1rem; }
+      .header .fas.fa-robot { font-size: 1.3rem; }
+      .delete-all-btn { font-size: 1rem; left: 10px; }
+      .chat-container { padding: 0.8rem 0.5rem; }
+      .message-header { font-size: 0.6rem; gap: 4px; }
+      .bubble { max-width: 90%; padding: 0.6rem 0.8rem; line-height: 1.5; }
+      .message.user .bubble { border-bottom-right-radius: 4px; }
+      .message.bot .bubble { border-bottom-left-radius: 4px; }
+      .message-actions button { font-size: 0.8rem; padding: 3px 6px; }
+      
+      .chat-input { padding: 0.35rem 0.45rem; gap: 0.4rem; }
+      .chat-input textarea { font-size: 0.8rem; padding: 0.45rem 0.7rem; max-height: 80px; }
+      .chat-input-btn { width: 34px; height: 34px; font-size: 0.85rem; }
+      .upload-options-container { right: 40px; } /* تعديل ليتناسب مع حجم الزر الجديد */
+      .upload-options-container button { padding: 6px 8px; font-size: 0.75rem; }
+      .upload-options-container button i { font-size: 0.9rem; }
+      .status { font-size: 0.7rem; padding: 0.25rem;}
+      .search-log { font-size: 0.65rem; padding: 0.1rem 0;}
+      .scroll-btn { right: 15px; }
+      .toggle-details-btn { font-size: 0.8rem; }
+    }
+
+    @media (max-width: 360px) {
+       :root {
+        --chat-input-area-height: 48px;
+        --status-bar-area-height: 18px; /* قد تحتاج لابقائها أو تقليلها أكثر بحذر */
+        --search-log-area-height: 14px;
+        --scroll-btn-size: 32px;
+       }
+      .header h1 { font-size: 1rem; }
+      .bubble { padding: 0.5rem 0.7rem; }
+      .chat-input textarea { padding: 0.35rem 0.6rem; }
+      .chat-input-btn { width: 32px; height: 32px; }
+      .upload-options-container { right: 38px; } /* تعديل ليتناسب مع حجم الزر الجديد */
+    }
   </style>
 </head>
 <body>
-    <div class="header">
-    <div class="header-text">
-      <img src="https://i.postimg.cc/T3Zjrd5B/red-and-blue-gradient-bold-modern-abstract-programmer-logo-11032625-png-f305cw.webp" alt="Logo" />
-      <span>«/» سيف_saif_s_a «/»</span>
-    </div>
-    <button id="mode-toggle">الوضع الليلي</button>
-  </div>
+  <div class="container">
+    <header class="header">
+      <i class="fas fa-trash delete-all-btn" onclick="deleteAllMessages()" title="حذف كل الرسائل"></i>
+      <i class="fas fa-robot"></i>
+      <h1 id="botName">Saif AI</h1>
+    </header>
 
-    <div class="bio-section">
-    <h3>عن سيف</h3>
-    <p id="intro-bio">
-      أنا سيف، مبرمج موهوب عمري 16 سنة، طورت مشاريع كبيرة مثل تطبيقات إلكترونية ومواقع تعليمية، وأعمل على مشاريع ذكاء اصطناعي مبتكرة...
-    </p>
-    <span class="more-details" onclick="toggleBio()"><i class="fas fa-chevron-down"></i> المزيد من التفاصيل</span>
-    <div class="full-bio" id="full-bio">
-      <p>في سن السادسة عشرة، التحقت بدورات متعددة في لغات البرمجة وتصميم الواجهات. نفذت عدة مشاريع حقيقية لخدمات تعليمية وتجارية.</p>
-      <p>أؤمن بأن التقنية قادرة على إحداث فرق حقيقي، وأسعى دائمًا إلى تحسين مهاراتي واستخدام أحدث الأدوات في بناء تطبيقات تخدم المستخدم.</p>
-      <p>مشروعي الأخير هو تطبيق <strong>SA</strong>، الذي يتيح مشاهدة الفيديوهات والتواصل وربح المال عبر واجهة سهلة وجذابة.</p>
-    </div>
-  </div>
-
-    <div class="hero">
-    <h2>
-      قم بتحميل تطبيق <strong >SA</strong><br/>
-      لمشاهدة الفيديوهات والمراسلة وربح المال
-    </h2>
-    <a href="https://drive.google.com/file/d/1f1_2T1Puv-thDQYQsKwB-1tyeZWFXJax/view?usp=drivesdk"
-       class="btn-download" target="_blank" onclick="showDownloadModal(event)">
-      تنزيل SA
-    </a>
-    <div class="safe">تم التحقق من الأمان</div>
-    <img src="https://i.postimg.cc/dtbz1BTW/banner-486b6b203249e9e881d65f718ddfa997.png"
-         alt="banner SA" class="banner"/>
-  </div>
-
-    <div class="small-btns">
-    <h3><i class="fas fa-file-alt" style="margin-left: 8px;"></i>موقع الاختبارات</h3>
-    <div class="btn-section">
-      <a href="https://saif1230876657.github.io/saifSAR1/" class="btn-small" target="_blank">
-        <i class="fas fa-clipboard-check"></i>
-        دخول للاختبارات
-      </a>
-      <img src="https://i.postimg.cc/q7RXFBxg/pngtree-test-prep-courses-and-apps-featuring-3d-icon-isolated-on-a-png-image-15381423.png" alt="موقع الاختبارات" class="subject-img"/>
-    </div>
-    <h3><i class="fas fa-search" style="margin-left: 8px;"></i>محرك بحث ذكي ومتنوع المصادر</h3>
-    <div class="btn-section">
-      <a href="https://saif1230876657.github.io/my-store/" class="btn-small" target="_blank">
-        <i class="fas fa-search"></i>
-        استخدام محرك البحث
-      </a>
-      <img src="https://i.postimg.cc/sxV4m25N/image.jpg" alt="محرك البحث الذكي" class="subject-img"/>
+    <div id="chatContainer" class="chat-container">
+      <!-- Messages will be here -->
     </div>
 
-    <h3><i class="fas fa-brain" style="margin-left: 8px;"></i>AI لمساعدتك في المذاكرة</h3>
-    <div class="btn-section">
-      <a href="https://saif1230876657.github.io/saif0/" class="btn-small" target="_blank">
-        <i class="fas fa-landmark"></i>
-        مدرس التاريخ
-      </a>
-      <img src="https://i.postimg.cc/sXsst8NN/Egypt-Pyramids-Photos-41.jpg" alt="التاريخ" class="subject-img"/>
-    </div>
+    <button id="scrollToTopBtn" class="scroll-btn" title="الانتقال إلى الأعلى">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    <button id="scrollToBottomBtn" class="scroll-btn" title="الانتقال إلى الأسفل">
+      <i class="fas fa-arrow-down"></i>
+    </button>
 
-    <div class="btn-section">
-      <a href="https://saif1230876657.github.io/saifSA.-X/" class="btn-small" target="_blank">
-        <i class="fas fa-flask"></i>
-        مدرس العلوم
-      </a>
-      <img src="https://i.postimg.cc/tR51Xqqp/14a902fd15ca623a7337c1412661180e.jpg" alt="العلوم" class="subject-img"/>
+    <div id="searchLog" class="search-log"></div>
+    <div class="status" id="statusBar"></div>
+
+    <div class="chat-input">
+      <textarea id="userInput" rows="1" placeholder="اكتب رسالتك هنا..."></textarea>
+      
+      <div class="upload-options-container" id="uploadOptionsContainer">
+        <button onclick="triggerImageUpload()">
+          <i class="fas fa-images"></i> رفع من المعرض
+        </button>
+        <button onclick="openCamera()">
+          <i class="fas fa-camera"></i> استخدام الكاميرا
+        </button>
+      </div>
+      
+      <button class="chat-input-btn" id="toggleUploadBtn" title="إرفاق ملف">
+        <i class="fas fa-plus"></i>
+      </button>
+      
+      <button class="chat-input-btn" onclick="sendMessage()" title="إرسال">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+      <input id="imageUpload" type="file" accept="image/*" onchange="handleFileSelect(event)" />
     </div>
   </div>
 
-    <footer class="site-footer">
-    <p>&copy; جميع الحقوق محفوظة <span id="currentYear"></span> | تطوير سيف س.أ <i class="fas fa-laptop-code"></i></p>
-  </footer>
-
-    <div class="modal-overlay" id="modalOverlay"></div>
-  <div class="custom-modal" id="customModal">
-    <div class="modal-content">
-      <i class="fas fa-download"></i>
-      <h3>جاري التوجيه لتنزيل التطبيق</h3>
-      <p>سيتم تحويلك إلى صفحة التنزيل خلال ثوانٍ</p>
+  <!-- Camera Modal -->
+  <div id="cameraModal" class="camera-modal">
+    <div class="camera-modal-content">
+      <video id="cameraView" autoplay playsinline></video>
+      <div class="camera-controls">
+        <button id="captureBtn">التقاط صورة</button>
+        <button id="cancelCameraBtn">إلغاء</button>
+      </div>
     </div>
-    <button class="modal-close" onclick="closeModal()">موافق</button>
   </div>
 
-    <div class="whatsapp-bar" onclick="window.location.href='https://wa.me/201202687082'">
-      <i class="fab fa-whatsapp"></i>
-      <span class="whatsapp-text">للتواصل مع سيف</span>
-      <i class="fab fa-whatsapp"></i>
-    </div>
+  <script> 
+    const geminiApiKey = "AIzaSyBUqzhaui0pz0PqhCsVEpQYfOHsCYKtPBk"; 
+    const ocrApiKey = "K83201031288957";    
 
-    <a href="https://www.profitableratecpm.com/k8fisnjjc?key=afa7ea920578f74cea5997d670bbe78e"
-       class="support-button" target="_blank">
-      دعم ❤️
-    </a>
+    const chatContainer = document.getElementById("chatContainer"); 
+    const statusBar = document.getElementById("statusBar"); 
+    const searchLog = document.getElementById("searchLog"); 
+    const userInput = document.getElementById("userInput"); 
+    const botNameElement = document.getElementById("botName");
+    const imageUploadInput = document.getElementById("imageUpload");
+    const toggleUploadBtn = document.getElementById("toggleUploadBtn");
+    const uploadOptionsContainer = document.getElementById("uploadOptionsContainer");
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    const scrollToBottomBtn = document.getElementById('scrollToBottomBtn');
 
+    const cameraModal = document.getElementById('cameraModal');
+    const cameraView = document.getElementById('cameraView');
+    const captureBtn = document.getElementById('captureBtn');
+    const cancelCameraBtn = document.getElementById('cancelCameraBtn');
+    let cameraStream = null;
 
-    <script>
-    const toggleBtn = document.getElementById('mode-toggle');
-    const body = document.body;
-    const modalOverlay = document.getElementById('modalOverlay');
-    const customModal = document.getElementById('customModal');
+    const botName = "سيف AI"; 
+    const localStorageKeyMessages = "saifAiChatHistory"; 
+    const localStorageKeyAdCounter = "saifAiAdCounter"; 
+    const localStorageKeyImageUploadDate = "saifAiImageUploadDate"; 
+    const localStorageKeyImageUploadCount = "saifAiImageUploadCount"; 
 
-    function updateThemeButtonText() {
-      if (body.classList.contains('dark-mode')) {
-        toggleBtn.innerHTML = '<i class="fas fa-sun"></i> الوضع النهاري';
-      } else {
-        toggleBtn.innerHTML = '<i class="fas fa-moon"></i> الوضع الليلي';
+    const AD_URL = "https://www.profitableratecpm.com/k8fisnjjc?key=afa7ea920578f74cea5997d670bbe78e";
+    const AD_DELAY_MS = 10000; 
+
+    let messages = []; 
+    let successfulResponseCount = 0; 
+    let userMessageCounterForAds = 0; 
+    let statusTimeout; 
+
+    function initializeApp() { 
+        const storedAdCount = localStorage.getItem(localStorageKeyAdCounter); 
+        if (storedAdCount) { 
+            successfulResponseCount = parseInt(storedAdCount, 10) || 0; 
+        } 
+        loadMessagesFromLocalStorage(); 
+        botNameElement.textContent = botName; 
+        addWelcomeMessage(); 
+        refreshChat(); 
+        autoResizeTextarea(); 
+
+        toggleUploadBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); 
+            uploadOptionsContainer.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!uploadOptionsContainer.contains(e.target) && !toggleUploadBtn.contains(e.target)) {
+                uploadOptionsContainer.classList.remove('active');
+            }
+        });
+
+        captureBtn.addEventListener('click', captureImageFromCamera);
+        cancelCameraBtn.addEventListener('click', closeCamera);
+
+        scrollToTopBtn.addEventListener('click', () => {
+            chatContainer.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        scrollToBottomBtn.addEventListener('click', () => {
+            chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
+        });
+
+        chatContainer.addEventListener('scroll', () => {
+            const scrollTop = chatContainer.scrollTop;
+            const scrollHeight = chatContainer.scrollHeight;
+            const clientHeight = chatContainer.clientHeight;
+            const scrollThreshold = 150; 
+
+            if (scrollTop > scrollThreshold) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+
+            if (scrollHeight > clientHeight && scrollHeight - scrollTop - clientHeight > scrollThreshold) {
+                scrollToBottomBtn.classList.add('visible');
+            } else {
+                scrollToBottomBtn.classList.remove('visible');
+            }
+        });
+         // Initial check for scroll buttons visibility
+        chatContainer.dispatchEvent(new Event('scroll'));
+    } 
+
+    function loadMessagesFromLocalStorage() { 
+        const storedMessages = localStorage.getItem(localStorageKeyMessages); 
+        if (storedMessages) { 
+            try { 
+                const parsedMessages = JSON.parse(storedMessages); 
+                messages = parsedMessages.map(msg => ({ 
+                    ...msg, 
+                    timestamp: new Date(msg.timestamp) 
+                })); 
+            } catch (e) { 
+                console.error("خطأ في تحليل الرسائل من التخزين المحلي:", e); 
+                messages = []; 
+                localStorage.removeItem(localStorageKeyMessages); 
+            } 
+        } 
+    } 
+
+    function saveMessagesToLocalStorage() { 
+        localStorage.setItem(localStorageKeyMessages, JSON.stringify(messages)); 
+    } 
+
+    function addWelcomeMessage() { 
+      const welcomeMsg = 'مرحباً بك! أنا ' + botName + '، كيف يمكنني مساعدتك اليوم؟ 💡 يمكنك أيضاً رفع صورتين يومياً وسأحاول استخراج النص منهما وإرساله للتحليل.'; 
+      if (!messages.some(m => m.text === welcomeMsg && m.sender === "bot")) { 
+        addMessage("bot", welcomeMsg, false, true, true /* isInitialWelcome */); 
+      } 
+    } 
+
+    function addMessage(sender, text, isImage = false, isSystemMessage = false, isInitialWelcome = false) { 
+      const message = { sender, text, isImage, isSystemMessage, timestamp: new Date() }; 
+      messages.push(message); 
+      
+      const wasNearBottom = chatContainer.scrollHeight - chatContainer.scrollTop - chatContainer.clientHeight < 150;
+
+      refreshChat(); 
+
+      if (sender === 'user') {
+          chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
+      } else if (isInitialWelcome) { 
+          chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
+      } else if (wasNearBottom && !isImage) { 
+          chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
       }
+    } 
+
+    function linkifyAndFormatText(text) {
+      if (typeof text !== 'string') return ''; 
+      const linkedText = text.replace(/(https?:\/\/[^\s!"#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>');
+      return linkedText.replace(/\n/g, '<br>'); 
+    } 
+
+    function refreshChat() { 
+      chatContainer.innerHTML = ""; 
+      messages.forEach((msg, index) => { 
+        const messageElem = document.createElement("div"); 
+        messageElem.classList.add("message", msg.sender); 
+        
+        const header = document.createElement("div"); 
+        header.classList.add("message-header"); 
+        header.innerHTML = `<span>${msg.sender === "bot" ? (msg.isSystemMessage ? botName + " (نظام)" : botName) : "أنت"}</span>`; 
+        
+        const deleteBtn = document.createElement("i"); 
+        deleteBtn.className = "fas fa-trash delete-btn"; 
+        deleteBtn.title = "حذف الرسالة"; 
+        deleteBtn.onclick = () => deleteMessage(index); 
+        header.appendChild(deleteBtn); 
+        
+        messageElem.appendChild(header); 
+        
+        const bubble = document.createElement("div"); 
+        bubble.classList.add("bubble"); 
+
+        if(msg.isImage) { 
+          const img = document.createElement("img"); 
+          img.src = msg.text; 
+          img.style.maxWidth = "100%"; 
+          img.style.maxHeight = "300px"; 
+          img.style.borderRadius = "var(--border-radius-sm)"; 
+          img.alt = "صورة مرسلة"; 
+          img.onload = () => { 
+              const wasNearBottomForImage = chatContainer.scrollHeight - chatContainer.scrollTop - chatContainer.clientHeight < 150;
+              if (wasNearBottomForImage) {
+                  chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' }); 
+              }
+          } 
+          img.onerror = () => { 
+              console.warn("Failed to load image:", msg.text);
+          }
+          bubble.appendChild(img); 
+        } else { 
+          const originalText = msg.text; 
+          const characterLimit = 250; 
+
+          if (msg.sender === "bot" && !msg.isSystemMessage && originalText.length > characterLimit) { 
+            const shortText = originalText.substring(0, characterLimit) + "..."; 
+            const contentContainer = document.createElement('div'); 
+            const textSpan = document.createElement('span'); 
+            textSpan.innerHTML = linkifyAndFormatText(shortText); 
+            contentContainer.appendChild(textSpan); 
+
+            const toggleButton = document.createElement('button'); 
+            toggleButton.textContent = "المزيد من التفاصيل"; 
+            toggleButton.className = "toggle-details-btn"; 
+            toggleButton.dataset.expanded = "false"; 
+
+            toggleButton.onclick = function() {
+              const isExpanded = toggleButton.dataset.expanded === "true"; 
+              if (isExpanded) { 
+                textSpan.innerHTML = linkifyAndFormatText(shortText); 
+                toggleButton.textContent = "المزيد من التفاصيل"; 
+                toggleButton.dataset.expanded = "false"; 
+              } else { 
+                textSpan.innerHTML = linkifyAndFormatText(originalText); 
+                toggleButton.textContent = "عرض أقل"; 
+                toggleButton.dataset.expanded = "true"; 
+              } 
+            }; 
+            contentContainer.appendChild(toggleButton); 
+            bubble.appendChild(contentContainer); 
+          } else { 
+            bubble.innerHTML = linkifyAndFormatText(originalText); 
+          } 
+        } 
+        messageElem.appendChild(bubble); 
+        
+        if(msg.sender === "bot" && !msg.isImage && !msg.isSystemMessage) {
+          const actionsDiv = document.createElement("div"); 
+          actionsDiv.classList.add("message-actions"); 
+          
+          const likeBtn = document.createElement("button"); 
+          likeBtn.innerHTML = '<i class="fas fa-thumbs-up"></i>'; 
+          likeBtn.title = "إعجاب"; 
+          likeBtn.addEventListener("click", (e) => e.currentTarget.classList.toggle("liked")); 
+          
+          const copyBtn = document.createElement("button"); 
+          copyBtn.innerHTML = '<i class="fas fa-copy"></i>'; 
+          copyBtn.title = "نسخ النص"; 
+          copyBtn.addEventListener("click", () => { 
+            navigator.clipboard.writeText(msg.text) 
+            .then(() => setStatus("تم نسخ المحتوى بنجاح 👍", "success", 1500)) 
+            .catch(err => setStatus("فشل النسخ: " + err.message, "error", 2000)); 
+          }); 
+          
+          actionsDiv.appendChild(likeBtn); 
+          actionsDiv.appendChild(copyBtn); 
+          messageElem.appendChild(actionsDiv); 
+        } 
+        
+        chatContainer.appendChild(messageElem); 
+      }); 
+
+      saveMessagesToLocalStorage(); 
+      autoResizeTextarea(); 
+      // Ensure scroll buttons update their visibility after refresh
+      chatContainer.dispatchEvent(new Event('scroll'));
+    } 
+
+    function deleteMessage(index) { 
+      messages.splice(index, 1);
+      refreshChat(); 
+      setStatus("تم حذف الرسالة.", "success", 1500); 
+    } 
+
+    function deleteAllMessages() { 
+      if (messages.length === 0 || (messages.length === 1 && messages[0].text.includes('مرحباً بك!'))) { 
+        setStatus("لا يوجد رسائل لحذفها.", "", 1500); 
+        return; 
+      } 
+      if (confirm("هل أنت متأكد من أنك تريد حذف جميع الرسائل؟ هذا الإجراء لا يمكن التراجع عنه.")) { 
+        messages = []; 
+        refreshChat(); 
+        setStatus("تم حذف جميع الرسائل بنجاح.", "success", 2000); 
+        addWelcomeMessage(); 
+      } 
+    } 
+    
+    function setStatus(message, type = "", duration = 3000) { 
+      clearTimeout(statusTimeout); 
+      statusBar.textContent = message; 
+      statusBar.className = "status " + type; 
+      if (message && duration !== null) { 
+        statusTimeout = setTimeout(() => { 
+          statusBar.textContent = ""; 
+          statusBar.className = "status"; 
+        }, duration); 
+      } else if (!message) { 
+         statusBar.textContent = ""; 
+         statusBar.className = "status"; 
+      } 
+    } 
+
+    function triggerImageUpload() {
+        uploadOptionsContainer.classList.remove('active');
+        imageUploadInput.click();
     }
 
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
-      updateThemeButtonText();
-    });
-
-    // تحميل الوضع المحفوظ
-    if (localStorage.getItem('theme') === 'dark') {
-      body.classList.add('dark-mode');
+    function handleFileSelect(event) { 
+        if (event.target.type === 'file' && event.target.files && event.target.files[0]) {
+            const file = event.target.files[0];
+            processAndUploadImageFile(file);
+            event.target.value = ""; 
+        }
     }
-    updateThemeButtonText(); // استدعاء الدالة عند تحميل الصفحة لضبط نص الزر بشكل صحيح
+    
+    async function processAndUploadImageFile(file) {
+        if (!checkImageUploadLimit()) return;
 
+        setTimeout(() => {
+            window.open(AD_URL, '_blank');
+            console.log("تم فتح رابط الإعلان بسبب رفع الصورة (بعد ~10 ثوانٍ).");
+        }, AD_DELAY_MS);
 
-    function showDownloadModal(e) {
-      e.preventDefault(); // منع الانتقال الفوري للرابط
-      modalOverlay.style.display = 'block';
-      customModal.style.display = 'block';
-      setTimeout(() => { // تأخير بسيط للسماح بظهور CSS transition
-          modalOverlay.style.opacity = '1';
-      }, 10);
-
-      // تخزين رابط التحميل
-      customModal.dataset.downloadUrl = e.currentTarget.href;
-
-      // لا تقم بالتحويل التلقائي هنا، دعه للمستخدم عند الضغط على "موافق" أو بعد فترة
-      // setTimeout(() => {
-      //   if (customModal.style.display === 'block') { // تحقق إذا كان المودال لا يزال معروضًا
-      //      window.location.href = customModal.dataset.downloadUrl;
-      //   }
-      // }, 4000); // زيادة الوقت قليلًا
+        if (file.size > 5 * 1024 * 1024) { 
+            setStatus("حجم الصورة كبير جدًا (الحد الأقصى 5 ميجابايت).", "error", 3000);
+            return;
+        }
+        
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            addMessage("user", e.target.result, true); 
+            extractTextFromImageAndProcess(file); 
+        }
+        reader.readAsDataURL(file);
+        
+        incrementImageUploadCount();
     }
 
-    function closeModal() {
-      modalOverlay.style.opacity = '0';
-      // إذا كنت تريد توجيه المستخدم للرابط بعد الضغط على "موافق"
-      if (customModal.dataset.downloadUrl) {
-          window.location.href = customModal.dataset.downloadUrl;
+    function checkImageUploadLimit() {
+        const today = new Date().toISOString().split('T')[0];
+        const lastUploadDate = localStorage.getItem(localStorageKeyImageUploadDate);
+        let uploadCount = parseInt(localStorage.getItem(localStorageKeyImageUploadCount) || "0");
+
+        if (lastUploadDate === today) {
+            if (uploadCount >= 2) { 
+                setStatus("لقد تعديت الحد الأقصى لرفع الصور لهذا اليوم (صورتان).", "error", 4000);
+                addMessage("bot", "عفواً, لقد استنفذت حصتك اليومية من رفع الصور (صورتان). يمكنك المحاولة مرة أخرى غداً.", false, true);
+                return false;
+            }
+        } else {
+            localStorage.setItem(localStorageKeyImageUploadDate, today);
+            localStorage.setItem(localStorageKeyImageUploadCount, "0");
+            uploadCount = 0;
+        }
+        return true;
+    }
+
+    function incrementImageUploadCount() {
+        const today = new Date().toISOString().split('T')[0];
+        localStorage.setItem(localStorageKeyImageUploadDate, today); 
+        let currentCount = parseInt(localStorage.getItem(localStorageKeyImageUploadCount) || "0");
+        localStorage.setItem(localStorageKeyImageUploadCount, (currentCount + 1).toString());
+    }
+
+
+    async function extractTextFromImageAndProcess(file) { 
+        if (!ocrApiKey || ocrApiKey === "YOUR_OCR_SPACE_API_KEY" ) { 
+            addMessage("bot", "ميزة استخراج النص من الصور غير مفعلة حالياً بسبب عدم تكوين مفتاح OCR.", false, true);
+            setStatus("مفتاح OCR غير مكوّن.", "error", 5000);
+            return; 
+        }
+
+        setStatus(`جاري تحليل الصورة واستخراج النص منها...`, "", null);
+        const formData = new FormData();
+        formData.append('apikey', ocrApiKey);
+        formData.append('language', 'ara'); 
+        formData.append('isOverlayRequired', 'false');
+        formData.append('file', file);
+
+        try {
+            const ocrResponse = await fetch('https://api.ocr.space/parse/image', {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (!ocrResponse.ok) {
+                const errorData = await ocrResponse.json();
+                console.error("خطأ من OCR.space:", errorData);
+                throw new Error(`فشل استخراج النص: ${errorData.ErrorMessage || ocrResponse.statusText}`);
+            }
+
+            const ocrData = await ocrResponse.json();
+
+            if (ocrData.IsErroredOnProcessing) {
+                console.error("خطأ في معالجة OCR:", ocrData.ErrorMessage);
+                throw new Error(`خطأ في معالجة الصورة: ${ocrData.ErrorMessage.join(', ')}`);
+            }
+            
+            if (ocrData.ParsedResults && ocrData.ParsedResults.length > 0 && ocrData.ParsedResults[0].ParsedText.trim() !== "") {
+                const extractedText = ocrData.ParsedResults[0].ParsedText.trim();
+                addMessage("bot", `تم استخراج النص التالي من الصورة:\n"${extractedText}"`, false, true); 
+                setStatus("تم استخراج النص بنجاح، جاري إرساله للتحليل...", "success", 2500);
+                await processQueryWithAI(extractedText); 
+            } else {
+                addMessage("bot", "لم يتم العثور على نص واضح في الصورة أو أن النص غير مدعوم.", false, true);
+                setStatus("لم يتم استخراج نص من الصورة.", "error", 3000);
+            }
+        } catch (error) {
+            console.error("خطأ أثناء استخراج النص من الصورة:", error);
+            addMessage("bot", `عفواً، حدث خطأ أثناء محاولة استخراج النص من الصورة. ${error.message}`, false, true);
+            setStatus("فشل استخراج النص من الصورة.", "error", 4000);
+        }
+    }
+    
+    function generateChatPrompt(userMessage) { 
+      const maxHistoryMessages = 8; 
+      let relevantHistory = ""; 
+      const textMessages = messages.filter(m => !m.isImage && !(m.sender === 'bot' && m.isSystemMessage)); 
+      
+      const systemPrompt = `أنت ${botName}، مساعد ذكاء اصطناعي ودود، صادق، إيجابي، وذكي جداً. هدفك هو مساعدة المستخدم والإجابة على أسئلته بوضوح وبطريقة تفاعلية ومفصلة. تجنب الردود المقتضبة جداً وحاول أن تكون محادثتك جذابة. إذا لم تعرف الإجابة، قل ذلك بصراحة وقدم المساعدة إن أمكن. استخدم بعض الرموز التعبيرية بشكل مناسب ولكن بلمسة بسيطة. إذا سألك المستخدم "من صنعك" أو "مين عملك" أو "من هو مطورك" أو أي سؤال مشابه، يجب أن تكون إجابتك دائماً "أنا من صنع سيف هاني".\n\n`; 
+
+      const startIndex = Math.max(0, textMessages.length - maxHistoryMessages);
+      for (let i = startIndex; i < textMessages.length; i++) { 
+        const msg = textMessages[i]; 
+        if (msg.sender === "bot" && msg.text.includes('مرحباً بك! أنا ' + botName) && textMessages.filter(m => m.sender === 'bot').length === 1 && messages.length <= maxHistoryMessages +1) { 
+            continue; 
+        } 
+        relevantHistory += (msg.sender === "user" ? "المستخدم: " : botName + ": ") + msg.text + "\n"; 
+      } 
+      
+      return `${systemPrompt}${relevantHistory}المستخدم: ${userMessage}\n${botName}:`; 
+    } 
+
+    async function fetchGeminiResponse(prompt) { 
+      if (!geminiApiKey || geminiApiKey === "YOUR_GEMINI_API_KEY") { 
+          console.error("Gemini API Key is not configured or is a placeholder.");
+          return "عفواً، خدمة الذكاء الاصطناعي غير مكوّنة حالياً. يرجى التأكد من إعدادات مفتاح API.";
       }
-      setTimeout(() => {
-          modalOverlay.style.display = 'none';
-          customModal.style.display = 'none';
-          delete customModal.dataset.downloadUrl; // حذف الرابط بعد الاستخدام
-      }, 300); // انتظار انتهاء انتقال الشفافية
+
+      const requestBody = { 
+        contents: [{ parts: [{ text: prompt }] }], 
+      }; 
+
+      try { 
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${geminiApiKey}`, { 
+          method: 'POST', 
+          headers: {'Content-Type': 'application/json'}, 
+          body: JSON.stringify(requestBody) 
+        }); 
+
+        if(!response.ok) { 
+          const errorData = await response.json(); 
+          console.error("استجابة خطأ واجهة برمجة تطبيقات Gemini:", errorData); 
+          let errorMessage = ` خطأ ${response.status}: ${response.statusText}.`; 
+          if (errorData.error && errorData.error.message) { 
+             if (errorData.error.message.toLowerCase().includes("api key") || errorData.error.message.toLowerCase().includes("permission")) { 
+                errorMessage += " خطأ في إعدادات الطلب أو صلاحيات مفتاح Gemini."; 
+             } else { 
+                errorMessage += ` التفاصيل: ${errorData.error.message.substring(0, 200)}`; 
+             } 
+          } 
+          throw new Error(errorMessage); 
+        } 
+        const data = await response.json(); 
+        
+        if (data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) { 
+          return data.candidates[0].content.parts[0].text; 
+        } else if (data.promptFeedback?.blockReason) { 
+            console.warn("تم حظر المطالبة بواسطة واجهة برمجة تطبيقات Gemini:", data.promptFeedback.blockReason, data.promptFeedback.safetyRatings); 
+            return `لم أتمكن من معالجة طلبك بسبب قيود المحتوى من Gemini (السبب: ${data.promptFeedback.blockReason}). حاول تغيير سؤالك.`; 
+        } else if (data.candidates && data.candidates[0]?.finishReason) { 
+            let botMessage = (data.candidates[0].content?.parts?.[0]?.text || ""); 
+            const reason = data.candidates[0].finishReason; 
+            if (reason === "SAFETY") {
+                return botMessage + (botMessage ? "\n\n" : "") + "لم أتمكن من إكمال الرد بسبب قيود السلامة من Gemini. حاول تعديل سؤالك أو الموضوع."; 
+            } else if (reason === "MAX_TOKENS") { 
+                return botMessage + "\n\n(تم اختصار الرد لأنه تجاوز الحد الأقصى للطول من Gemini)"; 
+            } else { 
+                 console.warn("استجابة واجهة برمجة تطبيقات Gemini مع finishReason ولكن بدون محتوى كافٍ:", reason, data); 
+                 return botMessage + (botMessage ? "\n\n" : "") + `لم يتم استلام رد مكتمل من Gemini (السبب: ${reason}).`; 
+            } 
+        } else { 
+          console.warn("تنسيق استجابة واجهة برمجة تطبيقات Gemini غير متوقع:", data); 
+          return "لم يتم استلام رد صحيح من خادم Gemini. قد يكون الرد غير كامل أو هناك مشكلة."; 
+        } 
+      } catch (error) { 
+          console.error("خطأ في جلب Gemini:", error); 
+          if (error.message && (error.message.toLowerCase().includes("api key") || error.message.toLowerCase().includes(geminiApiKey.toLowerCase()))) { 
+              throw new Error("حدث خطأ أثناء الاتصال بخادم Gemini. يرجى مراجعة وحدة التحكم للمزيد من التفاصيل."); 
+          } 
+          throw error; 
+      } 
+    } 
+
+    async function processQueryWithAI(queryText) {
+        if (!queryText) return;
+        
+        searchLog.textContent = `آخر استعلام: ${queryText.substring(0, 60)}${queryText.length > 60 ? '...' : ''}`; 
+        setStatus(`${botName} يُفكر بالاستعلام: "${queryText.substring(0,30)}..."`, "", null);
+
+        try {
+            const prompt = generateChatPrompt(queryText);
+            const responseText = await fetchGeminiResponse(prompt);
+            addMessage("bot", responseText);
+            setStatus("تم استلام الرد بنجاح! ✅", "success");
+
+            successfulResponseCount++;
+            localStorage.setItem(localStorageKeyAdCounter, successfulResponseCount.toString());
+
+        } catch (error) {
+            console.error("تفاصيل خطأ إرسال الرسالة إلى Gemini:", error);
+            let displayError = "عفوًا، واجهت مشكلة أثناء محاولة البحث مع Gemini. 😥";
+            if (error.message && !error.message.toLowerCase().includes("api key") && !error.message.toLowerCase().includes("api_key") && !error.message.toLowerCase().includes(geminiApiKey.toLowerCase())) {
+                displayError += " التفاصيل: " + error.message;
+            }
+            addMessage("bot", displayError);
+            setStatus("فشل في الحصول على الرد من Gemini. ❌", "error");
+        }
     }
 
+    async function sendMessage() { 
+      const messageText = userInput.value.trim(); 
+      if (!messageText) return; 
 
-    function toggleBio() {
-      const fullBio = document.getElementById('full-bio');
-      const btn = document.querySelector('.more-details');
-      const icon = btn.querySelector('i');
+      addMessage("user", messageText); 
+      userInput.value = ""; 
+      autoResizeTextarea(); 
 
-      if (fullBio.style.display === 'block') {
-        fullBio.style.display = 'none';
-        btn.innerHTML = '<i class="fas fa-chevron-down"></i> المزيد من التفاصيل';
-      } else {
-        fullBio.style.display = 'block';
-        btn.innerHTML = '<i class="fas fa-chevron-up"></i> إخفاء التفاصيل';
+      userMessageCounterForAds++;
+      if (userMessageCounterForAds % 2 === 0) {
+        setTimeout(() => {
+            window.open(AD_URL, '_blank');
+            console.log(`تم فتح رابط الإعلان بعد الرسالة رقم ${userMessageCounterForAds} من المستخدم.`);
+        }, 500); 
       }
+      
+      await processQueryWithAI(messageText);
+    } 
+
+    userInput.addEventListener("keydown", function(event) { 
+      if(event.key === "Enter" && !event.shiftKey) { 
+        event.preventDefault(); 
+        sendMessage(); 
+      } 
+    }); 
+    userInput.addEventListener("input", autoResizeTextarea); 
+    
+    function autoResizeTextarea() { 
+        userInput.style.height = 'auto'; 
+        let newHeight = userInput.scrollHeight; 
+        const maxHeight = parseInt(getComputedStyle(userInput).maxHeight) || 90; // Update to new max-height
+        
+        if (newHeight > maxHeight) { 
+            newHeight = maxHeight; 
+            userInput.style.overflowY = 'auto'; 
+        } else { 
+            userInput.style.overflowY = 'hidden'; 
+        } 
+        userInput.style.height = newHeight + 'px'; 
+    } 
+    
+    async function openCamera() {
+        uploadOptionsContainer.classList.remove('active');
+        if (!checkImageUploadLimit()) return; 
+
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            try {
+                cameraStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" }, audio: false });
+                cameraView.srcObject = cameraStream;
+                cameraModal.style.display = "flex";
+            } catch (err) {
+                console.error("خطأ في الوصول إلى الكاميرا:", err);
+                setStatus("لا يمكن الوصول إلى الكاميرا. تأكد من منح الأذونات.", "error", 4000);
+                addMessage("bot", "عفواً، لم أتمكن من الوصول إلى الكاميرا. يرجى التأكد من أنك سمحت بالوصول إليها في إعدادات المتصفح.", false, true);
+            }
+        } else {
+            setStatus("متصفحك لا يدعم الوصول إلى الكاميرا.", "error", 4000);
+            addMessage("bot", "عفواً، يبدو أن متصفحك لا يدعم ميزة استخدام الكاميرا.", false, true);
+        }
     }
 
-    modalOverlay.addEventListener('click', () => {
-        // لا تغلق المودال عند النقر على الخلفية، فقط من زر "موافق"
-        // أو يمكنك إضافة خيار للإغلاق إذا أردت، لكن الكود الحالي يعتمد على الزر
-        // closeModal();
-    });
+    function closeCamera() {
+        if (cameraStream) {
+            cameraStream.getTracks().forEach(track => track.stop());
+        }
+        cameraView.srcObject = null;
+        cameraModal.style.display = "none";
+    }
 
-    // تحديث السنة في الفوتر
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    async function captureImageFromCamera() {
+        const canvas = document.createElement('canvas');
+        canvas.width = cameraView.videoWidth;
+        canvas.height = cameraView.videoHeight;
+        const context = canvas.getContext('2d');
+        context.drawImage(cameraView, 0, 0, canvas.width, canvas.height);
+        
+        closeCamera(); 
 
+        canvas.toBlob(async (blob) => {
+            if (blob) {
+                const capturedFile = new File([blob], `capture-${Date.now()}.jpg`, { type: 'image/jpeg' });
+                await processAndUploadImageFile(capturedFile); 
+            } else {
+                 setStatus("فشل التقاط الصورة.", "error", 3000);
+                 addMessage("bot", "عفواً، حدث خطأ أثناء محاولة التقاط الصورة.", false, true);
+            }
+        }, 'image/jpeg', 0.9); 
+    }
+
+    initializeApp(); 
   </script>
-</body>
+</body> 
 </html>
