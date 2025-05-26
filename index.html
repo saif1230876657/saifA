@@ -1,772 +1,1006 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>صفحة سيف الشخصية ومشاريع AI</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <title>صفحة سيف الشخصية ومشاريع الذكاء الاصطناعي</title>
 
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="[ضع رابط موقعك هنا]">
-  <meta property="og:title" content="Saif_SA - المدرس الذكي ومشاريع AI">
-  <meta property="og:description" content="صفحة سيف الشخصية، موقع المدرس الذكي SAIFX، ومشاريع الذكاء الاصطناعي المبتكرة.">
-  <meta property="og:image" content="https://i.postimg.cc/cHp8sRTV/pngtree-d-rendering-of-an-adorable-ai-robot-reading-a-book-depicting-image-3803398.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="[ضع رابط رخيص هنا]"> <meta property="og:title" content="Saif_SA - المدرس الذكي ومشاريع الذكاء الاصطناعي">
+    <meta property="og:description" content="صفحة سيف الشخصية، موقع المدرس الذكي SAIFX، ومشاريع الذكاء الاصطناعي المبتكرة.">
+    <meta property="og:image" content="https://i.postimg.cc/cHp8sRTV/pngtree-d-rendering-of-an-adorable-ai-robot-reading-a-book-depicting-image-3803398.jpg">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="[ضع رابط موقعك هنا]">
-  <meta name="twitter:title" content="Saif_SA - المدرس الذكي ومشاريع AI">
-  <meta name="twitter:description" content="صفحة سيف الشخصية، موقع المدرس الذكي SAIFX، ومشاريع الذكاء الاصطناعي المبتكرة.">
-  <meta name="twitter:image" content="https://i.postimg.cc/cHp8sRTV/pngtree-d-rendering-of-an-adorable-ai-robot-reading-a-book-depicting-image-3803398.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="[ضع رابط هنا]"> <meta name="twitter:title" content="Saif_SA - المدرس الذكي ومشاريع الذكاء الاصطناعي">
+    <meta name="twitter:description" content="صفحة سيف الشخصية، موقع المدرس الذكي SAIFX، ومشاريع الذكاء الاصطناعي المتطور.">
+    <meta name="twitter:image" content="https://i.postimg.cc/cHp8sRTV/pngtree-d-rendering-of-an-adorable-ai-robot-reading-a-book-depicting-image-3803398.jpg">
 
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>
-    :root {
-      /* Light Mode Variables */
-      --bg-light: #FFF5E0;
-      --text-light: #3A3A3A;
-      --header-bg-light: linear-gradient(90deg, #FF4E00 0%, #FF6B00 100%);
-      --header-text-light: #FFFFFF;
-      --header-shadow-light: rgba(255, 75, 0, 0.2);
-      --card-bg-light: rgba(255, 255, 255, 0.95);
-      --card-shadow-light: rgba(0, 0, 0, 0.1);
-      --primary-accent-light: #FF4E00;
-      --secondary-accent-light: #FF6B00;
-      --btn-gradient-light: linear-gradient(135deg, #FF6B00 0%, #FF4E00 100%);
-      --btn-text-light: #FFFFFF;
-      --btn-shadow-light: rgba(255, 75, 0, 0.3);
-      --safe-color-light: #00C853;
-      --border-color-light: rgba(255, 78, 0, 0.2);
-      --more-details-bg-light: rgba(255, 78, 0, 0.1);
-      --footer-bg-light: linear-gradient(90deg, #FF4E00 0%, #FF6B00 100%);
-      --footer-text-light: #FFFFFF;
-
-      /* Dark Mode Variables */
-      --bg-dark: #1A1A1A;
-      --text-dark: #E0E0E0;
-      --header-bg-dark: linear-gradient(90deg, #4A0E00 0%, #6B2E00 100%);
-      --header-text-dark: #F5F5F5;
-      --header-shadow-dark: rgba(0, 0, 0, 0.4);
-      --card-bg-dark: #2C2C2C;
-      --card-shadow-dark: rgba(0, 0, 0, 0.3);
-      --primary-accent-dark: #FF8000;
-      --secondary-accent-dark: #FF9933;
-      --btn-gradient-dark: linear-gradient(135deg, #FF8000 0%, #FF5500 100%);
-      --btn-text-dark: #FFFFFF;
-      --btn-shadow-dark: rgba(255, 100, 0, 0.3);
-      --safe-color-dark: #00E676;
-      --border-color-dark: rgba(255, 128, 0, 0.3);
-      --more-details-bg-dark: rgba(255, 128, 0, 0.15);
-      --footer-bg-dark: linear-gradient(90deg, #4A0E00 0%, #6B2E00 100%);
-      --footer-text-dark: #E0E0E0;
-
-      --modal-bg-overlay: rgba(0,0,0,0.7);
-      --modal-content-bg-light: #FFFFFF;
-      --modal-content-text-light: #3A3A3A;
-      --modal-btn-bg-light: #FF4E00;
-      --modal-btn-text-light: #FFFFFF;
-
-      --modal-content-bg-dark: #333333;
-      --modal-content-text-dark: #E0E0E0;
-      --modal-btn-bg-dark: #FF8000;
-      --modal-btn-text-dark: #FFFFFF;
-    }
-
-    body {
-      font-family: 'Tajawal', sans-serif;
-      background-color: var(--bg-light);
-      color: var(--text-light);
-      margin: 0;
-      padding: 0;
-      transition: background-color 0.4s ease, color 0.4s ease;
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-    }
-
-    body.dark-mode {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-    }
-
-    .header {
-      background: var(--header-bg-light);
-      padding: 12px 30px;
-      box-shadow: 0 4px 15px var(--header-shadow-light);
-      border-radius: 0 0 20px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      z-index: 1000;
-      transition: background 0.4s ease, box-shadow 0.4s ease;
-    }
-    body.dark-mode .header {
-      background: var(--header-bg-dark);
-      box-shadow: 0 4px 15px var(--header-shadow-dark);
-    }
-
-    .header-text span {
-      color: var(--header-text-light);
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-      font-size: 24px;
-      font-weight: 700;
-    }
-    body.dark-mode .header-text span {
-      color: var(--header-text-dark);
-    }
-
-    .header-text img {
-      height: 35px;
-      margin-left: 15px;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-    }
-
-    #mode-toggle {
-      background: rgba(255, 255, 255, 0.1);
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      color: var(--header-text-light);
-      border-radius: 25px;
-      padding: 8px 20px;
-      transition: all 0.3s ease;
-      font-family: 'Tajawal', sans-serif;
-      font-weight: 700;
-      cursor: pointer;
-    }
-    body.dark-mode #mode-toggle {
-      background: rgba(0, 0, 0, 0.2);
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      color: var(--header-text-dark);
-    }
-    #mode-toggle:hover {
-        background: rgba(255, 255, 255, 0.2);
-    }
-    body.dark-mode #mode-toggle:hover {
-        background: rgba(0, 0, 0, 0.3);
-    }
-
-    .bio-section {
-      background: var(--card-bg-light);
-      padding: 25px;
-      border-radius: 20px;
-      margin: 30px auto;
-      max-width: 800px;
-      box-shadow: 0 4px 20px var(--card-shadow-light);
-      line-height: 1.8;
-      text-align: right;
-      transition: background 0.4s ease, box-shadow 0.4s ease;
-    }
-    body.dark-mode .bio-section {
-      background: var(--card-bg-dark);
-      box-shadow: 0 4px 20px var(--card-shadow-dark);
-    }
-
-    .bio-section h3 {
-      font-size: 28px;
-      color: var(--primary-accent-light);
-      margin-bottom: 20px;
-      font-weight: 700;
-      transition: color 0.4s ease;
-    }
-    body.dark-mode .bio-section h3 {
-      color: var(--primary-accent-dark);
-    }
-
-    .bio-section p {
-      font-size: 18px;
-      margin-bottom: 15px;
-    }
-
-    .more-details {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--more-details-bg-light);
-      padding: 10px 20px;
-      border-radius: 30px;
-      transition: background 0.3s, color 0.3s;
-      cursor: pointer;
-      font-weight: 700;
-      color: var(--primary-accent-light);
-    }
-    body.dark-mode .more-details {
-      background: var(--more-details-bg-dark);
-      color: var(--primary-accent-dark);
-    }
-    .more-details:hover {
-        background: var(--primary-accent-light);
-        color: var(--btn-text-light);
-    }
-    body.dark-mode .more-details:hover {
-        background: var(--primary-accent-dark);
-        color: var(--btn-text-dark);
-    }
-
-    .full-bio {
-      display: none;
-      margin-top: 20px;
-      border-top: 2px dashed var(--primary-accent-light);
-      padding-top: 20px;
-      transition: border-top-color 0.4s ease;
-    }
-    body.dark-mode .full-bio {
-      border-top-color: var(--primary-accent-dark);
-    }
-
-    .hero {
-      padding: 40px 20px 60px;
-    }
-
-    .hero h2 {
-      font-size: 32px;
-      line-height: 1.5;
-      margin-bottom: 30px;
-      font-weight: 900;
-    }
-    .hero h2 strong {
-        color: var(--primary-accent-light);
-        transition: color 0.4s ease;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.15); /* تحسين طفيف */
-    }
-    body.dark-mode .hero h2 strong {
-        color: var(--primary-accent-dark);
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.25); /* تحسين طفيف للوضع الليلي */
-    }
-
-    .btn-download {
-      background-image: var(--btn-gradient-light);
-      color: var(--btn-text-light);
-      padding: 18px 50px;
-      font-size: 22px;
-      border-radius: 40px;
-      box-shadow: 0 6px 20px var(--btn-shadow-light);
-      transition: transform 0.3s, box-shadow 0.3s, background-image 0.4s ease;
-      text-decoration: none;
-      display: inline-block;
-      cursor: pointer;
-      border: none;
-      position: relative;
-      font-weight: 700;
-    }
-    body.dark-mode .btn-download {
-      background-image: var(--btn-gradient-dark);
-      color: var(--btn-text-dark);
-      box-shadow: 0 6px 20px var(--btn-shadow-dark);
-    }
-
-    .btn-download::after {
-      content: "\f0ac"; /* أيقونة الكرة الأرضية */
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      margin-right: 10px;
-    }
-    .btn-download:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px var(--btn-shadow-light);
-    }
-    body.dark-mode .btn-download:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px var(--btn-shadow-dark);
-    }
-
-    .safe {
-      margin: 15px 0;
-      font-size: 16px;
-      color: var(--safe-color-light);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      font-weight: 700;
-      transition: color 0.4s ease;
-    }
-    body.dark-mode .safe {
-      color: var(--safe-color-dark);
-    }
-
-    .safe::before {
-      content: "\f058"; /* Font Awesome check-circle icon */
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-    }
-
-    .banner {
-      margin: 40px auto;
-      max-width: 90%;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px var(--card-shadow-light);
-      border: 3px solid var(--border-color-light);
-      display: block;
-      transition: box-shadow 0.4s ease, border-color 0.4s ease;
-    }
-    body.dark-mode .banner {
-      box-shadow: 0 8px 30px var(--card-shadow-dark);
-      border-color: var(--border-color-dark);
-    }
-
-    .small-btns {
-      margin: 40px 20px;
-    }
-    .small-btns h3 {
-        font-size: 28px;
-        font-weight: 700;
-        margin-bottom: 30px;
-        color: var(--primary-accent-light);
-    }
-    body.dark-mode .small-btns h3 {
-        color: var(--primary-accent-dark);
-    }
-
-    .btn-section {
-      margin-bottom: 30px;
-      padding: 20px;
-      background-color: var(--card-bg-light);
-      border-radius: 20px;
-      box-shadow: 0 4px 15px var(--card-shadow-light);
-      transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease; /* Added transform */
-    }
-    body.dark-mode .btn-section {
-        background-color: var(--card-bg-dark);
-        box-shadow: 0 4px 15px var(--card-shadow-dark);
-    }
-    /* Optional: subtle hover effect for btn-section cards */
-    /*
-    .btn-section:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 7px 22px var(--card-shadow-light);
-    }
-    body.dark-mode .btn-section:hover {
-        box-shadow: 0 7px 22px var(--card-shadow-dark);
-    }
-    */
-
-    .btn-small {
-      background-image: var(--btn-gradient-light);
-      color: var(--btn-text-light);
-      border-radius: 30px;
-      padding: 15px 35px;
-      font-size: 20px;
-      box-shadow: 0 4px 15px var(--btn-shadow-light);
-      transition: transform 0.3s, box-shadow 0.3s, background-image 0.4s ease;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      border: none;
-      cursor: pointer;
-      font-weight: 700;
-      width: auto;
-      min-width: 220px;
-    }
-    body.dark-mode .btn-small {
-      background-image: var(--btn-gradient-dark);
-      color: var(--btn-text-dark);
-      box-shadow: 0 4px 15px var(--btn-shadow-dark);
-    }
-    .btn-small:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px var(--btn-shadow-light);
-    }
-    body.dark-mode .btn-small:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px var(--btn-shadow-dark);
-    }
-    .btn-small i {
-        font-size: 20px;
-    }
-
-    .subject-img {
-      margin: 25px auto;
-      width: 90%;
-      max-width: 450px;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px var(--card-shadow-light);
-      border: 3px solid var(--primary-accent-light);
-      display: block;
-      transition: box-shadow 0.4s ease, border-color 0.4s ease;
-    }
-    body.dark-mode .subject-img {
-      box-shadow: 0 8px 25px var(--card-shadow-dark);
-      border-color: var(--primary-accent-dark);
-    }
-
-    .site-footer {
-      background: var(--footer-bg-light);
-      color: var(--footer-text-light);
-      padding: 25px;
-      text-align: center;
-      font-size: 16px;
-      margin-top: auto;
-      font-weight: 700;
-      transition: background 0.4s ease, color 0.4s ease;
-    }
-    body.dark-mode .site-footer {
-      background: var(--footer-bg-dark);
-      color: var(--footer-text-dark);
-    }
-
-    .whatsapp-bar {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: auto;
-      min-width: 280px;
-      max-width: 90%;
-      background: linear-gradient(90deg, #25D366 0%, #128C7E 100%);
-      padding: 12px 25px;
-      border-radius: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      z-index: 1000;
-      cursor: pointer;
-      animation: pulse 1.5s infinite;
-      color: white;
-    }
-    .whatsapp-bar:hover {
-        transform: translateX(-50%) scale(1.03);
-    }
-
-    .whatsapp-bar i.fab.fa-whatsapp {
-      font-size: 26px;
-      color: white;
-    }
-    .whatsapp-text {
-        font-size: 18px;
-        font-weight: 700;
-    }
-
-    .support-button {
-      position: fixed;
-      bottom: 80px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-image: var(--btn-gradient-light);
-      color: var(--btn-text-light);
-      padding: 12px 25px;
-      font-size: 18px;
-      border-radius: 30px;
-      box-shadow: 0 4px 15px var(--btn-shadow-light);
-      transition: transform 0.3s, box-shadow 0.3s, background-image 0.4s ease;
-      text-decoration: none;
-      font-weight: 700;
-      z-index: 999;
-      cursor: pointer;
-    }
-
-    body.dark-mode .support-button {
-      background-image: var(--btn-gradient-dark);
-      color: var(--btn-text-dark);
-      box-shadow: 0 4px 15px var(--btn-shadow-dark);
-    }
-
-    .support-button:hover {
-      transform: translateX(-50%) translateY(-3px);
-      box-shadow: 0 6px 20px var(--btn-shadow-light);
-    }
-    body.dark-mode .support-button:hover {
-      transform: translateX(-50%) translateY(-3px);
-      box-shadow: 0 6px 20px var(--btn-shadow-dark);
-    }
-
-    .custom-modal {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: var(--modal-content-bg-light);
-      color: var(--modal-content-text-light);
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      z-index: 2000;
-      max-width: 400px;
-      width: 90%;
-      text-align: center;
-      display: none;
-      transition: background 0.4s ease, color 0.4s ease, transform 0.3s ease; /* Added transform for entrance */
-      opacity: 0; /* Start hidden for fade-in */
-    }
-    body.dark-mode .custom-modal {
-      background: var(--modal-content-bg-dark);
-      color: var(--modal-content-text-dark);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-    .custom-modal.active { /* For smoother appearance */
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            /* متغيرات وضع الإضاءة */
+            --bg-light: #FFF5E0;
+            --text-light: #3A3A3A;
+            --header-bg-light: linear-gradient(90deg, #FF4E00 0%, #FF6B00 100%);
+            --header-text-light: #FFFFFF;
+            --header-shadow-light: rgba(255, 75, 0, 0.2);
+            --card-bg-light: rgba(255, 255, 255, 0.95);
+            --card-shadow-light: rgba(0, 0, 0, 0.1);
+            --primary-accent-light: #FF4E00;
+            --secondary-accent-light: #FF6B00;
+            --btn-gradient-light: linear-gradient(135deg, #FF6B00 0%, #FF4E00 100%);
+            --btn-text-light: #FFFFFF;
+            --btn-shadow-light: rgba(255, 75, 0, 0.3);
+            --safe-color-light: #00C853;
+            --border-color-light: rgba(255, 78, 0, 0.2);
+            --more-details-bg-light: rgba(255, 78, 0, 0.1);
+            --footer-bg-light: linear-gradient(90deg, #FF4E00 0%, #FF6B00 100%); /* Corrected: تدرج خطي to linear-gradient */
+            --footer-text-light: #FFFFFF;
+            --audio-btn-bg-light: rgba(255, 78, 0, 0.1);
+            --audio-btn-color-light: #FF4E00;
+            --audio-btn-hover-bg-light: #FF4E00;
+            --audio-btn-hover-color-light: #FFFFFF;
+            --settings-btn-bg-light: rgba(255, 78, 0, 0.15);
+            --settings-btn-color-light: #FF4E00;
+            --settings-btn-hover-bg-light: #FF4E00;
+            --settings-btn-hover-color-light: #FFFFFF;
 
 
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--modal-bg-overlay);
-      z-index: 1999;
-      display: none;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .modal-overlay.active { /* For smoother appearance */
-        opacity: 1;
-    }
+            /* Dark Mode Variables */
+            --bg-dark: #1A1A1A;
+            --text-dark: #E0E0E0;
+            --header-bg-dark: linear-gradient(90deg, #4A0E00 0%, #6B2E00 100%);
+            --header-text-dark: #F5F5F5;
+            --header-shadow-dark: rgba(0, 0, 0, 0.4);
+            --card-bg-dark: #2C2C2C;
+            --card-shadow-dark: rgba(0, 0, 0, 0.3);
+            --primary-accent-dark: #FF8000;
+            --secondary-accent-dark: #FF9933;
+            --btn-gradient-dark: linear-gradient(135deg, #FF8000 0%, #FF5500 100%);
+            --btn-text-dark: #FFFFFF;
+            --btn-shadow-dark: rgba(255, 100, 0, 0.3);
+            --safe-color-dark: #00E676;
+            --border-color-dark: rgba(255, 128, 0, 0.3);
+            --more-details-bg-dark: rgba(255, 128, 0, 0.15);
+            --footer-bg-dark: linear-gradient(90deg, #4A0E00 0%, #6B2E00 100%);
+            --footer-text-dark: #E0E0E0;
+            --audio-btn-bg-dark: rgba(255, 128, 0, 0.15);
+            --audio-btn-color-dark: #FF8000;
+            --audio-btn-hover-bg-dark: #FF8000;
+            --audio-btn-hover-color-dark: #FFFFFF;
+            --settings-btn-bg-dark: rgba(255, 128, 0, 0.2);
+            --settings-btn-color-dark: #FF8000;
+            --settings-btn-hover-bg-dark: #FF8000;
+            --settings-btn-hover-color-dark: #FFFFFF;
+
+            --modal-bg-overlay: rgba(0,0,0,0.7);
+            --modal-content-bg-light: #FFFFFF;
+            --modal-content-text-light: #3A3A3A;
+            --modal-btn-bg-light: #FF4E00;
+            --modal-btn-text-light: #FFFFFF;
+            --modal-content-bg-dark: #333333;
+            --modal-content-text-dark: #E0E0E0;
+            --modal-btn-bg-dark: #FF8000;
+            --modal-btn-text-dark: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.4s ease, color 0.4s ease;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        body.dark-mode {
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        .header {
+            background: var(--header-bg-light);
+            padding: 12px 30px;
+            box-shadow: 0 4px 15px var(--header-shadow-light);
+            border-radius: 0 0 20px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky; /* Changed to sticky for better behavior on scroll */
+            top: 0;
+            z-index: 1000;
+            transition: background 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        body.dark-mode .header {
+            background: var(--header-bg-dark);
+            box-shadow: 0 4px 15px var(--header-shadow-dark);
+        }
+
+        .header-text span {
+            color: var(--header-text-light);
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        body.dark-mode .header-text span {
+            color: var(--header-text-dark);
+        }
+
+        .header-text img {
+            height: 35px;
+            margin-left: 15px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        #mode-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: var(--header-text-light);
+            border-radius: 25px;
+            padding: 8px 20px;
+            transition: all 0.3s ease;
+            font-family: 'Tajawal', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        body.dark-mode #mode-toggle {
+            background: rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: var(--header-text-dark);
+        }
+
+        #mode-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        body.dark-mode #mode-toggle:hover {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .bio-section {
+            background: var(--card-bg-light);
+            padding: 25px;
+            border-radius: 20px;
+            margin: 30px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 20px var(--card-shadow-light);
+            line-height: 1.8;
+            text-align: right;
+            transition: background 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        body.dark-mode .bio-section {
+            background: var(--card-bg-dark);
+            box-shadow: 0 4px 20px var(--card-shadow-dark);
+        }
+
+        .bio-section h3 {
+            font-size: 28px;
+            color: var(--primary-accent-light);
+            margin-bottom: 20px;
+            font-weight: 700;
+            transition: color 0.4s ease;
+        }
+
+        body.dark-mode .bio-section h3 {
+            color: var(--primary-accent-dark);
+        }
+
+        .bio-section p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .more-details {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--more-details-bg-light);
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: background 0.3s, color 0.3s;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--primary-accent-light);
+        }
+
+        body.dark-mode .more-details {
+            background: var(--more-details-bg-dark);
+            color: var(--primary-accent-dark);
+        }
+
+        .more-details:hover {
+            background: var(--primary-accent-light);
+            color: var(--btn-text-light);
+        }
+
+        body.dark-mode .more-details:hover {
+            background: var(--primary-accent-dark);
+            color: var(--btn-text-dark);
+        }
+
+        .full-bio {
+            display: none;
+            margin-top: 20px;
+            border-top: 2px dashed var(--primary-accent-light);
+            padding-top: 20px;
+            transition: border-top-color 0.4s ease;
+        }
+
+        body.dark-mode .full-bio {
+            border-top-color: var(--primary-accent-dark);
+        }
+
+        .hero {
+            padding: 40px 20px 60px;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            font-weight: 900;
+        }
+
+        .hero h2 strong {
+            color: var(--primary-accent-light);
+            transition: color 0.4s ease;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+        }
+
+        body.dark-mode .hero h2 strong {
+            color: var(--primary-accent-dark);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+        }
+
+        .btn-download {
+            background-image: var(--btn-gradient-light);
+            color: var(--btn-text-light);
+            padding: 18px 50px;
+            font-size: 22px;
+            border-radius: 40px;
+            box-shadow: 0 6px 20px var(--btn-shadow-light);
+            transition: transform 0.3s, box-shadow 0.3s, background-image 0.4s ease;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+            position: relative;
+            font-weight: 700;
+        }
+
+        body.dark-mode .btn-download {
+            background-image: var(--btn-gradient-dark);
+            color: var(--btn-text-dark);
+            box-shadow: 0 6px 20px var(--btn-shadow-dark);
+        }
+
+        .btn-download::after {
+            content: "\f0ac"; /* Globe icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 10px;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--btn-shadow-light);
+        }
+
+        body.dark-mode .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--btn-shadow-dark);
+        }
+
+        .safe {
+            margin: 15px 0;
+            font-size: 16px;
+            color: var(--safe-color-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            transition: color 0.4s ease;
+        }
+
+        body.dark-mode .safe {
+            color: var(--safe-color-dark);
+        }
+
+        .safe::before {
+            content: "\f058"; /* Check circle icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+
+        .banner {
+            margin: 40px auto;
+            max-width: 90%;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px var(--card-shadow-light);
+            border: 3px solid var(--border-color-light);
+            display: block;
+            transition: box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+
+        body.dark-mode .banner {
+            box-shadow: 0 8px 30px var(--card-shadow-dark);
+            border-color: var(--border-color-dark);
+        }
+
+        .small-btns {
+            margin: 40px 20px;
+        }
+
+        .small-btns h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--primary-accent-light);
+        }
+
+        body.dark-mode .small-btns h3 {
+            color: var(--primary-accent-dark);
+        }
+
+        .btn-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: var(--card-bg-light);
+            border-radius: 20px;
+            box-shadow: 0 4px 15px var(--card-shadow-light);
+            transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+        }
+
+        body.dark-mode .btn-section {
+            background-color: var(--card-bg-dark);
+            box-shadow: 0 4px 15px var(--card-shadow-dark);
+        }
+
+        .btn-small {
+            background-image: var(--btn-gradient-light);
+            color: var(--btn-text-light);
+            border-radius: 30px;
+            padding: 15px 35px;
+            font-size: 20px;
+            box-shadow: 0 4px 15px var(--btn-shadow-light);
+            transition: transform 0.3s, box-shadow 0.3s, background-image 0.4s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            width: auto;
+            min-width: 220px;
+        }
+
+        body.dark-mode .btn-small {
+            background-image: var(--btn-gradient-dark);
+            color: var(--btn-text-dark);
+            box-shadow: 0 4px 15px var(--btn-shadow-dark);
+        }
+
+        .btn-small:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--btn-shadow-light);
+        }
+
+        body.dark-mode .btn-small:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--btn-shadow-dark);
+        }
+
+        .btn-small i {
+            font-size: 20px;
+        }
+
+        .subject-img {
+            margin: 25px auto;
+            width: 90%;
+            max-width: 450px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px var(--card-shadow-light);
+            border: 3px solid var(--primary-accent-light);
+            display: block;
+            transition: box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+
+        body.dark-mode .subject-img {
+            box-shadow: 0 8px 25px var(--card-shadow-dark);
+            border-color: var(--primary-accent-dark);
+        }
+
+        .site-footer {
+            background: var(--footer-bg-light);
+            color: var(--footer-text-light);
+            padding: 25px;
+            text-align: center;
+            font-size: 16px;
+            margin-top: auto;
+            font-weight: 700;
+            transition: background 0.4s ease, color 0.4s ease;
+        }
+
+        body.dark-mode .site-footer {
+            background: var(--footer-bg-dark);
+            color: var(--footer-text-dark);
+        }
+
+        /* --- Floating Action Buttons Area --- */
+        .floating-actions-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column; /* Stack buttons vertically initially */
+            align-items: center;
+            gap: 10px;
+            z-index: 990; /* Below settings button, above other content */
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .floating-actions-container.hidden {
+            opacity: 0;
+            transform: translateX(-50%) translateY(100px); /* Move down when hidden */
+            pointer-events: none;
+        }
 
 
-    .modal-content {
-      font-size: 18px;
-      margin: 10px 0 20px;
-    }
-    .modal-content i.fas {
-        font-size: 40px;
-        color: var(--primary-accent-light);
-        margin-bottom: 15px;
-        transition: color 0.4s ease;
-    }
-    body.dark-mode .modal-content i.fas {
-        color: var(--primary-accent-dark);
-    }
-    .modal-content h3 {
-        font-size: 22px;
-        font-weight: 700;
-        margin-bottom: 10px;
-    }
+        .whatsapp-bar {
+            /* position: fixed; */ /* Removed as it's now part of the container */
+            /* bottom: 20px; */
+            /* left: 50%; */
+            /* transform: translateX(-50%); */
+            width: auto;
+            min-width: 250px; /* Adjusted min-width */
+            max-width: 90%;
+            background: linear-gradient(90deg, #25D366 0%, #128C7E 100%);
+            padding: 10px 20px; /* Adjusted padding */
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25); /* Adjusted shadow */
+            /* z-index: 1000; */ /* Managed by container */
+            cursor: pointer;
+            /* animation: pulse 1.5s infinite; */ /* Consider removing or adjusting pulse */
+            color: white;
+            transition: transform 0.2s ease;
+            order: 3; /* Order within the flex container */
+        }
 
-    .modal-close {
-      background: var(--modal-btn-bg-light);
-      color: var(--modal-btn-text-light);
-      border: none;
-      padding: 12px 35px;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: 700;
-      transition: transform 0.3s, background 0.4s ease;
-    }
-    body.dark-mode .modal-close {
-      background: var(--modal-btn-bg-dark);
-      color: var(--modal-btn-text-dark);
-    }
-    .modal-close:hover {
-        transform: scale(1.05);
-    }
+        .whatsapp-bar:hover {
+            transform: scale(1.03); /* Simpler hover effect */
+        }
 
-    @keyframes pulse {
-      0% { transform: translateX(-50%) scale(1); }
-      50% { transform: translateX(-50%) scale(1.03); }
-      100% { transform: translateX(-50%) scale(1); }
-    }
-  </style>
+        .whatsapp-bar i.fab.fa-whatsapp {
+            font-size: 22px; /* Adjusted size */
+            color: white;
+        }
+
+        .whatsapp-text {
+            font-size: 16px; /* Adjusted size */
+            font-weight: 700;
+        }
+
+        .support-button {
+            /* position: fixed; */
+            /* bottom: 80px; */ /* Adjusted to be above WhatsApp bar */
+            /* left: 50%; */
+            /* transform: translateX(-50%); */
+            background-image: var(--btn-gradient-light);
+            color: var(--btn-text-light);
+            padding: 10px 22px; /* Adjusted padding */
+            font-size: 16px; /* Adjusted size */
+            border-radius: 30px;
+            box-shadow: 0 4px 12px var(--btn-shadow-light); /* Adjusted shadow */
+            transition: transform 0.3s, box-shadow 0.3s, background-image 0.4s ease;
+            text-decoration: none;
+            font-weight: 700;
+            /* z-index: 999; */
+            cursor: pointer;
+            order: 2; /* Order within the flex container */
+        }
+
+        body.dark-mode .support-button {
+            background-image: var(--btn-gradient-dark);
+            color: var(--btn-text-dark);
+            box-shadow: 0 4px 12px var(--btn-shadow-dark);
+        }
+
+        .support-button:hover {
+            transform: translateY(-2px); /* Adjusted hover effect */
+            box-shadow: 0 6px 18px var(--btn-shadow-light);
+        }
+
+        body.dark-mode .support-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px var(--btn-shadow-dark);
+        }
+
+        /* Audio Control Button */
+        #audio-control-btn {
+            /* position: fixed; */
+            /* bottom: 130px; */ /* Adjusted to be above support button */
+            /* left: 50%; */
+            /* transform: translateX(-50%); */
+            background-color: var(--audio-btn-bg-light);
+            color: var(--audio-btn-color-light);
+            border: 2px solid var(--audio-btn-color-light);
+            border-radius: 50%; /* Make it circular */
+            width: 45px; /* Adjusted width */
+            height: 45px; /* Adjusted height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px; /* Icon size */
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Adjusted shadow */
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+            /* z-index: 998; */ /* Below support button, above other content */
+            order: 1; /* Order within the flex container */
+        }
+
+        body.dark-mode #audio-control-btn {
+            background-color: var(--audio-btn-bg-dark);
+            color: var(--audio-btn-color-dark);
+            border-color: var(--audio-btn-color-dark);
+        }
+
+        #audio-control-btn:hover {
+            background-color: var(--audio-btn-hover-bg-light);
+            color: var(--audio-btn-hover-color-light);
+            transform: scale(1.1); /* Adjusted hover effect */
+        }
+
+        body.dark-mode #audio-control-btn:hover {
+            background-color: var(--audio-btn-hover-bg-dark);
+            color: var(--audio-btn-hover-color-dark);
+        }
+        /* Settings Toggle Button (Gear Icon) */
+        #settings-toggle-btn {
+            position: fixed;
+            bottom: 20px; /* Adjust as needed */
+            right: 20px;  /* Position to the right */
+            background-color: var(--settings-btn-bg-light);
+            color: var(--settings-btn-color-light);
+            border: 2px solid var(--settings-btn-color-light);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+            z-index: 1001; /* Above other floating buttons */
+        }
+        body.dark-mode #settings-toggle-btn {
+            background-color: var(--settings-btn-bg-dark);
+            color: var(--settings-btn-color-dark);
+            border-color: var(--settings-btn-color-dark);
+        }
+        #settings-toggle-btn:hover {
+            background-color: var(--settings-btn-hover-bg-light);
+            color: var(--settings-btn-hover-color-light);
+            transform: scale(1.1) rotate(45deg);
+        }
+        body.dark-mode #settings-toggle-btn:hover {
+            background-color: var(--settings-btn-hover-bg-dark);
+            color: var(--settings-btn-hover-color-dark);
+        }
+        /* --- End Floating Action Buttons Area --- */
+
+
+        .custom-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9); /* Initial state for animation */
+            background: var(--modal-content-bg-light);
+            color: var(--modal-content-text-light);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 2000;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            display: none;
+            transition: background 0.4s ease, color 0.4s ease, transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        body.dark-mode .custom-modal {
+            background: var(--modal-content-bg-dark);
+            color: var(--modal-content-text-dark);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .custom-modal.active {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--modal-bg-overlay);
+            z-index: 1999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+        }
+
+        .modal-content {
+            font-size: 18px;
+            margin: 10px 0 20px;
+        }
+
+        .modal-content i.fas {
+            font-size: 40px;
+            color: var(--primary-accent-light);
+            margin-bottom: 15px;
+            transition: color 0.4s ease;
+        }
+
+        body.dark-mode .modal-content i.fas {
+            color: var(--primary-accent-dark);
+        }
+
+        .modal-content h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .modal-close {
+            background: var(--modal-btn-bg-light);
+            color: var(--modal-btn-text-light);
+            border: none;
+            padding: 12px 35px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            transition: transform 0.3s, background 0.4s ease;
+        }
+
+        body.dark-mode .modal-close {
+            background: var(--modal-btn-bg-dark);
+            color: var(--modal-btn-text-dark);
+        }
+
+        .modal-close:hover {
+            transform: scale(1.05);
+        }
+
+
+        @keyframes pulse {
+            0% {
+                /* transform: translateX(-50%) scale(1); */ /* Adjusted due to container */
+                box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            }
+            50% {
+                /* transform: translateX(-50%) scale(1.03); */
+                box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+            }
+            100% {
+                /* transform: translateX(-50%) scale(1); */
+                box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            }
+        }
+        .whatsapp-bar.pulsing { /* Apply pulse animation selectively */
+            animation: pulse 1.5s infinite;
+        }
+
+    </style>
 </head>
 <body>
     <div class="header">
-    <div class="header-text">
-      <img src="https://i.postimg.cc/T3Zjrd5B/red-and-blue-gradient-bold-modern-abstract-programmer-logo-11032625-png-f305cw.webp" alt="Logo" />
-      <span>«/» سيف_saif_s_a «/»</span>
+        <div class="header-text">
+            <img src="https://i.postimg.cc/T3Zjrd5B/red-and-blue-gradient-bold-modern-abstract-programmer-logo-11032625-png-f305cw.webp" alt="Logo" />
+            <span>«/» سيف_saif_s_a «/»</span>
+        </div>
+        <button id="mode-toggle">الوضع الليلي</button>
     </div>
-    <button id="mode-toggle">الوضع الليلي</button>
-  </div>
 
     <div class="bio-section">
-    <h3>عن سيف</h3>
-    <p id="intro-bio">
-      أنا سيف، مبرمج موهوب عمري 16 سنة، طورت مشاريع كبيرة مثل تطبيقات إلكترونية ومواقع تعليمية، وأعمل على مشاريع ذكاء اصطناعي مبتكرة...
-    </p>
-    <span class="more-details" onclick="toggleBio()"><i class="fas fa-chevron-down"></i> المزيد من التفاصيل</span>
-    <div class="full-bio" id="full-bio">
-      <p>في سن السادسة عشرة، التحقت بدورات متعددة في لغات البرمجة وتصميم الواجهات. نفذت عدة مشاريع حقيقية لخدمات تعليمية وتجارية.</p>
-      <p>أؤمن بأن التقنية قادرة على إحداث فرق حقيقي، وأسعى دائمًا إلى تحسين مهاراتي واستخدام أحدث الأدوات في بناء تطبيقات تخدم المستخدم.</p>
-      <p>مشروعي الأخير هو موقع <strong>المدرس الذكي SAIFX</strong>، وهو مدرس لكل المواد يعمل بالذكاء الاصطناعي، متطور ومجاني لمساعدتك في الدراسة.</p>
+        <h3>عن سيف</h3>
+        <p id="intro-bio">
+            أنا سيف، مبرمج موهوب عمري 16 سنة، طورت مشاريع كبيرة مثل تطبيقات إلكترونية ومواقع تعليمية، وأعمل على مشاريع ذكاء اصطناعي مبتكرة...
+        </p>
+        <span class="more-details" onclick="toggleBio()"><i class="fas fa-chevron-down"></i> المزيد من التفاصيل</span>
+        <div class="full-bio" id="full-bio">
+            <p>في سن السادسة عشرة، التحقت بدورات متعددة في لغات البرمجة وتصميم الواجهات. نفذت عدة مشاريع حقيقية لخدمات تعليمية وتجارية.</p>
+            <p>أؤمن بأن التقنية قادرة على إحداث فرق حقيقي، وأسعى دائمًا إلى تحسين مهاراتي واستخدام أحدث الأدوات في بناء تطبيقات تخدم المستخدم.</p>
+            <p>مشروعي الأخير هو موقع <strong>المدرس الذكي SAIFX</strong>، وهو مدرس لكل المواد يعمل بالذكاء الاصطناعي، متطور ومجاني لمساعدتك في الدراسة.</p>
+        </div>
     </div>
-  </div>
 
     <div class="hero">
-    <h2>
-      اكتشف <strong>المدرس الذكي SAIFX</strong><br/>
-      مساعدك الدراسي لكل المواد مجاناً بالذكاء الاصطناعي
-    </h2>
-    <a href="https://saif1230876657.github.io/saifx/"
-       class="btn-download" target="_blank" onclick="showDownloadModal(event)">
-      الذهاب إلى SAIFX
-    </a>
-    <div class="safe">موقع آمن ومجاني</div>
-    <img src="https://i.postimg.cc/cHp8sRTV/pngtree-d-rendering-of-an-adorable-ai-robot-reading-a-book-depicting-image-3803398.jpg"
-         alt="المدرس الذكي SAIFX" class="banner"/>
-  </div>
+        <h2>
+            اكتشف <strong>المدرس الذكي SAIFX</strong><br/>
+            مساعدك الدراسي لكل المواد مجاناً بالذكاء الاصطناعي
+        </h2>
+        <a href="https://saif1230876657.github.io/saifx/" class="btn-download" target="_blank" onclick="showDownloadModal(event)">
+            الذهاب إلى SAIFX
+        </a>
+        <div class="safe">موقع آمن ومجاني</div>
+        <img src="https://i.postimg.cc/cHp8sRTV/pngtree-d-rendering-of-an-adorable-ai-robot-reading-a-book-depicting-image-3803398.jpg" alt="المدرس الذكي SAIFX" class="banner"/>
+    </div>
 
     <div class="small-btns">
-    <h3><i class="fas fa-file-alt" style="margin-left: 8px;"></i>موقع الاختبارات</h3>
-    <div class="btn-section">
-      <a href="https://saif1230876657.github.io/saifSAR1/" class="btn-small" target="_blank">
-        <i class="fas fa-clipboard-check"></i>
-        دخول للاختبارات
-      </a>
-      <img src="https://i.postimg.cc/q7RXFBxg/pngtree-test-prep-courses-and-apps-featuring-3d-icon-isolated-on-a-png-image-15381423.png" alt="موقع الاختبارات" class="subject-img"/>
-    </div>
-    <h3><i class="fas fa-search" style="margin-left: 8px;"></i>محرك بحث ذكي ومتنوع المصادر</h3>
-    <div class="btn-section">
-      <a href="https://saif1230876657.github.io/my-store/" class="btn-small" target="_blank">
-        <i class="fas fa-search"></i>
-        استخدام محرك البحث
-      </a>
-      <img src="https://i.postimg.cc/sxV4m25N/image.jpg" alt="محرك البحث الذكي" class="subject-img"/>
-    </div>
+        <h3><i class="fas fa-file-alt" style="margin-left: 8px;"></i>موقع الاختبارات</h3>
+        <div class="btn-section">
+            <a href="https://saif1230876657.github.io/saifSAR1/" class="btn-small" target="_blank">
+                <i class="fas fa-clipboard-check"></i> دخول للاختبارات
+            </a>
+            <img src="https://i.postimg.cc/q7RXFBxg/pngtree-test-prep-courses-and-apps-featuring-3d-icon-isolated-on-a-png-image-15381423.png" alt="موقع الاختبارات" class="subject-img"/>
+        </div>
 
-    <h3><i class="fas fa-brain" style="margin-left: 8px;"></i>AI لمساعدتك في المذاكرة</h3>
-    <div class="btn-section">
-      <a href="https://saif1230876657.github.io/saif0/" class="btn-small" target="_blank">
-        <i class="fas fa-landmark"></i>
-        مدرس التاريخ
-      </a>
-      <img src="https://i.postimg.cc/sXsst8NN/Egypt-Pyramids-Photos-41.jpg" alt="التاريخ" class="subject-img"/>
-    </div>
+        <h3><i class="fas fa-search" style="margin-left: 8px;"></i>محرك بحث ذكي ومتنوع المصادر</h3>
+        <div class="btn-section">
+            <a href="https://saif1230876657.github.io/my-store/" class="btn-small" target="_blank">
+                <i class="fas fa-search"></i> استخدام محرك البحث
+            </a>
+            <img src="https://i.postimg.cc/sxV4m25N/image.jpg" alt="محرك البحث الذكي" class="subject-img"/>
+        </div>
 
-    <script async="async" data-cfasync="false" src="//pl26642122.profitableratecpm.com/207bfbb4822f7b530ad2c391a896859c/invoke.js"></script>
-    <div id="container-207bfbb4822f7b530ad2c391a896859c"></div>
-    <div class="btn-section">
-      <a href="https://saif1230876657.github.io/saifSA.-X/" class="btn-small" target="_blank">
-        <i class="fas fa-flask"></i>
-        مدرس العلوم
-      </a>
-      <img src="https://i.postimg.cc/tR51Xqqp/14a902fd15ca623a7337c1412661180e.jpg" alt="العلوم" class="subject-img"/>
+        <h3><i class="fas fa-brain" style="margin-left: 8px;"></i>AI لمساعدتك في المذاكرة</h3>
+        <div class="btn-section">
+            <a href="https://saif1230876657.github.io/saif0/" class="btn-small" target="_blank">
+                <i class="fas fa-landmark"></i> مدرس التاريخ
+            </a>
+            <img src="https://i.postimg.cc/sXsst8NN/Egypt-Pyramids-Photos-41.jpg" alt="التاريخ" class="subject-img"/>
+        </div>
+        <script async="async" data-cfasync="false" src="//pl26642122.profitableratecpm.com/207bfbb4822f7b530ad2c391a896859c/invoke.js"></script>
+        <div id="container-207bfbb4822f7b530ad2c391a896859c"></div>
+        <div class="btn-section">
+            <a href="https://saif1230876657.github.io/saifSA.-X/" class="btn-small" target="_blank">
+                <i class="fas fa-flask"></i> مدرس العلوم
+            </a>
+            <img src="https://i.postimg.cc/tR51Xqqp/14a902fd15ca623a7337c1412661180e.jpg" alt="العلوم" class="subject-img"/>
+        </div>
     </div>
-  </div>
 
     <footer class="site-footer">
-    <p>© جميع الحقوق محفوظة <span id="currentYear"></span> | تطوير سيف س.أ <i class="fas fa-laptop-code"></i></p>
-  </footer>
+        <p>© جميع الحقوق محفوظة <span id="currentYear"></span> | تطوير سيف س.أ <i class="fas fa-laptop-code"></i></p>
+    </footer>
 
     <div class="modal-overlay" id="modalOverlay"></div>
-  <div class="custom-modal" id="customModal">
-    <div class="modal-content">
-      <i class="fas fa-chalkboard-teacher"></i> <!-- أيقونة المدرس/السبورة -->
-      <h3>جاري توجيهك إلى الموقع</h3>
-      <p>سيتم نقلك الآن إلى موقع المدرس الذكي SAIFX.</p>
-    </div>
-    <button class="modal-close" onclick="closeModal()">موافق</button>
-  </div>
+    <div class="custom-modal" id="customModal">
+        <div class="modal-content">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h3>جاري توجيهك إلى الموقع</h3>
+            <p>سيتم نقلك الآن إلى موقع المدرس الذكي SAIFX.</p>
+        </div>
+        <button class="modal-close" onclick="closeModal()">موافق</button> </div>
 
-    <div class="whatsapp-bar" onclick="window.open('https://wa.me/201202687082', '_blank')"> <!-- فتح في نافذة جديدة -->
-      <i class="fab fa-whatsapp"></i>
-      <span class="whatsapp-text">للتواصل مع سيف</span>
-      <i class="fab fa-whatsapp"></i>
+    <div class="floating-actions-container" id="floatingActionsContainer">
+        <button id="audio-control-btn">
+            <i class="fas fa-volume-up"></i>
+        </button>
+        <a href="https://www.profitableratecpm.com/k8fisnjjc?key=afa7ea920578f74cea5997d670bbe78e" class="support-button" target="_blank">
+            دعم ❤️
+        </a>
+        <div class="whatsapp-bar pulsing" onclick="window.open('https://wa.me/201202687082', '_blank')">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-text">للتواصل مع سيف</span>
+            <i class="fab fa-whatsapp"></i>
+        </div>
     </div>
 
-    <a href="https://www.profitableratecpm.com/k8fisnjjc?key=afa7ea920578f74cea5997d670bbe78e"
-       class="support-button" target="_blank">
-      دعم ❤️
-    </a>
+    <button id="settings-toggle-btn">
+        <i class="fas fa-cog"></i> </button>
+
+    <audio id="background-audio" loop>
+        <source src="https://files.catbox.moe/jn87gj.wav" type="audio/wav"> متصفحك لا يدعم عنصر الصوت.
+    </audio>
 
     <script>
-    const toggleBtn = document.getElementById('mode-toggle');
-    const body = document.body;
-    const modalOverlay = document.getElementById('modalOverlay');
-    const customModal = document.getElementById('customModal');
-    let redirectTimeoutId = null; // لتتبع مؤقت التوجيه
+        const toggleBtn = document.getElementById('mode-toggle');
+        const body = document.body;
+        const modalOverlay = document.getElementById('modalOverlay');
+        const customModal = document.getElementById('customModal');
+        let redirectTimeoutId = null;
 
-    function updateThemeButtonText() {
-      if (body.classList.contains('dark-mode')) {
-        toggleBtn.innerHTML = '<i class="fas fa-sun"></i> الوضع النهاري';
-      } else {
-        toggleBtn.innerHTML = '<i class="fas fa-moon"></i> الوضع الليلي';
-      }
-    }
+        // عناصر التحكم في الصوت
+        const audioControlBtn = document.getElementById('audio-control-btn');
+        const backgroundAudio = document.getElementById('background-audio');
+        let isAudioPlaying = false;
+        let userInteracted = false; // Track if user has interacted
 
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
-      updateThemeButtonText();
-    });
-
-    if (localStorage.getItem('theme') === 'dark') {
-      body.classList.add('dark-mode');
-    }
-    updateThemeButtonText();
-
-    function showDownloadModal(e) {
-      e.preventDefault();
-      modalOverlay.style.display = 'block';
-      customModal.style.display = 'block'; // Make it visible before adding class
-
-      // For smoother appearance with transition
-      setTimeout(() => {
-          modalOverlay.classList.add('active');
-          customModal.classList.add('active');
-          customModal.style.transform = 'translate(-50%, -50%) scale(1)'; // Ensure final state
-          customModal.style.opacity = '1'; // Ensure final state
-      }, 10);
+        // Floating actions and settings toggle
+        const floatingActionsContainer = document.getElementById('floatingActionsContainer');
+        const settingsToggleBtn = document.getElementById('settings-toggle-btn');
+        let areActionsVisible = true; // Initially visible
 
 
-      customModal.dataset.downloadUrl = e.currentTarget.href;
-
-      // إلغاء أي مؤقت توجيه سابق إذا تم فتح النافذة مرة أخرى بسرعة
-      if (redirectTimeoutId) {
-        clearTimeout(redirectTimeoutId);
-      }
-
-      // توجيه تلقائي بعد 3 ثوانٍ
-      redirectTimeoutId = setTimeout(() => {
-        if (customModal.style.display === 'block' && customModal.dataset.downloadUrl) { // تحقق إذا كانت النافذة لا تزال معروضة
-           window.location.href = customModal.dataset.downloadUrl;
+        // Attempt to autoplay audio
+        function attemptAutoplay() {
+            if (userInteracted) { // Only play if user has interacted
+                backgroundAudio.play().then(() => {
+                    isAudioPlaying = true;
+                    audioControlBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                }).catch(error => {
+                    console.log("Autoplay failed after interaction or audio error: ", error);
+                    isAudioPlaying = false;
+                    audioControlBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                });
+            } else {
+                 // If no interaction, set to play icon, actual play will happen on first click of audio button
+                isAudioPlaying = false;
+                audioControlBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                console.log("Autoplay prevented. Waiting for user interaction or audio button click.");
+            }
         }
-      }, 3000); // 3 ثوانٍ
-    }
 
-    function closeModal() {
-      // إلغاء المؤقت التلقائي إذا ضغط المستخدم "موافق"
-      if (redirectTimeoutId) {
-        clearTimeout(redirectTimeoutId);
-        redirectTimeoutId = null;
-      }
+        // Function to handle user interaction and then attempt autoplay
+        function handleFirstInteraction() {
+            if (!userInteracted) {
+                userInteracted = true;
+                // Potentially try to play audio immediately after first interaction
+                // Or rely on the audio button click
+                console.log("User interaction detected.");
+                // attemptAutoplay(); // You can call it here if you want sound after any first click
+            }
+        }
 
-      modalOverlay.classList.remove('active');
-      customModal.classList.remove('active');
-      customModal.style.opacity = '0'; // Start fade out
-      customModal.style.transform = 'translate(-50%, -50%) scale(0.9)'; // Optional: scale down on exit
+        // Add event listeners for common interactions to set userInteracted flag
+        document.addEventListener('click', handleFirstInteraction, { once: true });
+        document.addEventListener('scroll', handleFirstInteraction, { once: true });
+        document.addEventListener('keydown', handleFirstInteraction, { once: true });
 
 
-      // إذا كان هناك رابط، قم بالتوجيه إليه
-      if (customModal.dataset.downloadUrl) {
-          // التأخير قليلاً للسماح برؤية انتقال الإغلاق قبل التوجيه
-          setTimeout(() => {
-            window.location.href = customModal.dataset.downloadUrl;
-          }, 150); // وقت أقل من انتقال الـ CSS
-      }
+        window.addEventListener('load', () => {
+            // Don't attempt autoplay immediately on load.
+            // It will be handled by user interaction or explicit button click.
+            // Set initial icon based on a default non-playing state.
+            audioControlBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+            isAudioPlaying = false; // Ensure this is set correctly
 
-      // إخفاء العناصر بعد انتهاء الانتقال
-      setTimeout(() => {
-          modalOverlay.style.display = 'none';
-          customModal.style.display = 'none';
-          if(customModal.dataset.downloadUrl) delete customModal.dataset.downloadUrl;
-      }, 300); // يجب أن يكون هذا الوقت مساوياً أو أطول من مدة انتقال الـ CSS
-    }
+            // Ensure floating actions are visible by default
+            floatingActionsContainer.classList.remove('hidden');
+            areActionsVisible = true;
+            settingsToggleBtn.innerHTML = '<i class="fas fa-cog"></i>'; // Initial icon for settings
+        });
 
-    function toggleBio() {
-      const fullBio = document.getElementById('full-bio');
-      const btn = document.querySelector('.more-details');
-      // const icon = btn.querySelector('i'); // لا يتم استخدامه حالياً
 
-      if (fullBio.style.display === 'block') {
-        fullBio.style.display = 'none';
-        btn.innerHTML = '<i class="fas fa-chevron-down"></i> المزيد من التفاصيل';
-      } else {
-        fullBio.style.display = 'block';
-        btn.innerHTML = '<i class="fas fa-chevron-up"></i> إخفاء التفاصيل';
-      }
-    }
+        audioControlBtn.addEventListener('click', () => {
+            if (!userInteracted) { // If this is the first interaction via audio button
+                userInteracted = true;
+            }
 
-    // Optional: Close modal if overlay is clicked (if desired)
-    // modalOverlay.addEventListener('click', closeModal);
+            if (isAudioPlaying) {
+                backgroundAudio.pause();
+                audioControlBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+            } else {
+                backgroundAudio.play().then(() => {
+                    audioControlBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                }).catch(error => {
+                    console.log("Error playing audio: ", error);
+                    // In case of error, don't change the state or icon
+                    return;
+                });
+            }
+            isAudioPlaying = !isAudioPlaying;
+        });
 
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // Settings Toggle Functionality
+        settingsToggleBtn.addEventListener('click', () => {
+            areActionsVisible = !areActionsVisible;
+            if (areActionsVisible) {
+                floatingActionsContainer.classList.remove('hidden');
+                settingsToggleBtn.innerHTML = '<i class="fas fa-cog"></i>'; // Gear icon
+                settingsToggleBtn.style.transform = 'rotate(0deg)';
 
-  </script>
+            } else {
+                floatingActionsContainer.classList.add('hidden');
+                settingsToggleBtn.innerHTML = '<i class="fas fa-eye-slash"></i>'; // Or another icon like times, eye-slash
+                settingsToggleBtn.style.transform = 'rotate(90deg)';
+            }
+        });
+
+
+        function updateThemeButtonText() {
+            if (body.classList.contains('dark-mode')) {
+                toggleBtn.innerHTML = '<i class="fas fa-sun"></i> الوضع النهاري';
+            } else {
+                toggleBtn.innerHTML = '<i class="fas fa-moon"></i> الوضع الليلي';
+            }
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+            updateThemeButtonText();
+        });
+
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+        }
+        updateThemeButtonText();
+
+        function showDownloadModal(e) {
+            e.preventDefault();
+            modalOverlay.style.display = 'block';
+            customModal.style.display = 'block';
+            setTimeout(() => {
+                modalOverlay.classList.add('active');
+                customModal.classList.add('active');
+            }, 10); // Removed scale and opacity from here, handled by .active class
+
+            customModal.dataset.downloadUrl = e.currentTarget.href;
+
+            if (redirectTimeoutId) {
+                clearTimeout(redirectTimeoutId);
+            }
+            redirectTimeoutId = setTimeout(() => {
+                if (customModal.style.display === 'block' && customModal.dataset.downloadUrl) {
+                    window.open(customModal.dataset.downloadUrl, '_blank');
+                }
+            }, 3000);
+        }
+
+        function closeModal() {
+            if (redirectTimeoutId) {
+                clearTimeout(redirectTimeoutId);
+                redirectTimeoutId = null;
+            }
+            modalOverlay.classList.remove('active');
+            customModal.classList.remove('active');
+            // Opacity and transform handled by removing .active class
+
+            // Redirect immediately after starting close animation if a URL is set
+            if (customModal.dataset.downloadUrl) {
+                 // No timeout, or very short if needed for animation to start
+                window.open(customModal.dataset.downloadUrl, '_blank');
+            }
+
+            setTimeout(() => {
+                modalOverlay.style.display = 'none';
+                customModal.style.display = 'none';
+                if(customModal.dataset.downloadUrl) delete customModal.dataset.downloadUrl;
+            }, 300); // Match transition duration
+        }
+
+        function toggleBio() {
+            const fullBio = document.getElementById('full-bio');
+            const btn = document.querySelector('.more-details');
+            if (fullBio.style.display === 'block') {
+                fullBio.style.display = 'none';
+                btn.innerHTML = '<i class="fas fa-chevron-down"></i> المزيد من التفاصيل';
+            } else {
+                fullBio.style.display = 'block';
+                btn.innerHTML = '<i class="fas fa-chevron-up"></i> إخفاء التفاصيل';
+            }
+        }
+
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
