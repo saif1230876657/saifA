@@ -1,1016 +1,618 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!-- The language is dynamically set by JavaScript -->
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <title>صفحة سيف الشخصية ومشاريع الذكاء الاصطناعي</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saif,SA Portfolio | Design in Details</title>
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="[ضع رابط رخيص هنا]"> <meta property="og:title" content="Saif_SA - المدرس الذكي ومشاريع الذكاء الاصطناعي">
-    <meta property="og:description" content="صفحة سيف الشخصية، موقع المدرس الذكي SAIFX، ومشاريع الذكاء الاصطناعي المبتكرة.">
-    <meta property="og:image" content="https://i.postimg.cc/cHp8sRTV/pngtree-d-rendering-of-an-adorable-ai-robot-reading-a-book-depicting-image-3803398.jpg">
+    <!-- Tailwind CSS for a utility-first styling approach -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="[ضع رابط هنا]"> <meta name="twitter:title" content="Saif_SA - المدرس الذكي ومشاريع الذكاء الاصطناعي">
-    <meta name="twitter:description" content="صفحة سيف الشخصية، موقع المدرس الذكي SAIFX، ومشاريع الذكاء الاصطناعي المتطور.">
-    <meta name="twitter:image" content="https://i.postimg.cc/cHp8sRTV/pngtree-d-rendering-of-an-adorable-ai-robot-reading-a-book-depicting-image-3803398.jpg">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Knewave&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS (Animate on Scroll) Library for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
     <style>
+        /* Define base styles and theme variables */
         :root {
-            /* متغيرات وضع الإضاءة */
-            --bg-light: #FFF5E0;
-            --text-light: #3A3A3A;
-            --header-bg-light: linear-gradient(90deg, #FF4E00 0%, #FF6B00 100%);
-            --header-text-light: #FFFFFF;
-            --header-shadow-light: rgba(255, 75, 0, 0.2);
-            --card-bg-light: rgba(255, 255, 255, 0.95);
-            --card-shadow-light: rgba(0, 0, 0, 0.1);
-            --primary-accent-light: #FF4E00;
-            --secondary-accent-light: #FF6B00;
-            --btn-gradient-light: linear-gradient(135deg, #FF6B00 0%, #FF4E00 100%);
-            --btn-text-light: #FFFFFF;
-            --btn-shadow-light: rgba(255, 75, 0, 0.3);
-            --safe-color-light: #00C853;
-            --border-color-light: rgba(255, 78, 0, 0.2);
-            --more-details-bg-light: rgba(255, 78, 0, 0.1);
-            --footer-bg-light: linear-gradient(90deg, #FF4E00 0%, #FF6B00 100%); /* Corrected: تدرج خطي to linear-gradient */
-            --footer-text-light: #FFFFFF;
-            --audio-btn-bg-light: rgba(255, 78, 0, 0.1);
-            --audio-btn-color-light: #FF4E00;
-            --audio-btn-hover-bg-light: #FF4E00;
-            --audio-btn-hover-color-light: #FFFFFF;
-            --settings-btn-bg-light: rgba(255, 78, 0, 0.15);
-            --settings-btn-color-light: #FF4E00;
-            --settings-btn-hover-bg-light: #FF4E00;
-            --settings-btn-hover-color-light: #FFFFFF;
-
-
-            /* Dark Mode Variables */
-            --bg-dark: #1A1A1A;
-            --text-dark: #E0E0E0;
-            --header-bg-dark: linear-gradient(90deg, #4A0E00 0%, #6B2E00 100%);
-            --header-text-dark: #F5F5F5;
-            --header-shadow-dark: rgba(0, 0, 0, 0.4);
-            --card-bg-dark: #2C2C2C;
-            --card-shadow-dark: rgba(0, 0, 0, 0.3);
-            --primary-accent-dark: #FF8000;
-            --secondary-accent-dark: #FF9933;
-            --btn-gradient-dark: linear-gradient(135deg, #FF8000 0%, #FF5500 100%);
-            --btn-text-dark: #FFFFFF;
-            --btn-shadow-dark: rgba(255, 100, 0, 0.3);
-            --safe-color-dark: #00E676;
-            --border-color-dark: rgba(255, 128, 0, 0.3);
-            --more-details-bg-dark: rgba(255, 128, 0, 0.15);
-            --footer-bg-dark: linear-gradient(90deg, #4A0E00 0%, #6B2E00 100%);
-            --footer-text-dark: #E0E0E0;
-            --audio-btn-bg-dark: rgba(255, 128, 0, 0.15);
-            --audio-btn-color-dark: #FF8000;
-            --audio-btn-hover-bg-dark: #FF8000;
-            --audio-btn-hover-color-dark: #FFFFFF;
-            --settings-btn-bg-dark: rgba(255, 128, 0, 0.2);
-            --settings-btn-color-dark: #FF8000;
-            --settings-btn-hover-bg-dark: #FF8000;
-            --settings-btn-hover-color-dark: #FFFFFF;
-
-            --modal-bg-overlay: rgba(0,0,0,0.7);
-            --modal-content-bg-light: #FFFFFF;
-            --modal-content-text-light: #3A3A3A;
-            --modal-btn-bg-light: #FF4E00;
-            --modal-btn-text-light: #FFFFFF;
-            --modal-content-bg-dark: #333333;
-            --modal-content-text-dark: #E0E0E0;
-            --modal-btn-bg-dark: #FF8000;
-            --modal-btn-text-dark: #FFFFFF;
+            --primary-color: #43D9AD;
+            --primary-accent: #25a281;
+            --bg-color: #0d1117;
+            --surface-color: #161b22;
+            --text-color: #e6edf3;
+            --subtext-color: #8b949e;
+            --border-color: rgba(255, 255, 255, 0.1);
         }
 
+        /* Set the body font and background */
         body {
             font-family: 'Tajawal', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-light);
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.4s ease, color 0.4s ease;
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-        }
-
-        body.dark-mode {
-            background-color: var(--bg-dark);
-            color: var(--text-dark);
-        }
-
-        .header {
-            background: var(--header-bg-light);
-            padding: 12px 30px;
-            box-shadow: 0 4px 15px var(--header-shadow-light);
-            border-radius: 0 0 20px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky; /* Changed to sticky for better behavior on scroll */
-            top: 0;
-            z-index: 1000;
-            transition: background 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        body.dark-mode .header {
-            background: var(--header-bg-dark);
-            box-shadow: 0 4px 15px var(--header-shadow-dark);
-        }
-
-        .header-text span {
-            color: var(--header-text-light);
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-            font-size: 24px;
-            font-weight: 700;
-        }
-
-        body.dark-mode .header-text span {
-            color: var(--header-text-dark);
-        }
-
-        .header-text img {
-            height: 35px;
-            margin-left: 15px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-        }
-
-        #mode-toggle {
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            color: var(--header-text-light);
-            border-radius: 25px;
-            padding: 8px 20px;
-            transition: all 0.3s ease;
-            font-family: 'Tajawal', sans-serif;
-            font-weight: 700;
-            cursor: pointer;
-        }
-
-        body.dark-mode #mode-toggle {
-            background: rgba(0, 0, 0, 0.2);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            color: var(--header-text-dark);
-        }
-
-        #mode-toggle:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        body.dark-mode #mode-toggle:hover {
-            background: rgba(0, 0, 0, 0.3);
-        }
-
-        .bio-section {
-            background: var(--card-bg-light);
-            padding: 25px;
-            border-radius: 20px;
-            margin: 30px auto;
-            max-width: 800px;
-            box-shadow: 0 4px 20px var(--card-shadow-light);
-            line-height: 1.8;
-            text-align: right;
-            transition: background 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        body.dark-mode .bio-section {
-            background: var(--card-bg-dark);
-            box-shadow: 0 4px 20px var(--card-shadow-dark);
-        }
-
-        .bio-section h3 {
-            font-size: 28px;
-            color: var(--primary-accent-light);
-            margin-bottom: 20px;
-            font-weight: 700;
-            transition: color 0.4s ease;
-        }
-
-        body.dark-mode .bio-section h3 {
-            color: var(--primary-accent-dark);
-        }
-
-        .bio-section p {
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-
-        .more-details {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--more-details-bg-light);
-            padding: 10px 20px;
-            border-radius: 30px;
-            transition: background 0.3s, color 0.3s;
-            cursor: pointer;
-            font-weight: 700;
-            color: var(--primary-accent-light);
-        }
-
-        body.dark-mode .more-details {
-            background: var(--more-details-bg-dark);
-            color: var(--primary-accent-dark);
-        }
-
-        .more-details:hover {
-            background: var(--primary-accent-light);
-            color: var(--btn-text-light);
-        }
-
-        body.dark-mode .more-details:hover {
-            background: var(--primary-accent-dark);
-            color: var(--btn-text-dark);
-        }
-
-        .full-bio {
-            display: none;
-            margin-top: 20px;
-            border-top: 2px dashed var(--primary-accent-light);
-            padding-top: 20px;
-            transition: border-top-color 0.4s ease;
-        }
-
-        body.dark-mode .full-bio {
-            border-top-color: var(--primary-accent-dark);
-        }
-
-        .hero {
-            padding: 40px 20px 60px;
-        }
-
-        .hero h2 {
-            font-size: 32px;
-            line-height: 1.5;
-            margin-bottom: 30px;
-            font-weight: 900;
-        }
-
-        .hero h2 strong {
-            color: var(--primary-accent-light);
-            transition: color 0.4s ease;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
-        }
-
-        body.dark-mode .hero h2 strong {
-            color: var(--primary-accent-dark);
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
-        }
-
-        .btn-download {
-            background-image: var(--btn-gradient-light);
-            color: var(--btn-text-light);
-            padding: 18px 50px;
-            font-size: 22px;
-            border-radius: 40px;
-            box-shadow: 0 6px 20px var(--btn-shadow-light);
-            transition: transform 0.3s, box-shadow 0.3s, background-image 0.4s ease;
-            text-decoration: none;
-            display: inline-block;
-            cursor: pointer;
-            border: none;
-            position: relative;
-            font-weight: 700;
-        }
-
-        body.dark-mode .btn-download {
-            background-image: var(--btn-gradient-dark);
-            color: var(--btn-text-dark);
-            box-shadow: 0 6px 20px var(--btn-shadow-dark);
-        }
-
-        .btn-download::after {
-            content: "\f0ac"; /* Globe icon */
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            margin-right: 10px;
-        }
-
-        .btn-download:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px var(--btn-shadow-light);
-        }
-
-        body.dark-mode .btn-download:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px var(--btn-shadow-dark);
-        }
-
-        .safe {
-            margin: 15px 0;
-            font-size: 16px;
-            color: var(--safe-color-light);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            font-weight: 700;
-            transition: color 0.4s ease;
-        }
-
-        body.dark-mode .safe {
-            color: var(--safe-color-dark);
-        }
-
-        .safe::before {
-            content: "\f058"; /* Check circle icon */
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-        }
-
-        .banner {
-            margin: 40px auto;
-            max-width: 90%;
-            border-radius: 20px;
-            box-shadow: 0 8px 30px var(--card-shadow-light);
-            border: 3px solid var(--border-color-light);
-            display: block;
-            transition: box-shadow 0.4s ease, border-color 0.4s ease;
-        }
-
-        body.dark-mode .banner {
-            box-shadow: 0 8px 30px var(--card-shadow-dark);
-            border-color: var(--border-color-dark);
-        }
-
-        .small-btns {
-            margin: 40px 20px;
-        }
-
-        .small-btns h3 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 30px;
-            color: var(--primary-accent-light);
-        }
-
-        body.dark-mode .small-btns h3 {
-            color: var(--primary-accent-dark);
-        }
-
-        .btn-section {
-            margin-bottom: 30px;
-            padding: 20px;
-            background-color: var(--card-bg-light);
-            border-radius: 20px;
-            box-shadow: 0 4px 15px var(--card-shadow-light);
-            transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
-        }
-
-        body.dark-mode .btn-section {
-            background-color: var(--card-bg-dark);
-            box-shadow: 0 4px 15px var(--card-shadow-dark);
-        }
-
-        .btn-small {
-            background-image: var(--btn-gradient-light);
-            color: var(--btn-text-light);
-            border-radius: 30px;
-            padding: 15px 35px;
-            font-size: 20px;
-            box-shadow: 0 4px 15px var(--btn-shadow-light);
-            transition: transform 0.3s, box-shadow 0.3s, background-image 0.4s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            border: none;
-            cursor: pointer;
-            font-weight: 700;
-            width: auto;
-            min-width: 220px;
-        }
-
-        body.dark-mode .btn-small {
-            background-image: var(--btn-gradient-dark);
-            color: var(--btn-text-dark);
-            box-shadow: 0 4px 15px var(--btn-shadow-dark);
-        }
-
-        .btn-small:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px var(--btn-shadow-light);
-        }
-
-        body.dark-mode .btn-small:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px var(--btn-shadow-dark);
-        }
-
-        .btn-small i {
-            font-size: 20px;
-        }
-
-        .subject-img {
-            margin: 25px auto;
-            width: 90%;
-            max-width: 450px;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px var(--card-shadow-light);
-            border: 3px solid var(--primary-accent-light);
-            display: block;
-            transition: box-shadow 0.4s ease, border-color 0.4s ease;
-        }
-
-        body.dark-mode .subject-img {
-            box-shadow: 0 8px 25px var(--card-shadow-dark);
-            border-color: var(--primary-accent-dark);
-        }
-
-        .site-footer {
-            background: var(--footer-bg-light);
-            color: var(--footer-text-light);
-            padding: 25px;
-            text-align: center;
-            font-size: 16px;
-            margin-top: auto;
-            font-weight: 700;
-            transition: background 0.4s ease, color 0.4s ease;
-        }
-
-        body.dark-mode .site-footer {
-            background: var(--footer-bg-dark);
-            color: var(--footer-text-dark);
-        }
-
-        /* --- Floating Action Buttons Area --- */
-        .floating-actions-container {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column; /* Stack buttons vertically initially */
-            align-items: center;
-            gap: 10px;
-            z-index: 990; /* Below settings button, above other content */
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .floating-actions-container.hidden {
-            opacity: 0;
-            transform: translateX(-50%) translateY(100px); /* Move down when hidden */
-            pointer-events: none;
-        }
-
-
-        .whatsapp-bar {
-            /* position: fixed; */ /* Removed as it's now part of the container */
-            /* bottom: 20px; */
-            /* left: 50%; */
-            /* transform: translateX(-50%); */
-            width: auto;
-            min-width: 250px; /* Adjusted min-width */
-            max-width: 90%;
-            background: linear-gradient(90deg, #25D366 0%, #128C7E 100%);
-            padding: 10px 20px; /* Adjusted padding */
-            border-radius: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.25); /* Adjusted shadow */
-            /* z-index: 1000; */ /* Managed by container */
-            cursor: pointer;
-            /* animation: pulse 1.5s infinite; */ /* Consider removing or adjusting pulse */
-            color: white;
-            transition: transform 0.2s ease;
-            order: 3; /* Order within the flex container */
-        }
-
-        .whatsapp-bar:hover {
-            transform: scale(1.03); /* Simpler hover effect */
-        }
-
-        .whatsapp-bar i.fab.fa-whatsapp {
-            font-size: 22px; /* Adjusted size */
-            color: white;
-        }
-
-        .whatsapp-text {
-            font-size: 16px; /* Adjusted size */
-            font-weight: 700;
-        }
-
-        .support-button {
-            /* position: fixed; */
-            /* bottom: 80px; */ /* Adjusted to be above WhatsApp bar */
-            /* left: 50%; */
-            /* transform: translateX(-50%); */
-            background-image: var(--btn-gradient-light);
-            color: var(--btn-text-light);
-            padding: 10px 22px; /* Adjusted padding */
-            font-size: 16px; /* Adjusted size */
-            border-radius: 30px;
-            box-shadow: 0 4px 12px var(--btn-shadow-light); /* Adjusted shadow */
-            transition: transform 0.3s, box-shadow 0.3s, background-image 0.4s ease;
-            text-decoration: none;
-            font-weight: 700;
-            /* z-index: 999; */
-            cursor: pointer;
-            order: 2; /* Order within the flex container */
-        }
-
-        body.dark-mode .support-button {
-            background-image: var(--btn-gradient-dark);
-            color: var(--btn-text-dark);
-            box-shadow: 0 4px 12px var(--btn-shadow-dark);
-        }
-
-        .support-button:hover {
-            transform: translateY(-2px); /* Adjusted hover effect */
-            box-shadow: 0 6px 18px var(--btn-shadow-light);
-        }
-
-        body.dark-mode .support-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 18px var(--btn-shadow-dark);
-        }
-
-        /* Audio Control Button */
-        #audio-control-btn {
-            /* position: fixed; */
-            /* bottom: 130px; */ /* Adjusted to be above support button */
-            /* left: 50%; */
-            /* transform: translateX(-50%); */
-            background-color: var(--audio-btn-bg-light);
-            color: var(--audio-btn-color-light);
-            border: 2px solid var(--audio-btn-color-light);
-            border-radius: 50%; /* Make it circular */
-            width: 45px; /* Adjusted width */
-            height: 45px; /* Adjusted height */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 18px; /* Icon size */
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Adjusted shadow */
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-            /* z-index: 998; */ /* Below support button, above other content */
-            order: 1; /* Order within the flex container */
-        }
-
-        body.dark-mode #audio-control-btn {
-            background-color: var(--audio-btn-bg-dark);
-            color: var(--audio-btn-color-dark);
-            border-color: var(--audio-btn-color-dark);
-        }
-
-        #audio-control-btn:hover {
-            background-color: var(--audio-btn-hover-bg-light);
-            color: var(--audio-btn-hover-color-light);
-            transform: scale(1.1); /* Adjusted hover effect */
-        }
-
-        body.dark-mode #audio-control-btn:hover {
-            background-color: var(--audio-btn-hover-bg-dark);
-            color: var(--audio-btn-hover-color-dark);
-        }
-        /* Settings Toggle Button (Gear Icon) */
-        #settings-toggle-btn {
-            position: fixed;
-            bottom: 20px; /* Adjust as needed */
-            right: 20px;  /* Position to the right */
-            background-color: var(--settings-btn-bg-light);
-            color: var(--settings-btn-color-light);
-            border: 2px solid var(--settings-btn-color-light);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            scroll-behavior: smooth;
+            cursor: none; /* Hide the default cursor */
+        }
+        
+        /* Custom cursor styles */
+        .custom-cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 22px;
-            cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-            z-index: 1001; /* Above other floating buttons */
-        }
-        body.dark-mode #settings-toggle-btn {
-            background-color: var(--settings-btn-bg-dark);
-            color: var(--settings-btn-color-dark);
-            border-color: var(--settings-btn-color-dark);
-        }
-        #settings-toggle-btn:hover {
-            background-color: var(--settings-btn-hover-bg-light);
-            color: var(--settings-btn-hover-color-light);
-            transform: scale(1.1) rotate(45deg);
-        }
-        body.dark-mode #settings-toggle-btn:hover {
-            background-color: var(--settings-btn-hover-bg-dark);
-            color: var(--settings-btn-hover-color-dark);
-        }
-        /* --- End Floating Action Buttons Area --- */
-
-
-        .custom-modal {
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.9); /* Initial state for animation */
-            background: var(--modal-content-bg-light);
-            color: var(--modal-content-text-light);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            z-index: 2000;
-            max-width: 400px;
-            width: 90%;
-            text-align: center;
-            display: none;
-            transition: background 0.4s ease, color 0.4s ease, transform 0.3s ease, opacity 0.3s ease;
-            opacity: 0;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
         }
 
-        body.dark-mode .custom-modal {
-            background: var(--modal-content-bg-dark);
-            color: var(--modal-content-text-dark);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        .custom-cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s, opacity 0.2s;
+        }
+        
+        /* Cursor hover effects */
+        body:has(a:hover, button:hover, .lang-switcher:hover, .portfolio-card:hover) .custom-cursor-dot {
+            background-color: rgba(255,255,255,0.8);
+        }
+         body:has(a:hover, button:hover, .lang-switcher:hover, .portfolio-card:hover) .custom-cursor-outline {
+            transform: translate(-50%, -50%) scale(1.4);
+            opacity: 0.5;
         }
 
-        .custom-modal.active {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
+        /* Custom font for the main hero title */
+        .font-knewave {
+            font-family: 'Knewave', cursive;
         }
 
-        .modal-overlay {
+        /* Glassmorphism effect for cards and header */
+        .glass-effect {
+            background: rgba(22, 27, 34, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Styling for the animated text cursor from Typed.js */
+        .typed-cursor {
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+        
+        /* Glowing particle canvas background */
+        .network-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        /* Active navigation link style */
+        .nav-links a.active {
+            color: var(--primary-color);
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+
+        /* Preloader styles */
+        #preloader {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--modal-bg-overlay);
-            z-index: 1999;
-            display: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            background-color: var(--bg-color);
+            z-index: 10000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+        }
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--surface-color);
+            border-top: 5px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
-        .modal-overlay.active {
-            opacity: 1;
+        /* Cosmic Elements Styles */
+        .cosmic-element {
+            position: absolute;
+            will-change: transform;
+            pointer-events: none;
+            z-index: 5; 
         }
-
-        .modal-content {
-            font-size: 18px;
-            margin: 10px 0 20px;
+        #astronaut-1 { width: 150px; top: 20%; left: 10%; animation: float-1 8s ease-in-out infinite; }
+        #astronaut-2 { width: 100px; top: 50%; right: 15%; animation: float-2 12s ease-in-out infinite; animation-delay: -3s; }
+        #moon { width: 150px; animation: moon-roam 45s linear infinite; }
+        
+        @keyframes float-1 { 0% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-30px) rotate(5deg); } 100% { transform: translateY(0px) rotate(0deg); } }
+        @keyframes float-2 { 0% { transform: translateY(0px) rotate(-10deg) scaleX(-1); } 50% { transform: translateY(25px) translateX(-20px) rotate(-5deg) scaleX(-1); } 100% { transform: translateY(0px) rotate(-10deg) scaleX(-1); } }
+        @keyframes moon-roam { 0% { top: 70%; left: -10%; transform: scale(0.8) rotate(-20deg); } 25% { top: 40%; left: 40%; transform: scale(1) rotate(0deg); } 50% { top: 15%; left: 75%; transform: scale(0.9) rotate(20deg); } 75% { top: 45%; left: 40%; transform: scale(1.1) rotate(0deg); } 100% { top: 70%; left: -10%; transform: scale(0.8) rotate(-20deg); } }
+        
+        @media (max-width: 768px) {
+            #astronaut-1 { width: 100px; top: 15%;}
+            #astronaut-2 { width: 80px; top: 60%; right: 5%;}
+            #moon { width: 100px; }
         }
-
-        .modal-content i.fas {
-            font-size: 40px;
-            color: var(--primary-accent-light);
-            margin-bottom: 15px;
-            transition: color 0.4s ease;
-        }
-
-        body.dark-mode .modal-content i.fas {
-            color: var(--primary-accent-dark);
-        }
-
-        .modal-content h3 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .modal-close {
-            background: var(--modal-btn-bg-light);
-            color: var(--modal-btn-text-light);
-            border: none;
-            padding: 12px 35px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 700;
-            transition: transform 0.3s, background 0.4s ease;
-        }
-
-        body.dark-mode .modal-close {
-            background: var(--modal-btn-bg-dark);
-            color: var(--modal-btn-text-dark);
-        }
-
-        .modal-close:hover {
-            transform: scale(1.05);
-        }
-
-
-        @keyframes pulse {
-            0% {
-                /* transform: translateX(-50%) scale(1); */ /* Adjusted due to container */
-                box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            }
-            50% {
-                /* transform: translateX(-50%) scale(1.03); */
-                box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
-            }
-            100% {
-                /* transform: translateX(-50%) scale(1); */
-                box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            }
-        }
-        .whatsapp-bar.pulsing { /* Apply pulse animation selectively */
-            animation: pulse 1.5s infinite;
-        }
-
     </style>
 </head>
-<body>
-    <div class="header">
-        <div class="header-text">
-            <img src="https://i.postimg.cc/T3Zjrd5B/red-and-blue-gradient-bold-modern-abstract-programmer-logo-11032625-png-f305cw.webp" alt="Logo" />
-            <span>«/» سيف_saif_s_a «/»</span>
-        </div>
-        <button id="mode-toggle">الوضع الليلي</button>
+<body class="overflow-x-hidden">
+
+    <!-- Custom Cursor Elements -->
+    <div class="custom-cursor-dot"></div>
+    <div class="custom-cursor-outline"></div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
     </div>
 
-    <div class="bio-section">
-        <h3>عن سيف</h3>
-        <p id="intro-bio">
-            أنا سيف، مبرمج موهوب عمري 16 سنة، طورت مشاريع كبيرة مثل تطبيقات إلكترونية ومواقع تعليمية، وأعمل على مشاريع ذكاء اصطناعي مبتكرة...
-        </p>
-        <span class="more-details" onclick="toggleBio()"><i class="fas fa-chevron-down"></i> المزيد من التفاصيل</span>
-        <div class="full-bio" id="full-bio">
-            <p>في سن السادسة عشرة، التحقت بدورات متعددة في لغات البرمجة وتصميم الواجهات. نفذت عدة مشاريع حقيقية لخدمات تعليمية وتجارية.</p>
-            <p>أؤمن بأن التقنية قادرة على إحداث فرق حقيقي، وأسعى دائمًا إلى تحسين مهاراتي واستخدام أحدث الأدوات في بناء تطبيقات تخدم المستخدم.</p>
-            <p>مشروعي الأخير هو موقع <strong>المدرس الذكي SAIFX</strong>، وهو مدرس لكل المواد يعمل بالذكاء الاصطناعي، متطور ومجاني لمساعدتك في الدراسة.</p>
-        </div>
-    </div>
-
-    <div class="hero">
-        <h2>
-            اكتشف <strong>المدرس الذكي SAIFX</strong><br/>
-            مساعدك الدراسي لكل المواد مجاناً بالذكاء الاصطناعي
-        </h2>
-        <!-- === تم تحديث الرابط هنا === -->
-        <a href="https://tinyurl.com/saif-ai" class="btn-download" target="_blank" onclick="showDownloadModal(event)">
-            الذهاب إلى SAIFX
-        </a>
-        <div class="safe">موقع آمن ومجاني</div>
-        <img src="https://i.postimg.cc/cHp8sRTV/pngtree-d-rendering-of-an-adorable-ai-robot-reading-a-book-depicting-image-3803398.jpg" alt="المدرس الذكي SAIFX" class="banner"/>
-    </div>
-
-    <div class="small-btns">
-        <h3><i class="fas fa-file-alt" style="margin-left: 8px;"></i>موقع الاختبارات</h3>
-        <div class="btn-section">
-            <a href="https://saif1230876657.github.io/saifSAR1/" class="btn-small" target="_blank">
-                <i class="fas fa-clipboard-check"></i> دخول للاختبارات
+    <!-- Header Section -->
+    <header id="header" class="glass-effect fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="logo" aria-label="Home">
+                <svg class="w-10 h-10 text-white hover:text-primary-color transition-colors duration-300 transform hover:rotate-[-15deg] hover:scale-110" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,2A10,10,0,0,0,2,12c0,4.23,2.6,7.85,6.29,9.28a.5.5,0,0,0,.68-.54V18.5a.5.5,0,0,1,.5-.5h5a.5.5,0,0,1,.5.5v2.24a.5.5,0,0,0,.68.54C19.4,19.85,22,16.23,22,12A10,10,0,0,0,12,2ZM8,12a2,2,0,1,1,2,2A2,2,0,0,1,8,12Zm8,0a2,2,0,1,1,2,2A2,2,0,0,1,16,12Z"/></svg>
             </a>
-            <img src="https://i.postimg.cc/q7RXFBxg/pngtree-test-prep-courses-and-apps-featuring-3d-icon-isolated-on-a-png-image-15381423.png" alt="موقع الاختبارات" class="subject-img"/>
+            <nav class="hidden md:flex items-center space-x-8">
+                <ul class="nav-links flex space-x-8">
+                    <li><a href="#home" data-key="nav_home" class="text-lg font-bold hover:text-primary-color transition-colors duration-300">Home</a></li>
+                    <li><a href="#about" data-key="nav_about" class="text-lg font-bold hover:text-primary-color transition-colors duration-300">About</a></li>
+                    <li><a href="#services" data-key="nav_services" class="text-lg font-bold hover:text-primary-color transition-colors duration-300">Services</a></li>
+                    <li><a href="#skills" data-key="nav_skills" class="text-lg font-bold hover:text-primary-color transition-colors duration-300">Skills</a></li>
+                    <li><a href="#portfolio" data-key="nav_portfolio" class="text-lg font-bold hover:text-primary-color transition-colors duration-300">Portfolio</a></li>
+                    <li><a href="#contact" data-key="nav_contact" class="text-lg font-bold hover:text-primary-color transition-colors duration-300">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="lang-switcher glass-effect text-white font-bold py-2 px-4 rounded-full cursor-pointer hover:bg-primary-color transition-all duration-300" id="lang-switcher">AR</div>
         </div>
+    </header>
 
-        <h3><i class="fas fa-search" style="margin-left: 8px;"></i>محرك بحث ذكي ومتنوع المصادر</h3>
-        <div class="btn-section">
-            <a href="https://saif1230876657.github.io/my-store/" class="btn-small" target="_blank">
-                <i class="fas fa-search"></i> استخدام محرك البحث
-            </a>
-            <img src="https://i.postimg.cc/sxV4m25N/image.jpg" alt="محرك البحث الذكي" class="subject-img"/>
-        </div>
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="h-screen flex items-center justify-center text-center relative overflow-hidden bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=2071&auto-format&fit=crop');">
+            <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+            <div class="relative z-10 px-4" data-aos="fade-up">
+                <h1 class="font-knewave text-6xl md:text-8xl lg:text-9xl text-white uppercase tracking-wider" style="text-shadow: 0 0 15px rgba(0,0,0,0.7), 4px 4px 0px #0d1117;">
+                    Saif,SA
+                </h1>
+                <p class="text-xl md:text-2xl mt-4 text-gray-300 font-medium">
+                    <span data-key="hero_subtitle_prefix">I'm a </span><span id="typed-subtitle"></span>
+                </p>
+            </div>
+            <!-- === Animated Cosmic Elements (UPDATED) === -->
+            <img src="https://i.postimg.cc/15L2K4wT/1000137153.png" alt="Astronaut 1" id="astronaut-1" class="cosmic-element">
+            <img src="https://i.postimg.cc/15L2K4wT/1000137153.png" alt="Astronaut 2" id="astronaut-2" class="cosmic-element">
+            <img src="https://pngimg.com/d/moon_PNG14.png" alt="Moon" id="moon" class="cosmic-element">
+        </section>
 
-        <h3><i class="fas fa-brain" style="margin-left: 8px;"></i>AI لمساعدتك في المذاكرة</h3>
-        <div class="btn-section">
-            <a href="https://saif1230876657.github.io/saif0/" class="btn-small" target="_blank">
-                <i class="fas fa-landmark"></i> مدرس التاريخ
-            </a>
-            <img src="https://i.postimg.cc/sXsst8NN/Egypt-Pyramids-Photos-41.jpg" alt="التاريخ" class="subject-img"/>
-        </div>
-        <script async="async" data-cfasync="false" src="//pl26642122.profitableratecpm.com/207bfbb4822f7b530ad2c391a896859c/invoke.js"></script>
-        <div id="container-207bfbb4822f7b530ad2c391a896859c"></div>
-        <div class="btn-section">
-            <a href="https://saif1230876657.github.io/saifSA.-X/" class="btn-small" target="_blank">
-                <i class="fas fa-flask"></i> مدرس العلوم
-            </a>
-            <img src="https://i.postimg.cc/tR51Xqqp/14a902fd15ca623a7337c1412661180e.jpg" alt="العلوم" class="subject-img"/>
-        </div>
+        <!-- About Section -->
+        <section id="about" class="py-20 lg:py-32">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div data-aos="fade-right" data-aos-duration="800">
+                        <img src="https://i.postimg.cc/MpqbxSSH/68f8caaf8a8b48dbbdcc4be42abb5d69-ezgif-com-video-to-gif-converter.gif" alt="Welcome GIF" class="rounded-2xl shadow-2xl w-full max-w-md mx-auto">
+                    </div>
+                    <div data-aos="fade-left" data-aos-duration="800" data-aos-delay="200" class="text-center lg:text-left">
+                        <h2 class="text-4xl lg:text-5xl font-black mb-4" data-key="about_title">Welcome!</h2>
+                        <p class="text-lg text-subtext-color leading-relaxed" data-key="about_text">
+                            I'm Saif, a talented <span id="age">16</span>-year-old programmer and passionate developer specializing in creating designs and user experiences that balance creativity and precision, keeping up with the latest technologies and trends.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        <!-- === تم إضافة القسم الجديد هنا === -->
-        <h3><i class="fas fa-gamepad" style="margin-left: 8px;"></i>موقع اللاعبين والتليجرام</h3>
-        <div class="btn-section">
-            <a href="https://tinyurl.com/saifxcv" class="btn-small" target="_blank">
-                <i class="fab fa-telegram-plane"></i> الذهاب إلى الموقع
-            </a>
-            <img src="https://i.postimg.cc/LXvvF8Q8/pngtree-flat-icon-of-a-group-of-people-playing-a-game-vector-png-image-12297564.png" alt="موقع اللاعبين والتليجرام" class="subject-img"/>
-        </div>
-    </div>
+        <!-- Services Section -->
+        <section id="services" class="py-20 lg:py-32 bg-surface-color relative">
+            <canvas class="network-canvas"></canvas>
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h2 class="text-4xl lg:text-5xl font-black mb-4" data-key="services_title" data-aos="fade-up">What I Do</h2>
+                <p class="text-lg text-subtext-color max-w-2xl mx-auto mb-16" data-key="services_subtitle" data-aos="fade-up" data-aos-delay="100">
+                    I specialize in crafting beautiful, functional, and user-centric digital experiences.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="glass-effect p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-primary-color mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg></div>
+                        <h3 class="text-2xl font-bold mb-2" data-key="service_1_title">UI/UX Design</h3>
+                        <p class="text-subtext-color" data-key="service_1_desc">Creating intuitive and visually appealing interfaces that users love.</p>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="glass-effect p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-primary-color mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></div>
+                        <h3 class="text-2xl font-bold mb-2" data-key="service_2_title">Web Development</h3>
+                        <p class="text-subtext-color" data-key="service_2_desc">Building responsive, high-performance websites from the ground up.</p>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="glass-effect p-8 rounded-2xl text-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="text-primary-color mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.71.71a5.4 5.4 0 0 0 0 7.65l.71.71a5.4 5.4 0 0 0 7.65 0l.71-.71a5.4 5.4 0 0 0 0-7.65z"></path><path d="m3.58 20.42 7.65-7.65"></path></svg></div>
+                        <h3 class="text-2xl font-bold mb-2" data-key="service_3_title">Prototyping</h3>
+                        <p class="text-subtext-color" data-key="service_3_desc">Bringing ideas to life with interactive prototypes and mockups.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer class="site-footer">
-        <p>© جميع الحقوق محفوظة <span id="currentYear"></span> | تطوير سيف س.أ <i class="fas fa-laptop-code"></i></p>
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 lg:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl lg:text-5xl font-black mb-4" data-key="skills_title" data-aos="fade-up">My Tech Stack</h2>
+                <p class="text-lg text-subtext-color max-w-2xl mx-auto mb-16" data-key="skills_subtitle" data-aos="fade-up" data-aos-delay="100">
+                    I work with modern tools and technologies to build the best products.
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-4xl mx-auto">
+                    <div class="glass-effect p-6 rounded-2xl flex flex-col items-center justify-center transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="h-16 w-16 mb-2"/>
+                        <h3 data-key="skill_html" class="font-bold text-lg">HTML5</h3>
+                    </div>
+                    <div class="glass-effect p-6 rounded-2xl flex flex-col items-center justify-center transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="250">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="h-16 w-16 mb-2"/>
+                        <h3 data-key="skill_css" class="font-bold text-lg">CSS3</h3>
+                    </div>
+                    <div class="glass-effect p-6 rounded-2xl flex flex-col items-center justify-center transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="h-16 w-16 mb-2"/>
+                        <h3 data-key="skill_js" class="font-bold text-lg">JavaScript</h3>
+                    </div>
+                    <div class="glass-effect p-6 rounded-2xl flex flex-col items-center justify-center transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="350">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="h-16 w-16 mb-2"/>
+                        <h3 data-key="skill_figma" class="font-bold text-lg">Figma</h3>
+                    </div>
+                    <div class="glass-effect p-6 rounded-2xl flex flex-col items-center justify-center transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" class="h-16 w-16 mb-2"/>
+                        <h3 data-key="skill_photoshop" class="font-bold text-lg">Photoshop</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="py-20 lg:py-32 bg-surface-color relative">
+             <canvas class="network-canvas"></canvas>
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h2 class="text-4xl lg:text-5xl font-black mb-4" data-key="portfolio_title" data-aos="fade-up">Featured Works</h2>
+                <p class="text-lg text-subtext-color max-w-2xl mx-auto mb-16" data-key="portfolio_subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Here are some of the projects I'm proud of.
+                </p>
+                <div class="portfolio-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid-container">
+                    <!-- Portfolio cards are injected here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 lg:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl lg:text-5xl font-black mb-4" data-key="contact_title" data-aos="fade-up">Let's Talk!</h2>
+                <p class="text-lg text-subtext-color max-w-2xl mx-auto mb-12" data-key="contact_text" data-aos="fade-up" data-aos-delay="100">
+                    Have a project idea? I'd love to hear about it. Reach out via one of the methods below.
+                </p>
+                
+                <div class="social-icons flex justify-center items-center flex-wrap gap-4" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://wa.me/201202687082" target="_blank" aria-label="WhatsApp" class="w-16 h-16 rounded-full glass-effect flex items-center justify-center text-primary-color hover:bg-primary-color hover:text-white transition-all duration-300 transform hover:scale-110">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    </a>
+                    <a href="https://t.me/cxs001" target="_blank" aria-label="Telegram" class="w-16 h-16 rounded-full glass-effect flex items-center justify-center text-primary-color hover:bg-primary-color hover:text-white transition-all duration-300 transform hover:scale-110">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </a>
+                    <a href="mailto:a42492692@gmail.com" aria-label="Email" class="w-16 h-16 rounded-full glass-effect flex items-center justify-center text-primary-color hover:bg-primary-color hover:text-white transition-all duration-300 transform hover:scale-110">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-surface-color py-8">
+        <div class="container mx-auto px-6 text-center text-subtext-color">
+            <p>&copy; <span id="current-year">2024</span> Saif,SA. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <div class="modal-overlay" id="modalOverlay"></div>
-    <div class="custom-modal" id="customModal">
-        <div class="modal-content">
-            <i class="fas fa-chalkboard-teacher"></i>
-            <h3>جاري توجيهك إلى الموقع</h3>
-            <p>سيتم نقلك الآن إلى موقع المدرس الذكي SAIFX.</p>
-        </div>
-        <button class="modal-close" onclick="closeModal()">موافق</button> </div>
 
-    <div class="floating-actions-container" id="floatingActionsContainer">
-        <button id="audio-control-btn">
-            <i class="fas fa-volume-up"></i>
-        </button>
-        <a href="https://www.profitableratecpm.com/k8fisnjjc?key=afa7ea920578f74cea5997d670bbe78e" class="support-button" target="_blank">
-            دعم ❤️
-        </a>
-        <div class="whatsapp-bar pulsing" onclick="window.open('https://wa.me/201202687082', '_blank')">
-            <i class="fab fa-whatsapp"></i>
-            <span class="whatsapp-text">للتواصل مع سيف</span>
-            <i class="fab fa-whatsapp"></i>
-        </div>
-    </div>
+    <!-- Back to Top Button -->
+    <a href="#home" id="back-to-top" class="back-to-top-btn fixed bottom-8 right-8 w-14 h-14 rounded-full bg-primary-color text-white flex items-center justify-center shadow-lg transform translate-y-24 opacity-0 transition-all duration-300 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+    </a>
 
-    <button id="settings-toggle-btn">
-        <i class="fas fa-cog"></i> </button>
-
-    <audio id="background-audio" loop>
-        <source src="https://files.catbox.moe/jn87gj.wav" type="audio/wav"> متصفحك لا يدعم عنصر الصوت.
-    </audio>
+    <!-- AOS (Animate on Scroll) Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Typed.js for animated text -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
     <script>
-        const toggleBtn = document.getElementById('mode-toggle');
-        const body = document.body;
-        const modalOverlay = document.getElementById('modalOverlay');
-        const customModal = document.getElementById('customModal');
-        let redirectTimeoutId = null;
+    document.addEventListener('DOMContentLoaded', () => {
 
-        // عناصر التحكم في الصوت
-        const audioControlBtn = document.getElementById('audio-control-btn');
-        const backgroundAudio = document.getElementById('background-audio');
-        let isAudioPlaying = false;
-        let userInteracted = false; // Track if user has interacted
-
-        // Floating actions and settings toggle
-        const floatingActionsContainer = document.getElementById('floatingActionsContainer');
-        const settingsToggleBtn = document.getElementById('settings-toggle-btn');
-        let areActionsVisible = true; // Initially visible
-
-
-        // Attempt to autoplay audio
-        function attemptAutoplay() {
-            if (userInteracted) { // Only play if user has interacted
-                backgroundAudio.play().then(() => {
-                    isAudioPlaying = true;
-                    audioControlBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
-                }).catch(error => {
-                    console.log("Autoplay failed after interaction or audio error: ", error);
-                    isAudioPlaying = false;
-                    audioControlBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-                });
-            } else {
-                 // If no interaction, set to play icon, actual play will happen on first click of audio button
-                isAudioPlaying = false;
-                audioControlBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-                console.log("Autoplay prevented. Waiting for user interaction or audio button click.");
-            }
-        }
-
-        // Function to handle user interaction and then attempt autoplay
-        function handleFirstInteraction() {
-            if (!userInteracted) {
-                userInteracted = true;
-                // Potentially try to play audio immediately after first interaction
-                // Or rely on the audio button click
-                console.log("User interaction detected.");
-                // attemptAutoplay(); // You can call it here if you want sound after any first click
-            }
-        }
-
-        // Add event listeners for common interactions to set userInteracted flag
-        document.addEventListener('click', handleFirstInteraction, { once: true });
-        document.addEventListener('scroll', handleFirstInteraction, { once: true });
-        document.addEventListener('keydown', handleFirstInteraction, { once: true });
-
-
+        // --- PRELOADER ---
+        const preloader = document.getElementById('preloader');
         window.addEventListener('load', () => {
-            // Don't attempt autoplay immediately on load.
-            // It will be handled by user interaction or explicit button click.
-            // Set initial icon based on a default non-playing state.
-            audioControlBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-            isAudioPlaying = false; // Ensure this is set correctly
-
-            // Ensure floating actions are visible by default
-            floatingActionsContainer.classList.remove('hidden');
-            areActionsVisible = true;
-            settingsToggleBtn.innerHTML = '<i class="fas fa-cog"></i>'; // Initial icon for settings
+            preloader.style.opacity = '0';
+            preloader.style.visibility = 'hidden';
         });
 
-
-        audioControlBtn.addEventListener('click', () => {
-            if (!userInteracted) { // If this is the first interaction via audio button
-                userInteracted = true;
-            }
-
-            if (isAudioPlaying) {
-                backgroundAudio.pause();
-                audioControlBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-            } else {
-                backgroundAudio.play().then(() => {
-                    audioControlBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
-                }).catch(error => {
-                    console.log("Error playing audio: ", error);
-                    // In case of error, don't change the state or icon
-                    return;
-                });
-            }
-            isAudioPlaying = !isAudioPlaying;
+        // --- AOS INITIALIZATION ---
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+        });
+        
+        // --- CUSTOM CURSOR ---
+        const cursorDot = document.querySelector('.custom-cursor-dot');
+        const cursorOutline = document.querySelector('.custom-cursor-outline');
+        window.addEventListener('mousemove', (e) => {
+            const { clientX: posX, clientY: posY } = e;
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+            cursorOutline.style.left = `${posX}px`;
+            cursorOutline.style.top = `${posY}px`;
         });
 
-        // Settings Toggle Functionality
-        settingsToggleBtn.addEventListener('click', () => {
-            areActionsVisible = !areActionsVisible;
-            if (areActionsVisible) {
-                floatingActionsContainer.classList.remove('hidden');
-                settingsToggleBtn.innerHTML = '<i class="fas fa-cog"></i>'; // Gear icon
-                settingsToggleBtn.style.transform = 'rotate(0deg)';
+        // --- DYNAMIC AGE & YEAR ---
+        const birthDate = new Date('2008-01-01'); // Set your birth date here
+        const age = new Date().getFullYear() - birthDate.getFullYear();
+        document.getElementById('age').textContent = age;
+        document.getElementById('current-year').textContent = new Date().getFullYear();
 
-            } else {
-                floatingActionsContainer.classList.add('hidden');
-                settingsToggleBtn.innerHTML = '<i class="fas fa-eye-slash"></i>'; // Or another icon like times, eye-slash
-                settingsToggleBtn.style.transform = 'rotate(90deg)';
+        // --- TRANSLATIONS & DATA ---
+        const translations = {
+            en: {
+                // Nav
+                nav_home: "Home", nav_about: "About", nav_services: "Services", nav_skills: "Skills", nav_portfolio: "Portfolio", nav_contact: "Contact",
+                // Hero
+                hero_subtitle_prefix: "I'm a",
+                hero_subtitle_typed: ["Creative Developer", "UI/UX Enthusiast", "Problem Solver"],
+                // About
+                about_title: "Welcome!",
+                about_text: `I'm Saif, a talented ${age}-year-old programmer and passionate developer specializing in creating designs and user experiences that balance creativity and precision, keeping up with the latest technologies and trends.`,
+                // Services
+                services_title: "What I Do",
+                services_subtitle: "I specialize in crafting beautiful, functional, and user-centric digital experiences.",
+                service_1_title: "UI/UX Design", service_1_desc: "Creating intuitive and visually appealing interfaces that users love.",
+                service_2_title: "Web Development", service_2_desc: "Building responsive, high-performance websites from the ground up.",
+                service_3_title: "Prototyping", service_3_desc: "Bringing ideas to life with interactive prototypes and mockups.",
+                // Skills
+                skills_title: "My Tech Stack",
+                skills_subtitle: "I work with modern tools and technologies to build the best products.",
+                skill_html: "HTML5", skill_css: "CSS3", skill_js: "JavaScript", skill_figma: "Figma", skill_photoshop: "Photoshop",
+                // Portfolio
+                portfolio_title: "Featured Works",
+                portfolio_subtitle: "Here are some of the projects I'm proud of.",
+                portfolio_item_button: "Visit Project",
+                // Contact
+                contact_title: "Let's Talk!",
+                contact_text: "Have a project idea? I'd love to hear about it. Reach out via one of the methods below.",
+            },
+            ar: {
+                // Nav
+                nav_home: "الرئيسية", nav_about: "عني", nav_services: "خدماتي", nav_skills: "المهارات", nav_portfolio: "أعمالي", nav_contact: "تواصل معي",
+                // Hero
+                hero_subtitle_prefix: "أنا",
+                hero_subtitle_typed: ["مطور مبدع", "مهتم بتجربة المستخدم", "محلل للمشكلات"],
+                // About
+                about_title: "أهلاً بك!",
+                about_text: `أنا سيف، مبرمج موهوب عمري ${age} سنة، مطور شغوف متخصص في إنشاء تصميمات وتجارب مستخدم توازن بين الإبداع والدقة، مع مواكبة أحدث التقنيات والاتجاهات.`,
+                // Services
+                services_title: "ماذا أقدم",
+                services_subtitle: "أتخصص في صياغة تجارب رقمية جميلة وعملية ومتمحورة حول المستخدم.",
+                service_1_title: "تصميم واجهة وتجربة المستخدم", service_1_desc: "إنشاء واجهات سهلة الاستخدام وجذابة بصريًا يحبها المستخدمون.",
+                service_2_title: "تطوير الويب", service_2_desc: "بناء مواقع ويب سريعة الاستجابة وعالية الأداء من البداية.",
+                service_3_title: "النماذج الأولية", service_3_desc: "تحويل الأفكار إلى واقع من خلال النماذج الأولية التفاعلية.",
+                // Skills
+                skills_title: "تقنياتي",
+                skills_subtitle: "أعمل بأدوات وتقنيات حديثة لبناء أفضل المنتجات.",
+                skill_html: "HTML5", skill_css: "CSS3", skill_js: "JavaScript", skill_figma: "Figma", skill_photoshop: "Photoshop",
+                // Portfolio
+                portfolio_title: "أعمال مميزة",
+                portfolio_subtitle: "إليك بعض المشاريع التي أفتخر بها.",
+                portfolio_item_button: "زيارة المشروع",
+                // Contact
+                contact_title: "لنتحدث!",
+                contact_text: "هل لديك فكرة مشروع؟ أحب أن أسمع عنها. تواصل معي عبر إحدى الطرق التالية.",
             }
-        });
+        };
 
+        const portfolioData = {
+            en: [
+                { img: 'https://i.postimg.cc/cHp8sRTV/pngtree-d-rendering-of-an-adorable-ai-robot-reading-a-book-depicting-image-3803398.jpg', title: 'SAIFX Smart Tutor', description: 'Your AI-powered study assistant for all subjects, completely free.', link: 'https://tinyurl.com/saif-ai', tags: ['AI', 'Education'] },
+                { img: 'https://i.postimg.cc/q7RXFBxg/pngtree-test-prep-courses-and-apps-featuring-3d-icon-isolated-on-a-png-image-15381423.png', title: 'Exams Website', description: 'An online platform for taking tests and quizzes across various subjects.', link: 'https://saif1230876657.github.io/saifSAR1/', tags: ['Web App', 'Tool'] },
+                { img: 'https://i.postimg.cc/sxV4m25N/image.jpg', title: 'Smart Search Engine', description: 'A versatile search engine that aggregates results from multiple sources.', link: 'https://saif1230876657.github.io/my-store/', tags: ['Web App', 'Utility'] },
+                { img: 'https://i.postimg.cc/sXsst8NN/Egypt-Pyramids-Photos-41.jpg', title: 'AI History Tutor', description: 'An AI specialized in teaching history, making learning interactive and fun.', link: 'https://saif1230876657.github.io/saif0/', tags: ['AI', 'Education'] },
+                { img: 'https://i.postimg.cc/tR51Xqqp/14a902fd15ca623a7337c1412661180e.jpg', title: 'AI Science Tutor', description: 'Your personal AI tutor for science subjects, helping you understand complex concepts.', link: 'https://saif1230876657.github.io/saifSA.-X/', tags: ['AI', 'Tool'] }
+            ],
+            ar: [
+                { img: 'https://i.postimg.cc/cHp8sRTV/pngtree-d-rendering-of-an-adorable-ai-robot-reading-a-book-depicting-image-3803398.jpg', title: 'المدرس الذكي SAIFX', description: 'مساعدك الدراسي لكل المواد مجاناً بالذكاء الاصطناعي.', link: 'https://tinyurl.com/saif-ai', tags: ['ذكاء اصطناعي', 'تعليم'] },
+                { img: 'https://i.postimg.cc/q7RXFBxg/pngtree-test-prep-courses-and-apps-featuring-3d-icon-isolated-on-a-png-image-15381423.png', title: 'موقع الاختبارات', description: 'منصة إلكترونية لإجراء الاختبارات والمسابقات في مواد مختلفة.', link: 'https://saif1230876657.github.io/saifSAR1/', tags: ['تطبيق ويب', 'أداة'] },
+                { img: 'https://i.postimg.cc/sxV4m25N/image.jpg', title: 'محرك بحث ذكي', description: 'محرك بحث متنوع يجمع النتائج من مصادر متعددة.', link: 'https://saif1230876657.github.io/my-store/', tags: ['تطبيق ويب', 'أداة'] },
+                { img: 'https://i.postimg.cc/sXsst8NN/Egypt-Pyramids-Photos-41.jpg', title: 'مدرس التاريخ AI', description: 'ذكاء اصطناعي متخصص في تدريس مادة التاريخ لجعل التعلم تفاعلياً.', link: 'https://saif1230876657.github.io/saif0/', tags: ['ذكاء اصطناعي', 'تعليم'] },
+                { img: 'https://i.postimg.cc/tR51Xqqp/14a902fd15ca623a7337c1412661180e.jpg', title: 'مدرس العلوم AI', description: 'مدرسك الذكي الخاص لمادة العلوم، يساعدك على فهم المفاهيم المعقدة.', link: 'https://saif1230876657.github.io/saifSA.-X/', tags: ['ذكاء اصطناعي', 'أداة'] }
+            ]
+        };
 
-        function updateThemeButtonText() {
-            if (body.classList.contains('dark-mode')) {
-                toggleBtn.innerHTML = '<i class="fas fa-sun"></i> الوضع النهاري';
-            } else {
-                toggleBtn.innerHTML = '<i class="fas fa-moon"></i> الوضع الليلي';
-            }
-        }
+        // --- LANGUAGE SWITCHER LOGIC ---
+        const langSwitcher = document.getElementById('lang-switcher');
+        const htmlEl = document.documentElement;
+        let currentLang = localStorage.getItem('lang') || 'en';
+        let typedInstance = null;
 
-        toggleBtn.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
-            updateThemeButtonText();
-        });
-
-        if (localStorage.getItem('theme') === 'dark') {
-            body.classList.add('dark-mode');
-        }
-        updateThemeButtonText();
-
-        function showDownloadModal(e) {
-            e.preventDefault();
-            modalOverlay.style.display = 'block';
-            customModal.style.display = 'block';
-            setTimeout(() => {
-                modalOverlay.classList.add('active');
-                customModal.classList.add('active');
-            }, 10); // Removed scale and opacity from here, handled by .active class
-
-            customModal.dataset.downloadUrl = e.currentTarget.href;
-
-            if (redirectTimeoutId) {
-                clearTimeout(redirectTimeoutId);
-            }
-            redirectTimeoutId = setTimeout(() => {
-                if (customModal.style.display === 'block' && customModal.dataset.downloadUrl) {
-                    window.open(customModal.dataset.downloadUrl, '_blank');
+        const setLanguage = (lang) => {
+            const langData = translations[lang];
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (langData[key]) {
+                    if (key !== 'hero_subtitle_typed') {
+                        el.innerHTML = langData[key];
+                    }
                 }
-            }, 3000);
-        }
+            });
 
-        function closeModal() {
-            if (redirectTimeoutId) {
-                clearTimeout(redirectTimeoutId);
-                redirectTimeoutId = null;
+            htmlEl.lang = lang;
+            htmlEl.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            langSwitcher.textContent = lang === 'en' ? 'AR' : 'EN';
+            localStorage.setItem('lang', lang);
+
+            if (typedInstance) {
+                typedInstance.destroy();
             }
-            modalOverlay.classList.remove('active');
-            customModal.classList.remove('active');
-            // Opacity and transform handled by removing .active class
+            typedInstance = new Typed('#typed-subtitle', {
+                strings: langData.hero_subtitle_typed,
+                typeSpeed: 50,
+                backSpeed: 30,
+                loop: true,
+                backDelay: 2000,
+            });
 
-            // Redirect immediately after starting close animation if a URL is set
-            if (customModal.dataset.downloadUrl) {
-                 // No timeout, or very short if needed for animation to start
-                window.open(customModal.dataset.downloadUrl, '_blank');
-            }
+            renderPortfolio(lang);
+        };
 
-            setTimeout(() => {
-                modalOverlay.style.display = 'none';
-                customModal.style.display = 'none';
-                if(customModal.dataset.downloadUrl) delete customModal.dataset.downloadUrl;
-            }, 300); // Match transition duration
-        }
+        langSwitcher.addEventListener('click', () => {
+            currentLang = htmlEl.lang === 'en' ? 'ar' : 'en';
+            setLanguage(currentLang);
+        });
 
-        function toggleBio() {
-            const fullBio = document.getElementById('full-bio');
-            const btn = document.querySelector('.more-details');
-            if (fullBio.style.display === 'block') {
-                fullBio.style.display = 'none';
-                btn.innerHTML = '<i class="fas fa-chevron-down"></i> المزيد من التفاصيل';
+        // --- RENDER PORTFOLIO ---
+        const portfolioContainer = document.getElementById('portfolio-grid-container');
+        const renderPortfolio = (lang) => {
+            const projects = portfolioData[lang];
+            portfolioContainer.innerHTML = '';
+            projects.forEach((project, index) => {
+                const card = document.createElement('div');
+                card.className = 'portfolio-card glass-effect rounded-2xl overflow-hidden text-left transform transition-transform duration-300 hover:-translate-y-2';
+                card.setAttribute('data-aos', 'fade-up');
+                card.setAttribute('data-aos-delay', (index * 100) + 200);
+
+                const tagsHTML = project.tags.map(tag => 
+                    `<span class="bg-gray-700 text-gray-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">${tag}</span>`
+                ).join('');
+
+                card.innerHTML = `
+                    <img src="${project.img}" alt="${project.title}" class="w-full h-56 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="mb-3">${tagsHTML}</div>
+                        <h3 class="text-xl font-bold mb-2">${project.title}</h3>
+                        <p class="text-subtext-color flex-grow mb-4">${project.description}</p>
+                        <a href="${project.link}" target="_blank" class="self-start mt-auto inline-block bg-primary-color text-white font-bold py-2 px-5 rounded-full hover:bg-primary-accent transition-colors duration-300" data-key="portfolio_item_button">${translations[lang].portfolio_item_button}</a>
+                    </div>`;
+                portfolioContainer.appendChild(card);
+            });
+        };
+
+        // --- SCROLL-BASED UI CHANGES ---
+        const backToTopBtn = document.getElementById('back-to-top');
+        const header = document.getElementById('header');
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.5 };
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => sectionObserver.observe(section));
+
+        window.onscroll = () => {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.classList.remove('translate-y-24', 'opacity-0');
             } else {
-                fullBio.style.display = 'block';
-                btn.innerHTML = '<i class="fas fa-chevron-up"></i> إخفاء التفاصيل';
+                backToTopBtn.classList.add('translate-y-24', 'opacity-0');
             }
+
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+        };
+
+        // --- PARTICLE NETWORK BACKGROUND ---
+        function initializeGlowingParticles(canvas) {
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            
+            function resizeCanvas() {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+            }
+            
+            class Particle {
+                constructor() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.vx = (Math.random() - 0.5) * 0.5; this.vy = (Math.random() - 0.5) * 0.5; this.radius = Math.random() * 1.5 + 1; }
+                update() { this.x += this.vx; this.y += this.vy; if (this.x < 0 || this.x > canvas.width) this.vx *= -1; if (this.y < 0 || this.y > canvas.height) this.vy *= -1; }
+                draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); ctx.fillStyle = 'rgba(67, 217, 173, 0.5)'; ctx.fill(); }
+            }
+
+            function initParticles() {
+                particles = [];
+                const numberOfParticles = Math.floor((canvas.width * canvas.height) / 10000);
+                for (let i = 0; i < numberOfParticles; i++) { particles.push(new Particle()); }
+            }
+
+            function connectParticles() {
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i; j < particles.length; j++) {
+                        const dist = Math.sqrt((particles[i].x - particles[j].x) ** 2 + (particles[i].y - particles[j].y) ** 2);
+                        if (dist < 120) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(67, 217, 173, ${1 - dist / 120})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => { p.update(); p.draw(); });
+                connectParticles();
+                requestAnimationFrame(animate);
+            }
+
+            window.addEventListener('resize', () => { resizeCanvas(); initParticles(); });
+            resizeCanvas(); initParticles(); animate();
         }
 
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.querySelectorAll('.network-canvas').forEach(canvas => {
+            initializeGlowingParticles(canvas);
+        });
+
+        // --- INITIAL LOAD ---
+        setLanguage(currentLang);
+    });
     </script>
 </body>
 </html>
