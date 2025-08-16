@@ -122,18 +122,34 @@
             align-items: center;
             transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
         }
-        .loader {
-            width: 50px;
-            height: 50px;
-            border: 5px solid var(--surface-color);
-            border-top: 5px solid var(--primary-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+        .preloader-gif {
+            width: 250px;
+            height: auto;
+            margin-bottom: 25px;
         }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .progress-bar-container {
+            width: 300px;
+            height: 15px;
+            background-color: var(--surface-color);
+            border-radius: 10px;
+            border: 2px solid var(--border-color);
+            overflow: hidden;
+            margin: 0 auto;
         }
+        .progress-bar {
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 8px;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: fill-progress 2s ease-out forwards;
+        }
+        @keyframes fill-progress {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+
 
         /* Cosmic Elements Styles */
         .cosmic-element {
@@ -176,7 +192,12 @@
 
     <!-- Preloader -->
     <div id="preloader">
-        <div class="loader"></div>
+        <div class="preloader-content text-center">
+            <img src="https://i.postimg.cc/8C1sy9cJ/giphy-unscreen.gif" alt="Loading..." class="preloader-gif">
+            <div class="progress-bar-container">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
     </div>
 
     <!-- Header Section -->
@@ -370,8 +391,11 @@
         // --- PRELOADER ---
         const preloader = document.getElementById('preloader');
         window.addEventListener('load', () => {
-            preloader.style.opacity = '0';
-            preloader.style.visibility = 'hidden';
+            // A short delay to ensure the progress bar animation is visible
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+            }, 500); // 0.5 second delay
         });
 
         // --- AOS INITIALIZATION ---
